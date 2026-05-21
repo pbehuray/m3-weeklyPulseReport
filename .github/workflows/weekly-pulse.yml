@@ -1,0 +1,110 @@
+name: Weekly Review Pulse
+
+on:
+  # Run every Sunday at 9:00 AM UTC (schedule can be adjusted)
+  schedule:
+    - cron: '0 9 * * 0'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  generate-weekly-pulse:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests
+        
+    - name: Fetch latest reviews
+      env:
+        # Add any API keys needed for review fetching
+        # GOOGLE_PLAY_API_KEY: ${{ secrets.GOOGLE_PLAY_API_KEY }}
+        # APP_STORE_API_KEY: ${{ secrets.APP_STORE_API_KEY }}
+      run: |
+        echo "Fetching latest reviews..."
+        # Uncomment and configure based on your review source
+        # python phase2/fetch_groww_play_reviews.py
+        
+    - name: Run Phase 3 - Normalize reviews
+      run: |
+        echo "Running Phase 3: Data Normalization..."
+        python phase3/normalize_reviews.py
+        
+    - name: Run Phase 4 - Privacy filter
+      run: |
+        echo "Running Phase 4: Privacy Protection..."
+        python phase4/privacy_filter.py
+        
+    - name: Run Phase 5 - Theme analysis (with Groq)
+      env:
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      run: |
+        echo "Running Phase 5: AI Theme Analysis..."
+        python phase5/pre_llm_analysis.py
+        
+    - name: Run Phase 6 - Prioritize themes
+      run: |
+        echo "Running Phase 6: Theme Prioritization..."
+        python phase6/prioritize_themes.py
+        
+    - name: Run Phase 7 - Generate actions
+      env:
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      run: |
+        echo "Running Phase 7: Action Idea Generation..."
+        python phase7/generate_actions.py
+        
+    - name: Run Phase 8 - Compose weekly pulse
+      env:
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      run: |
+        echo "Running Phase 8: Weekly Pulse Composition..."
+        python phase8/compose_weekly_pulse.py
+        
+    - name: Run Phase 9 - Publish to Google Docs
+      env:
+        GDOCS_DOC_ID: ${{ secrets.GDOCS_DOC_ID }}
+      run: |
+        echo "Running Phase 9: Google Docs MCP Delivery..."
+        python phase9/publish_to_docs.py
+        
+    - name: Run Phase 10 - Create Gmail draft
+      env:
+        EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+      run: |
+        echo "Running Phase 10: Gmail MCP Draft Creation..."
+        python phase10/create_email_draft.py
+        
+    - name: Run Phase 11 - Validate workflow
+      run: |
+        echo "Running Phase 11: End-to-End Validation..."
+        python phase11/validate_workflow.py
+        
+    - name: Commit and push updated data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add phase*/data/
+        git diff --staged --quiet || (git commit -m "Weekly pulse update: $(date +%Y-%m-%d)" && git push)
+        
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: weekly-pulse-$(date +%Y-%m-%d)
+        path: |
+          phase8/data/weekly_pulse/
+          phase9/data/docs_delivery/
+          phase10/data/gmail_delivery/
+          phase11/data/validation/
+          phase12/data/submission/
+        retention-days: 30

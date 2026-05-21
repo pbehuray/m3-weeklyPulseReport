@@ -395,9 +395,15 @@ The submission should clearly show what the project does, how the AI agent works
 
 ## Future Enhancements
 
-- **Automated scheduling:** Run the workflow weekly without manual start.
+### Implemented
+
+- **Automated scheduling:** GitHub Actions workflow runs weekly every Sunday at 9:00 AM UTC. Includes manual trigger option and automated result committing.
+
+### Planned
+
 - **Sentiment analysis:** Show positive, neutral, and negative sentiment by theme.
-- **Trend comparison:** Compare this week’s themes with previous weeks.
+- **Trend comparison:** Compare this week's themes with previous weeks.
 - **Stakeholder dashboard:** Display review trends visually.
 - **Multi-product support:** Run the same workflow for multiple apps.
 - **More delivery channels:** Add Slack, Teams, or other stakeholder notification tools.
+- **Live review fetching:** Automated daily fetching of new reviews via store APIs.

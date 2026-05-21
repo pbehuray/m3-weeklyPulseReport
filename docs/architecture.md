@@ -240,6 +240,67 @@ This is the main stakeholder-facing report. It contains the weekly review summar
 
 This is a ready-to-review email draft addressed to the user or an approved alias. It contains either the weekly note itself or a link to the Google Docs document.
 
+## Automated Scheduling with GitHub Actions
+
+The workflow can be automated using GitHub Actions for scheduled execution:
+
+### Scheduler Component
+
+GitHub Actions provides the scheduling infrastructure to run the complete pipeline automatically:
+
+**Schedule Configuration:**
+- **Cron Schedule**: Runs every Sunday at 9:00 AM UTC (`0 9 * * 0`)
+- **Manual Trigger**: `workflow_dispatch` allows on-demand execution
+- **Frequency**: Weekly execution aligns with the "weekly pulse" concept
+
+**Workflow Steps:**
+1. **Checkout**: Pulls latest code from repository
+2. **Setup**: Installs Python 3.11 and dependencies
+3. **Fetch Reviews**: Optionally fetches latest reviews (if API integration enabled)
+4. **Execute Phases 3-10**: Runs the complete pipeline sequentially
+5. **Validation**: Runs Phase 11 to verify outputs
+6. **Commit Results**: Saves generated data back to repository
+7. **Upload Artifacts**: Preserves outputs as downloadable artifacts
+
+**Secrets Management:**
+Sensitive configuration is stored in GitHub Secrets:
+- `GROQ_API_KEY`: For AI analysis (Phases 5, 7, 8)
+- `GDOCS_DOC_ID`: Target Google Doc ID for Phase 9
+- `EMAIL_RECIPIENT`: Draft email recipient for Phase 10
+- `GOOGLE_PLAY_API_KEY` (optional): For automated review fetching
+- `APP_STORE_API_KEY` (optional): For automated review fetching
+
+**Benefits:**
+- **No local infrastructure needed**: Runs entirely on GitHub-hosted runners
+- **Automatic weekly execution**: No manual intervention required
+- **Version controlled**: Workflow definition is in `.github/workflows/`
+- **Observable**: Execution logs visible in GitHub Actions tab
+- **Reproducible**: Same environment every run
+
+### Scheduler Architecture Flow
+
+```text
+GitHub Actions Scheduler (cron)
+        |
+        v
+Repository Checkout
+        |
+        v
+Environment Setup (Python, deps)
+        |
+        v
+Phase 2-10 Execution (sequentially)
+        |
+        v
+Phase 11 Validation
+        |
+        v
+Commit Results to Repo
+        |
+        v
+Upload Artifacts
+```
+
 ## Key Constraints
 
 - **Public data only:** Use public review exports only.
