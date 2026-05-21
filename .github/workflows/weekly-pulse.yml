@@ -50,7 +50,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install --upgrade pip
-        pip install requests
+        pip install -r requirements.txt
         
     - name: Pre-execution summary
       run: |
@@ -61,19 +61,26 @@ jobs:
         echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         
+    - name: Run Phase 2 - Ingest reviews
+      run: |
+        echo "### 📥 Phase 2: Review Ingestion" >> $GITHUB_STEP_SUMMARY
+        if [ -f "phase2/data/raw/groww_play_store_reviews.csv" ]; then
+          python phase2/ingest_reviews.py
+          echo "- ✅ Reviews ingested" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "- ⏭️ No new reviews to ingest" >> $GITHUB_STEP_SUMMARY
+        fi
+        
     - name: Fetch latest reviews
       env:
-        GOOGLE_PLAY_API_KEY: ${{ secrets.GOOGLE_PLAY_API_KEY }}
-        APP_STORE_API_KEY: ${{ secrets.APP_STORE_API_KEY }}
         SKIP_FETCH: ${{ github.event.inputs.skip_fetch || 'false' }}
       run: |
         echo "### 📥 Phase 2: Fetching Reviews" >> $GITHUB_STEP_SUMMARY
         if [ "$SKIP_FETCH" = "true" ]; then
           echo "- ⏭️ Skipped (manual trigger with skip option)" >> $GITHUB_STEP_SUMMARY
-        elif [ -f "phase2/fetch_groww_play_reviews.py" ]; then
-          python phase2/fetch_groww_play_reviews.py && echo "- ✅ Reviews fetched" >> $GITHUB_STEP_SUMMARY || echo "- ⚠️ Review fetch skipped" >> $GITHUB_STEP_SUMMARY
         else
-          echo "- ⏭️ Review fetch not configured" >> $GITHUB_STEP_SUMMARY
+          echo "Fetching latest reviews from Google Play Store..."
+          python phase2/fetch_groww_play_reviews.py --count 500 --weeks 2 && echo "- ✅ Reviews fetched from Play Store" >> $GITHUB_STEP_SUMMARY || echo "- ⚠️ Review fetch failed, using existing data" >> $GITHUB_STEP_SUMMARY
         fi
         
     - name: Debug - List all files

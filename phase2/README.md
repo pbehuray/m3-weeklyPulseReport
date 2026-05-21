@@ -9,6 +9,7 @@ Load public App Store and Play Store review exports, validate required fields, f
 ```text
 phase2/
 ├── ingest_reviews.py              # Main ingestion script
+├── fetch_groww_play_reviews.py    # Live Google Play review fetcher
 ├── README.md                      # This file
 └── data/
     ├── raw/                       # Source review export files
@@ -21,7 +22,22 @@ phase2/
 
 ## How to Run
 
+### Option 1: Ingest from CSV files
 ```bash
+python phase2/ingest_reviews.py
+```
+
+### Option 2: Fetch live reviews from Google Play
+```bash
+python phase2/fetch_groww_play_reviews.py --count 500 --weeks 2
+```
+
+### Option 3: Full pipeline with live fetch
+```bash
+# First fetch new reviews
+python phase2/fetch_groww_play_reviews.py
+
+# Then ingest them
 python phase2/ingest_reviews.py
 ```
 
@@ -33,6 +49,39 @@ python phase2/ingest_reviews.py
 4. **Filters by date window** — keeps only reviews from the last 12 weeks
 5. **Removes duplicates** — deduplicates by review text + date + platform
 6. **Saves output** — writes `ingested_reviews.json` and `ingestion_report.json`
+
+## Live Review Fetching (Google Play)
+
+The `fetch_groww_play_reviews.py` script fetches **live reviews** from the Google Play Store using the `google-play-scraper` library.
+
+### Features:
+- **No API key required** — uses public web scraping
+- **Configurable** — adjust count, country, language, time window
+- **Automatic deduplication** — by review ID
+- **Saves as CSV** — ready for ingestion
+
+### Usage:
+```bash
+# Fetch 500 most recent reviews from last 2 weeks
+python phase2/fetch_groww_play_reviews.py --count 500 --weeks 2
+
+# Fetch 1000 reviews from last month (default 12 weeks)
+python phase2/fetch_groww_play_reviews.py --count 1000
+```
+
+### Parameters:
+- `--count`: Number of reviews to fetch (default: 2500)
+- `--weeks`: How many weeks back to fetch (default: 12)
+- `--country`: Country code (default: 'in' for India)
+- `--language`: Language code (default: 'en')
+
+### GitHub Actions Integration:
+The workflow automatically fetches new reviews every week:
+```yaml
+- name: Fetch latest reviews
+  run: |
+    python phase2/fetch_groww_play_reviews.py --count 500 --weeks 2
+```
 
 ## Sample Data
 
@@ -52,4 +101,6 @@ The `data/raw/` folder contains sample review CSVs with:
 
 ## Status
 
-Complete — ingestion script implemented with sample data and validation.
+✅ **Complete** — Ingestion script implemented
+✅ **Complete** — Live Google Play review fetcher implemented
+✅ **Complete** — GitHub Actions integration for weekly automated fetching
