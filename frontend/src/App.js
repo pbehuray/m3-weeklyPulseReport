@@ -772,6 +772,98 @@ function App() {
             ))}
           </div>
         </div>
+
+        {/* User Quotes Section */}
+        {data.quotes && data.quotes.length > 0 && (
+          <div style={{ 
+            backgroundColor: colors.card,
+            borderRadius: '12px',
+            padding: '24px',
+            border: `1px solid ${colors.border}`,
+            marginTop: '24px'
+          }}>
+            <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>💬 User Quotes</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {data.quotes.map((quote, idx) => (
+                <div 
+                  key={idx}
+                  style={{
+                    padding: '16px',
+                    backgroundColor: darkMode ? '#1e293b' : '#fffbeb',
+                    borderRadius: '8px',
+                    borderLeft: '4px solid #f59e0b'
+                  }}
+                >
+                  <p style={{ margin: 0, fontStyle: 'italic', color: colors.text }}>
+                    "{quote}"
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Action Items Section */}
+        {data.actions && data.actions.length > 0 && (
+          <div style={{ 
+            backgroundColor: colors.card,
+            borderRadius: '12px',
+            padding: '24px',
+            border: `1px solid ${colors.border}`,
+            marginTop: '24px'
+          }}>
+            <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>💡 Recommended Actions</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {data.actions.map((action, idx) => (
+                <div 
+                  key={idx}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '12px',
+                    padding: '16px',
+                    backgroundColor: darkMode ? '#1e293b' : '#f0fdf4',
+                    borderRadius: '8px',
+                    borderLeft: '4px solid #10b981'
+                  }}
+                >
+                  <span style={{ 
+                    width: '24px', 
+                    height: '24px', 
+                    backgroundColor: '#10b981',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '12px',
+                    fontWeight: '600',
+                    color: 'white',
+                    flexShrink: 0
+                  }}>
+                    {idx + 1}
+                  </span>
+                  <p style={{ margin: 0, color: colors.text }}>{action}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Headline Section */}
+        {data.headline && (
+          <div style={{ 
+            backgroundColor: colors.card,
+            borderRadius: '12px',
+            padding: '24px',
+            border: `1px solid ${colors.border}`,
+            marginTop: '24px'
+          }}>
+            <h3 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600' }}>📰 Weekly Pulse Headline</h3>
+            <p style={{ margin: 0, fontSize: '18px', lineHeight: 1.6, color: colors.text }}>
+              {data.headline}
+            </p>
+          </div>
+        )}
       </main>
     </div>
   );
