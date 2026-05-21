@@ -1,0 +1,21 @@
+{
+  "source": "groq",
+  "external_api_calls": 1,
+  "actions": [
+    {
+      "theme_name": "Customer Support",
+      "action": "Improve response times and provide clear updates on issue resolution",
+      "rationale": "Users have reported slow and poor customer support, with issues taking too long to resolve and delayed responses without proper updates."
+    },
+    {
+      "theme_name": "Withdrawals",
+      "action": "Enhance transparency of fees and charges associated with withdrawals",
+      "rationale": "Users have expressed frustration with unclear and high fees, highlighting the need for transparent pricing and clear communication of costs before executing trades."
+    },
+    {
+      "theme_name": "Product Experience and Features",
+      "action": "Streamline the user interface and provide better guidance and solutions",
+      "rationale": "Users have reported a good but simple app experience, but with poor customer support and confusing executive responses, indicating a need for improved guidance and solutions."
+    }
+  ]
+}

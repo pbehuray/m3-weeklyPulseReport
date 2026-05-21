@@ -1,0 +1,114 @@
+{
+  "provider": "groq",
+  "external_api_calls": 1,
+  "source_review_count": 2390,
+  "working_set_review_count": 500,
+  "max_themes": 5,
+  "themes": [
+    {
+      "theme_name": "Product Experience and Features",
+      "summary": "Users have mixed opinions about the app's features and user experience.",
+      "sentiment": "mixed",
+      "review_count": 145,
+      "rating_breakdown": {
+        "positive": 69,
+        "negative": 42,
+        "neutral": 34
+      },
+      "supporting_review_ids": [
+        "play_store-2026-05-14-00017",
+        "play_store-2026-05-13-00154",
+        "play_store-2026-05-11-00440"
+      ],
+      "sample_quotes": [
+        "easy interface app and good and easy to use. nice service help too",
+        "this is not good features only buy and sells charge extra",
+        "App good simple and essy but costomer care very slow and poor . Proper guidence and solution bhi nahi milta hai . groww excutive khud hi confuse rahty hai . Costomer care ( chat & call ) poor responce . And baat nahi kerty call cut kerty hai hai Please provide better costomer sup"
+      ]
+    },
+    {
+      "theme_name": "Customer Support",
+      "summary": "Users are generally dissatisfied with the customer support provided by the app.",
+      "sentiment": "mostly_negative",
+      "review_count": 105,
+      "rating_breakdown": {
+        "negative": 58,
+        "positive": 33,
+        "neutral": 14
+      },
+      "supporting_review_ids": [
+        "play_store-2026-05-14-00099",
+        "play_store-2026-05-11-00440",
+        "play_store-2026-05-12-00246"
+      ],
+      "sample_quotes": [
+        "Very bad experience with Groww. The [ACCOUNT_ID] is extremely poor and issues take too long to resolve. I have been waiting for a solution but keep getting delayed responses without proper updates. Very disappointing support experience.",
+        "App good simple and essy but costomer care very slow and poor . Proper guidence and solution bhi nahi milta hai . groww excutive khud hi confuse rahty hai . Costomer care ( chat & call ) poor responce . And baat nahi kerty call cut kerty hai hai Please provide better costomer sup",
+        "WORST EXPERIENCE EVER. 6 days and my KYC is still pending. Your support team LIED to me on email - promised activation by 9 PM on 8th Oct 2026. It's 9:50 PM now, still blocked. I am losing money every day because I cannot start my SIP due to YOUR incompetence. This is financial h"
+      ]
+    },
+    {
+      "theme_name": "Withdrawals",
+      "summary": "Users have mixed opinions about the withdrawal process and fees associated with it.",
+      "sentiment": "mixed",
+      "review_count": 95,
+      "rating_breakdown": {
+        "negative": 43,
+        "positive": 40,
+        "neutral": 12
+      },
+      "supporting_review_ids": [
+        "play_store-2026-05-14-00075",
+        "play_store-2026-05-13-00160",
+        "play_store-2026-05-14-00088"
+      ],
+      "sample_quotes": [
+        "Limit [REFERENCE_ID] is not proper. Not able to sell all quantity at a time at a predefined price, it sells quantity partially & brokerage charges exceed more than profit. This is the worst experience.",
+        "I chose Groww expecting transparent pricing, but my experience was the opposite. The final charges were much higher than anticipated, and I did not clearly understand the full cost before executing the trade. Platforms handling financial transactions should make all fees prominen",
+        "all ok but, withdrawal was not coming in time"
+      ]
+    },
+    {
+      "theme_name": "Payments and Transfers",
+      "summary": "Users have mixed opinions about the payment and transfer process.",
+      "sentiment": "mixed",
+      "review_count": 82,
+      "rating_breakdown": {
+        "negative": 32,
+        "positive": 31,
+        "neutral": 19
+      },
+      "supporting_review_ids": [
+        "play_store-2026-05-13-00160",
+        "play_store-2026-05-13-00181",
+        "play_store-2026-05-14-00052"
+      ],
+      "sample_quotes": [
+        "I chose Groww expecting transparent pricing, but my experience was the opposite. The final charges were much higher than anticipated, and I did not clearly understand the full cost before executing the trade. Platforms handling financial transactions should make all fees prominen",
+        "Today I faced very bad experience, i suppose to sell my stock but grow was down for 6hours.... Really very bad experience....Today I will exit from Groww....Will go with Paytm.",
+        "Hi UPI TAB has disappeared from the last 2 days. is this the impact of app version update?"
+      ]
+    },
+    {
+      "theme_name": "App Stability and Crashes",
+      "summary": "Users have mixed opinions about the app's stability and crash issues.",
+      "sentiment": "mixed",
+      "review_count": 74,
+      "rating_breakdown": {
+        "negative": 29,
+        "positive": 29,
+        "neutral": 16
+      },
+      "supporting_review_ids": [
+        "play_store-2026-05-14-00011",
+        "play_store-2026-05-11-00440",
+        "play_store-2026-05-07-00688"
+      ],
+      "sample_quotes": [
+        "abe kitna charge lete ho. maine vedanta k only two quantity li intraday me ...just kitne charge lagte to... inhone 19 rp liya ..aise h kuch trade liy... second day check kiya to 150 rp.. charge jabke zerodha pe check kiya vo h charge utne quantity k liye pure trade k liye only 25",
+        "App good simple and essy but costomer care very slow and poor . Proper guidence and solution bhi nahi milta hai . groww excutive khud hi confuse rahty hai . Costomer care ( chat & call ) poor responce . And baat nahi kerty call cut kerty hai hai Please provide better costomer sup",
+        "Requesting [ACCOUNT_ID] to please reach out to change my number. Thanks in advance."
+      ]
+    }
+  ]
+}

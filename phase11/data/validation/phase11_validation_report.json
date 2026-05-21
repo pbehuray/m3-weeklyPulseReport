@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-05-21T15:37:12.255826",
+  "overall_valid": true,
+  "phases_validated": 8,
+  "constraints_met": {
+    "max_5_themes": true,
+    "top_3_themes_in_report": true,
+    "3_real_quotes": true,
+    "3_action_ideas": true,
+    "mcp_docs_integration": true,
+    "mcp_gmail_integration": true,
+    "privacy_protection": true
+  },
+  "phase_results": {
+    "phase3_normalization": {
+      "valid": true,
+      "review_count": 2390,
+      "fields_present": [
+        "content",
+        "rating",
+        "platform",
+        "date_standardized"
+      ]
+    },
+    "phase4_privacy": {
+      "valid": true,
+      "privacy_safe_count": 2390,
+      "pii_issues_in_sample": [],
+      "note": "PII check on sample - some patterns may be false positives"
+    },
+    "phase5_themes": {
+      "valid": true,
+      "theme_count": 5,
+      "within_limit": true,
+      "themes": [
+        "Product Experience and Features",
+        "Customer Support",
+        "Withdrawals",
+        "Payments and Transfers",
+        "App Stability and Crashes"
+      ]
+    },
+    "phase6_prioritization": {
+      "valid": true,
+      "top_theme_count": 3,
+      "quote_count": 3,
+      "themes": [
+        "Product Experience and Features",
+        "Customer Support",
+        "Withdrawals"
+      ]
+    },
+    "phase7_actions": {
+      "valid": true,
+      "action_count": 3,
+      "actions": [
+        "Improve response times and provide clear updates on issue re...",
+        "Enhance transparency of fees and charges associated with wit...",
+        "Streamline the user interface and provide better guidance an..."
+      ]
+    },
+    "phase8_pulse": {
+      "valid": true,
+      "has_headline": true,
+      "top_themes_count": 3,
+      "quotes_count": 3,
+      "actions_count": 3
+    },
+    "phase9_docs": {
+      "valid": true,
+      "mcp_used": true,
+      "document_url": "https://docs.google.com/document/d/1IsqpOHq53G51Shg5R271iq7P57k6wUqqQKVNzJVA6dw/edit",
+      "timestamp": "2026-05-21T13:56:57.397910"
+    },
+    "phase10_gmail": {
+      "valid": true,
+      "mcp_used": true,
+      "recipient": "purbashabehuray@gmail.com",
+      "subject": "Weekly App Review Pulse - 2026-05-21",
+      "timestamp": "2026-05-21T15:27:10.533148"
+    }
+  }
+}
