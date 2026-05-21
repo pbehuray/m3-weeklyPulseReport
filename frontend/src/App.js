@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   RefreshCw, 
   Download, 
-  Search, 
-  Star,
+  Search,
   TrendingUp,
   TrendingDown,
   Minus,
@@ -25,10 +24,7 @@ import {
   YAxis, 
   CartesianGrid, 
   Tooltip, 
-  ResponsiveContainer,
-  PieChart as RePieChart,
-  Pie,
-  Cell
+  ResponsiveContainer
 } from 'recharts';
 
 // Mock data - replace with actual API calls
