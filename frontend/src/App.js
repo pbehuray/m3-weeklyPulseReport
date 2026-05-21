@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
   RefreshCw, 
-  Download, 
   Search,
   TrendingUp,
   TrendingDown,
@@ -18,13 +17,9 @@ import {
   Sun,
   Star,
   BarChart3,
-  Activity,
   Zap,
-  Target,
   TrendingUp as TrendIcon,
-  AlertCircle,
-  CheckCircle,
-  Clock
+  CheckCircle
 } from 'lucide-react';
 import { 
   BarChart, 
@@ -34,14 +29,7 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
-  Cell,
-  LineChart,
-  Line,
-  AreaChart,
-  Area,
-  PieChart as RePieChart,
-  Pie,
-  Legend
+  Cell
 } from 'recharts';
 
 // v1.0.1 - Build fix applied
