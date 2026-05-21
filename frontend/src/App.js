@@ -365,125 +365,301 @@ function App() {
       <main style={{ padding: '24px' }}>
         {activeTab === 'reviews' && (
           <>
-        {/* Reviews Summary Card */}
-        <div style={{ 
-          backgroundColor: colors.card,
-          borderRadius: '12px',
-          padding: '20px',
-          marginBottom: '24px',
-          border: `1px solid ${colors.border}`
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <MessageSquare size={20} style={{ color: '#10b981' }} />
-              <span style={{ fontSize: '18px', fontWeight: '600' }}>
-                {data.totalReviews.toLocaleString()} reviews
-              </span>
-              <span style={{ color: colors.textMuted, fontSize: '14px' }}>
-                Android: 8h ago • iOS: 8h ago
-              </span>
-            </div>
-            <button
-              style={{
-                padding: '8px 16px',
-                borderRadius: '8px',
-                border: `1px solid ${colors.border}`,
-                backgroundColor: 'transparent',
-                color: colors.text,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                fontSize: '13px'
-              }}
-            >
-              <Download size={16} />
-              Import CSV
-            </button>
-          </div>
+            {/* Reviews Summary Card */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <MessageSquare size={20} style={{ color: '#10b981' }} />
+                  <span style={{ fontSize: '18px', fontWeight: '600' }}>
+                    945 reviews
+                  </span>
+                  <span style={{ color: colors.textMuted, fontSize: '14px' }}>
+                    iOS: 8h ago
+                  </span>
+                </div>
+              </div>
 
-          {/* AI Categorization Progress */}
-          <div style={{ 
-            backgroundColor: darkMode ? '#1e293b' : '#f1f5f9',
-            borderRadius: '8px',
-            padding: '16px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ 
-                width: '32px', 
-                height: '32px', 
-                backgroundColor: '#8b5cf6',
-                borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <PieChart size={18} color="white" />
-              </div>
-              <div>
-                <p style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>AI Categorization</p>
-                <p style={{ margin: 0, fontSize: '13px', color: colors.textMuted }}>
-                  {data.categorized.toLocaleString()} of {data.totalReviews.toLocaleString()} categorized • 
-                  <span style={{ color: '#f59e0b' }}>{data.pending.toLocaleString()} pending</span>
-                </p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ 
-                width: '200px', 
-                height: '6px', 
-                backgroundColor: colors.border,
-                borderRadius: '3px',
-                overflow: 'hidden'
-              }}>
-                <div style={{ 
-                  width: `${(data.categorized / data.totalReviews) * 100}%`,
-                  height: '100%',
-                  backgroundColor: '#10b981',
-                  borderRadius: '3px'
-                }} />
-              </div>
-              <span style={{ fontSize: '13px', color: colors.textMuted }}>
-                {Math.round((data.categorized / data.totalReviews) * 100)}%
-              </span>
-              <button
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '6px',
-                  border: 'none',
-                  backgroundColor: '#8b5cf6',
-                  color: 'white',
-                  cursor: 'pointer',
-                  fontSize: '13px',
-                  fontWeight: '500'
-                }}
-              >
-                Categorize
-              </button>
-            </div>
-          </div>
-        </div>
+              {/* Rating Distribution & Health Metrics */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                {/* Rating Distribution */}
+                <div>
+                  <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase' }}>Rating Distribution</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {[
+                      { rating: 5, count: 840, percentage: 88.9 },
+                      { rating: 4, count: 48, percentage: 5.1 },
+                      { rating: 3, count: 5, percentage: 0.5 },
+                      { rating: 2, count: 6, percentage: 0.6 },
+                      { rating: 1, count: 46, percentage: 4.9 }
+                    ].map((item) => (
+                      <div key={item.rating} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <span style={{ color: getRatingColor(item.rating), fontSize: '13px', minWidth: '24px' }}>{item.rating}★</span>
+                        <div style={{ flex: 1, height: '8px', backgroundColor: colors.border, borderRadius: '4px', overflow: 'hidden' }}>
+                          <div style={{ width: `${item.percentage}%`, height: '100%', backgroundColor: getRatingColor(item.rating), borderRadius: '4px' }} />
+                        </div>
+                        <span style={{ fontSize: '13px', color: colors.text, minWidth: '32px' }}>{item.count}</span>
+                        <span style={{ fontSize: '12px', color: colors.textMuted, minWidth: '40px', textAlign: 'right' }}>{item.percentage}%</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-        {/* Platform & Time Filters */}
-        <div style={{ 
-          backgroundColor: colors.card,
-          borderRadius: '12px',
-          padding: '20px',
-          marginBottom: '24px',
-          border: `1px solid ${colors.border}`
-        }}>
-          <div style={{ display: 'flex', gap: '40px' }}>
-            <div>
-              <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                {['all', 'android', 'ios'].map(p => (
+                {/* Health Metrics */}
+                <div>
+                  <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase' }}>Health Metrics</h3>
+                  <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '12px', padding: '20px', marginBottom: '16px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                      <div>
+                        <p style={{ margin: '0 0 4px 0', fontSize: '12px', color: colors.textMuted }}>NPS</p>
+                        <p style={{ margin: 0, fontSize: '32px', fontWeight: '700', color: '#10b981' }}>+88</p>
+                        <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: '#10b981' }}>Excellent</p>
+                      </div>
+                      <div style={{ textAlign: 'right', fontSize: '12px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                          <span style={{ color: '#10b981' }}>●</span>
+                          <span style={{ color: colors.textMuted }}>Promoters (4-5):</span>
+                          <span style={{ color: colors.text }}>0</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+                          <span style={{ color: '#f59e0b' }}>●</span>
+                          <span style={{ color: colors.textMuted }}>Passives (3):</span>
+                          <span style={{ color: colors.text }}>0</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ color: '#ef4444' }}>●</span>
+                          <span style={{ color: colors.textMuted }}>Detractors (1-2):</span>
+                          <span style={{ color: colors.text }}>0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                    <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '16px' }}>
+                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>Total Reviews</p>
+                      <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>945</p>
+                    </div>
+                    <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '16px' }}>
+                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>Avg Rating</p>
+                      <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>4.7★</p>
+                    </div>
+                  </div>
+                  <div style={{ marginTop: '16px' }}>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>Sentiment Split</p>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      <div style={{ flex: 1, textAlign: 'center', padding: '8px', backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '6px' }}>
+                        <TrendIcon size={16} style={{ color: '#10b981', marginBottom: '2px' }} />
+                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#10b981' }}>0%</p>
+                      </div>
+                      <div style={{ flex: 1, textAlign: 'center', padding: '8px', backgroundColor: darkMode ? '#1e293b' : '#fefce8', borderRadius: '6px' }}>
+                        <Minus size={16} style={{ color: '#eab308', marginBottom: '2px' }} />
+                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#eab308' }}>0%</p>
+                      </div>
+                      <div style={{ flex: 1, textAlign: 'center', padding: '8px', backgroundColor: darkMode ? '#1e293b' : '#fef2f2', borderRadius: '6px' }}>
+                        <TrendingDown size={16} style={{ color: '#ef4444', marginBottom: '2px' }} />
+                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#ef4444' }}>0%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Search & Filter */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '16px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`,
+              display: 'flex',
+              gap: '16px',
+              alignItems: 'center'
+            }}>
+              <div style={{ flex: 1, position: 'relative' }}>
+                <Search size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: colors.textMuted }} />
+                <input
+                  type="text"
+                  placeholder="Search reviews..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px 10px 40px',
+                    borderRadius: '8px',
+                    border: `1px solid ${colors.border}`,
+                    backgroundColor: darkMode ? '#0f172a' : '#f8fafc',
+                    color: colors.text,
+                    fontSize: '14px',
+                    outline: 'none'
+                  }}
+                />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ fontSize: '12px', color: colors.textMuted }}>SENTIMENT</span>
+                {['all', 'positive', 'negative', 'neutral'].map(s => (
                   <button
-                    key={p}
-                    onClick={() => setPlatform(p)}
+                    key={s}
+                    onClick={() => setSentimentFilter(s)}
                     style={{
+                      padding: '8px 16px',
+                      borderRadius: '20px',
+                      border: 'none',
+                      backgroundColor: sentimentFilter === s ? '#10b981' : colors.border,
+                      color: sentimentFilter === s ? 'white' : colors.text,
+                      cursor: 'pointer',
+                      fontSize: '13px',
+                      textTransform: 'capitalize'
+                    }}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Individual Review Cards */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {[
+                { 
+                  user: 'Hi good game for my son', 
+                  platform: 'iOS', 
+                  date: '15 May 2026', 
+                  text: 'Groww is best app for trading',
+                  rating: 5,
+                  sentiment: 'Neutral'
+                },
+                { 
+                  user: 'banabasi', 
+                  platform: 'iOS', 
+                  date: '15 May 2026', 
+                  text: 'Most informative and easy to operate app',
+                  rating: 5,
+                  sentiment: 'Neutral'
+                },
+                { 
+                  user: 'trader_pro', 
+                  platform: 'Android', 
+                  date: '14 May 2026', 
+                  text: 'App is good but customer care needs improvement. Response time is very slow.',
+                  rating: 3,
+                  sentiment: 'Negative'
+                },
+                { 
+                  user: 'investor_2024', 
+                  platform: 'iOS', 
+                  date: '13 May 2026', 
+                  text: 'Excellent app for beginners. Very simple interface and easy to understand.',
+                  rating: 5,
+                  sentiment: 'Positive'
+                },
+                { 
+                  user: 'stockmaster', 
+                  platform: 'Android', 
+                  date: '12 May 2026', 
+                  text: 'Good app overall but charges are not transparent. Hidden fees are a problem.',
+                  rating: 4,
+                  sentiment: 'Mixed'
+                }
+              ].map((review, idx) => (
+                <div 
+                  key={idx}
+                  style={{
+                    backgroundColor: colors.card,
+                    borderRadius: '12px',
+                    padding: '20px',
+                    border: `1px solid ${colors.border}`
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <div style={{ 
+                        width: '40px', 
+                        height: '40px', 
+                        backgroundColor: colors.border,
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                        <span style={{ fontSize: '16px', fontWeight: '600', color: colors.text }}>{review.user.charAt(0).toUpperCase()}</span>
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, fontWeight: '600', fontSize: '14px' }}>{review.user}</p>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '2px' }}>
+                          <span style={{ fontSize: '12px', color: colors.textMuted }}>{review.platform}</span>
+                          <span style={{ fontSize: '12px', color: colors.textMuted }}>•</span>
+                          <span style={{ fontSize: '12px', color: colors.textMuted }}>{review.date}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <div style={{ display: 'flex', gap: '2px' }}>
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} fill={i < review.rating ? '#f59e0b' : 'transparent'} color={i < review.rating ? '#f59e0b' : colors.border} />
+                        ))}
+                      </div>
+                      <span style={{ 
+                        padding: '4px 12px', 
+                        borderRadius: '12px', 
+                        backgroundColor: review.sentiment === 'Positive' ? '#d4edda' : review.sentiment === 'Negative' ? '#f8d7da' : '#fff3cd',
+                        color: review.sentiment === 'Positive' ? '#155724' : review.sentiment === 'Negative' ? '#721c24' : '#856404',
+                        fontSize: '12px',
+                        fontWeight: '500'
+                      }}>
+                        {review.sentiment}
+                      </span>
+                    </div>
+                  </div>
+                  <p style={{ margin: '0 0 16px 0', fontSize: '15px', color: colors.text, lineHeight: 1.5 }}>
+                    {review.text}
+                  </p>
+                  <div style={{ display: 'flex', gap: '16px' }}>
+                    <button style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: colors.textMuted, background: 'none', border: 'none', cursor: 'pointer' }}>
+                      <MessageSquare size={14} />
+                      Reply
+                    </button>
+                    <button style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: colors.textMuted, background: 'none', border: 'none', cursor: 'pointer' }}>
+                      <Search size={14} />
+                      Find Similar
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {activeTab === 'analytics' && (
+          <>
+            {/* Analytics Header */}
+            <div style={{ marginBottom: '24px' }}>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Analytics</h2>
+              <p style={{ margin: 0, color: colors.textMuted }}>Grow app metrics, sentiment analysis, and trend insights</p>
+            </div>
+
+            {/* Filters */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`
+            }}>
+              <div style={{ display: 'flex', gap: '40px' }}>
+                <div>
+                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    {['all', 'android', 'ios'].map(p => (
+                      <button
+                        key={p}
+                        onClick={() => setPlatform(p)}
+                        style={{
                       padding: '8px 16px',
                       borderRadius: '20px',
                       border: 'none',
@@ -1222,22 +1398,179 @@ function App() {
           <>
             <div style={{ marginBottom: '24px' }}>
               <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Word Cloud</h2>
-              <p style={{ margin: 0, color: colors.textMuted }}>Most frequent words and phrases from user reviews</p>
+              <p style={{ margin: 0, color: colors.textMuted }}>Most used words, top keywords, and top upvoted reviews</p>
             </div>
+
+            {/* Filters */}
             <div style={{ 
               backgroundColor: colors.card,
               borderRadius: '12px',
-              padding: '60px',
-              border: `1px solid ${colors.border}`,
-              minHeight: '400px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+              padding: '20px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`
             }}>
-              <div style={{ textAlign: 'center' }}>
-                <Cloud size={48} color={colors.textMuted} style={{ marginBottom: '16px' }} />
-                <p style={{ color: colors.textMuted }}>Word cloud visualization coming soon</p>
-                <p style={{ color: colors.textMuted, fontSize: '13px', marginTop: '8px' }}>Analyzing {data.totalReviews.toLocaleString()} reviews...</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
+                  <div>
+                    <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      {['all', 'android', 'ios'].map(p => (
+                        <button
+                          key={p}
+                          onClick={() => setPlatform(p)}
+                          style={{
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            border: 'none',
+                            backgroundColor: platform === p ? '#10b981' : colors.border,
+                            color: platform === p ? 'white' : colors.text,
+                            cursor: 'pointer',
+                            fontSize: '13px',
+                            textTransform: 'capitalize'
+                          }}
+                        >
+                          {p}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Time Period</p>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                      {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
+                        <button
+                          key={period}
+                          style={{
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            border: 'none',
+                            backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
+                            color: period === 'Last 30 Days' ? 'white' : colors.text,
+                            cursor: 'pointer',
+                            fontSize: '13px'
+                          }}
+                        >
+                          {period}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <button style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}>Reset</button>
+              </div>
+            </div>
+
+            {/* Stats Grid */}
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(3, 1fr)', 
+              gap: '16px',
+              marginBottom: '24px'
+            }}>
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <MessageSquare size={16} color={colors.textMuted} />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Reviews Analyzed</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>945</p>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <BarChart3 size={16} color="#8b5cf6" />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Total Words</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>4,367</p>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <PieChart size={16} color="#f59e0b" />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Unique Words</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>1,234</p>
+              </div>
+            </div>
+
+            {/* Word Cloud Visualization */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '40px',
+              border: `1px solid ${colors.border}`,
+              minHeight: '400px'
+            }}>
+              <h3 style={{ margin: '0 0 24px 0', fontSize: '16px', fontWeight: '600' }}>Word Cloud</h3>
+              <div style={{ 
+                display: 'flex', 
+                flexWrap: 'wrap', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                gap: '12px',
+                lineHeight: 1.4
+              }}>
+                {[
+                  { word: 'app', size: 48, color: '#10b981' },
+                  { word: 'good', size: 42, color: '#3b82f6' },
+                  { word: 'easy', size: 38, color: '#f59e0b' },
+                  { word: 'user', size: 32, color: '#8b5cf6' },
+                  { word: 'nice', size: 28, color: '#10b981' },
+                  { word: 'excellent', size: 26, color: '#06b6d4' },
+                  { word: 'trade', size: 24, color: '#64748b' },
+                  { word: 'experience', size: 22, color: '#8b5cf6' },
+                  { word: 'charges', size: 22, color: '#64748b' },
+                  { word: 'mutual', size: 20, color: '#64748b' },
+                  { word: 'platform', size: 20, color: '#64748b' },
+                  { word: 'interface', size: 20, color: '#64748b' },
+                  { word: 'friendly', size: 20, color: '#f59e0b' },
+                  { word: 'smooth', size: 18, color: '#64748b' },
+                  { word: 'money', size: 18, color: '#64748b' },
+                  { word: 'groww', size: 18, color: '#10b981' },
+                  { word: 'simple', size: 18, color: '#64748b' },
+                  { word: 'stocks', size: 18, color: '#64748b' },
+                  { word: 'UI', size: 16, color: '#3b82f6' },
+                  { word: 'investment', size: 16, color: '#64748b' },
+                  { word: 'funds', size: 16, color: '#64748b' },
+                  { word: 'grow', size: 16, color: '#64748b' },
+                  { word: 'great', size: 16, color: '#f59e0b' },
+                  { word: 'best', size: 16, color: '#ef4444' },
+                  { word: 'invest', size: 16, color: '#64748b' },
+                  { word: 'investing', size: 16, color: '#64748b' },
+                  { word: 'application', size: 14, color: '#64748b' },
+                  { word: 'trading', size: 14, color: '#64748b' },
+                  { word: 'beginners', size: 14, color: '#64748b' },
+                  { word: 'stock', size: 14, color: '#64748b' },
+                  { word: 'market', size: 14, color: '#64748b' },
+                ].map((item, idx) => (
+                  <span 
+                    key={idx}
+                    style={{ 
+                      fontSize: item.size,
+                      color: item.color,
+                      fontWeight: item.size > 24 ? 700 : 500,
+                      cursor: 'pointer',
+                      transition: 'transform 0.2s',
+                      ':hover': { transform: 'scale(1.1)' }
+                    }}
+                  >
+                    {item.word}
+                  </span>
+                ))}
               </div>
             </div>
           </>
