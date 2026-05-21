@@ -81,11 +81,27 @@ jobs:
           echo "- ⏭️ Review fetch not configured" >> $GITHUB_STEP_SUMMARY
         fi
         
+    - name: Debug - List all files
+      run: |
+        echo "=== Current Directory ==="
+        pwd
+        ls -la
+        echo ""
+        echo "=== Phase Directories ==="
+        ls -la phase*/ 2>/dev/null || echo "No phase directories"
+        echo ""
+        echo "=== Data Files ==="
+        find . -name "*.json" -path "*/data/*" 2>/dev/null | head -20 || echo "No JSON files found"
+        
     - name: Check existing data
       id: check_data
       run: |
         echo "Checking for existing data files..."
-        ls -la phase*/data/ 2>/dev/null || echo "No data directories found"
+        if [ -f "phase3/data/normalized/normalized_reviews.json" ]; then
+          echo "✅ Found: phase3/data/normalized/normalized_reviews.json"
+        else
+          echo "❌ Missing: phase3/data/normalized/normalized_reviews.json"
+        fi
         
     - name: Run Phase 3 - Normalize reviews
       id: phase3
