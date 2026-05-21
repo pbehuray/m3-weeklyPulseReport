@@ -237,32 +237,29 @@ jobs:
     needs: generate-weekly-pulse
     runs-on: ubuntu-latest
     if: always()
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     
     steps:
     - name: Send Slack notification
-      if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
+      if: env.SLACK_WEBHOOK_URL != ''
       uses: 8398a7/action-slack@v3
       with:
         status: ${{ needs.generate-weekly-pulse.result }}
-        channel: '#weekly-pulse'
-        webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-        fields: repo,message,commit,author,action,eventName,ref,workflow
+        author_name: Weekly Pulse Bot
         text: |
           Weekly Pulse ${{ needs.generate-weekly-pulse.result == 'success' && '✅ Succeeded' || '❌ Failed' }}
           Date: ${{ needs.generate-weekly-pulse.outputs.pulse_date }}
           Validation: ${{ needs.generate-weekly-pulse.outputs.validation_status }}
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       continue-on-error: true
       
     - name: Send Discord notification
-      if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
-      uses: Ilshidur/action-discord@master
-      with:
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        content: |
-          🤖 Weekly Pulse Report - ${{ needs.generate-weekly-pulse.result == 'success' && '✅ SUCCESS' || '❌ FAILED' }}
-          
-          Date: ${{ needs.generate-weekly-pulse.outputs.pulse_date }}
-          Validation: ${{ needs.generate-weekly-pulse.outputs.validation_status }}
-          
-          ${{ needs.generate-weekly-pulse.result == 'success' && 'All phases completed successfully!' || 'Some phases failed. Check GitHub Actions for details.' }}
+      if: env.DISCORD_WEBHOOK_URL != ''
+      run: |
+        curl -H "Content-Type: application/json" \
+             -d "{\"content\":\"🤖 Weekly Pulse Report - ${{ needs.generate-weekly-pulse.result == 'success' && '✅ SUCCESS' || '❌ FAILED' }}\n\nDate: ${{ needs.generate-weekly-pulse.outputs.pulse_date }}\nValidation: ${{ needs.generate-weekly-pulse.outputs.validation_status }}\n\n${{ needs.generate-weekly-pulse.result == 'success' && 'All phases completed successfully!' || 'Some phases failed. Check GitHub Actions for details.' }}\"}" \
+             ${{ secrets.DISCORD_WEBHOOK_URL }}
       continue-on-error: true
