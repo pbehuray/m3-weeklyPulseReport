@@ -70,7 +70,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeTab, setActiveTab] = useState('reviews');
   const [platform, setPlatform] = useState('all');
-  const [timePeriod, setTimePeriod] = useState('last30days');
+  const [timePeriod] = useState('last30days');
   const [searchQuery, setSearchQuery] = useState('');
   const [sentimentFilter, setSentimentFilter] = useState('all');
   const [data, setData] = useState(mockData);
@@ -158,22 +158,6 @@ function App() {
     { id: 'reporting', label: 'Reporting', icon: FileText }
   ];
 
-  const timePeriods = [
-    { id: 'today', label: 'Today' },
-    { id: 'yesterday', label: 'Yesterday' },
-    { id: 'last7days', label: 'Last 7 Days' },
-    { id: 'last15days', label: 'Last 15 Days' },
-    { id: 'last30days', label: 'Last 30 Days' },
-    { id: 'custom', label: 'Custom Range' }
-  ];
-
-  const getSentimentIcon = (sentiment) => {
-    switch(sentiment) {
-      case 'positive': return <TrendingUp size={16} className="text-emerald-500" />;
-      case 'negative': return <TrendingDown size={16} className="text-red-500" />;
-      default: return <Minus size={16} className="text-amber-500" />;
-    }
-  };
 
   const getRatingColor = (rating) => {
     switch(rating) {
