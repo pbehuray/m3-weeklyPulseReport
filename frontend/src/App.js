@@ -353,105 +353,287 @@ function App() {
       <main style={{ padding: '24px' }}>
         {activeTab === 'reviews' && (
           <>
+            {/* Header */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
+              <div>
+                <h2 style={{ margin: '0 0 4px 0', fontSize: '20px', fontWeight: '600' }}>Reviews</h2>
+                <p style={{ margin: 0, color: colors.textMuted, fontSize: '14px' }}>Triage and analyze Groww app store reviews</p>
+              </div>
+              <button
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '8px',
+                  border: `1px solid ${colors.border}`,
+                  backgroundColor: 'transparent',
+                  color: colors.text,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '13px'
+                }}
+              >
+                <RefreshCw size={14} />
+                Import CSV
+              </button>
+            </div>
+
             {/* Reviews Summary Card */}
             <div style={{ 
               backgroundColor: colors.card,
               borderRadius: '12px',
-              padding: '20px',
+              padding: '16px 20px',
+              marginBottom: '16px',
+              border: `1px solid ${colors.border}`,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <MessageSquare size={18} style={{ color: '#10b981' }} />
+                <span style={{ fontSize: '16px', fontWeight: '600' }}>
+                  6,792 reviews
+                </span>
+                <span style={{ color: '#10b981', fontSize: '13px' }}>
+                  ● Android: 8h ago
+                </span>
+                <span style={{ color: '#10b981', fontSize: '13px' }}>
+                  ● iOS: 8h ago
+                </span>
+              </div>
+              <button
+                style={{
+                  padding: '6px 12px',
+                  borderRadius: '6px',
+                  border: 'none',
+                  backgroundColor: 'transparent',
+                  color: colors.textMuted,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontSize: '13px'
+                }}
+              >
+                <RefreshCw size={14} />
+                Refresh
+              </button>
+            </div>
+
+            {/* AI Categorization */}
+            <div style={{ 
+              backgroundColor: darkMode ? '#1e293b' : '#f1f5f9',
+              borderRadius: '12px',
+              padding: '16px 20px',
+              marginBottom: '16px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ 
+                  width: '32px', 
+                  height: '32px', 
+                  backgroundColor: '#8b5cf6',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <PieChart size={18} color="white" />
+                </div>
+                <div>
+                  <p style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>AI Categorization</p>
+                  <p style={{ margin: '2px 0 0 0', fontSize: '12px', color: colors.textMuted }}>
+                    590 of 6792 categorized • <span style={{ color: '#f59e0b' }}>6202 pending</span>
+                  </p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ 
+                  width: '120px', 
+                  height: '6px', 
+                  backgroundColor: colors.border,
+                  borderRadius: '3px',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{ 
+                    width: '9%',
+                    height: '100%',
+                    backgroundColor: '#10b981',
+                    borderRadius: '3px'
+                  }} />
+                </div>
+                <span style={{ fontSize: '12px', color: colors.textMuted }}>9%</span>
+                <button
+                  style={{
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    border: 'none',
+                    backgroundColor: '#8b5cf6',
+                    color: 'white',
+                    cursor: 'pointer',
+                    fontSize: '13px',
+                    fontWeight: '500'
+                  }}
+                >
+                  Categorize
+                </button>
+              </div>
+            </div>
+
+            {/* Platform & Time Filters */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '16px 20px',
               marginBottom: '24px',
               border: `1px solid ${colors.border}`
             }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <MessageSquare size={20} style={{ color: '#10b981' }} />
-                  <span style={{ fontSize: '18px', fontWeight: '600' }}>
-                    945 reviews
-                  </span>
-                  <span style={{ color: colors.textMuted, fontSize: '14px' }}>
-                    iOS: 8h ago
-                  </span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
+                  <div>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '11px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600', letterSpacing: '0.5px' }}>Platform</p>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      {['All', 'Android', 'iOS'].map(p => (
+                        <button
+                          key={p}
+                          onClick={() => setPlatform(p.toLowerCase())}
+                          style={{
+                            padding: '6px 14px',
+                            borderRadius: '20px',
+                            border: 'none',
+                            backgroundColor: (p === 'All' ? platform === 'all' : platform === p.toLowerCase()) ? '#10b981' : colors.border,
+                            color: (p === 'All' ? platform === 'all' : platform === p.toLowerCase()) ? 'white' : colors.text,
+                            cursor: 'pointer',
+                            fontSize: '13px'
+                          }}
+                        >
+                          {p}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '11px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600', letterSpacing: '0.5px' }}>Time Period</p>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
+                        <button
+                          key={period}
+                          style={{
+                            padding: '6px 14px',
+                            borderRadius: '20px',
+                            border: 'none',
+                            backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
+                            color: period === 'Last 30 Days' ? 'white' : colors.text,
+                            cursor: 'pointer',
+                            fontSize: '13px'
+                          }}
+                        >
+                          {period}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <button style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}>Reset</button>
+              </div>
+            </div>
+
+            {/* Rating Distribution & Health Metrics */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
+              {/* Rating Distribution */}
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '13px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Rating Distribution</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {[
+                    { rating: 5, count: 799, percentage: 79.9 },
+                    { rating: 4, count: 82, percentage: 8.2 },
+                    { rating: 3, count: 22, percentage: 2.2 },
+                    { rating: 2, count: 10, percentage: 1.0 },
+                    { rating: 1, count: 87, percentage: 8.7 }
+                  ].map((item) => (
+                    <div key={item.rating} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <span style={{ color: getRatingColor(item.rating), fontSize: '13px', minWidth: '20px', fontWeight: 600 }}>{item.rating}★</span>
+                      <div style={{ flex: 1, height: '10px', backgroundColor: darkMode ? '#1e293b' : '#e2e8f0', borderRadius: '5px', overflow: 'hidden' }}>
+                        <div style={{ width: `${item.percentage}%`, height: '100%', backgroundColor: getRatingColor(item.rating), borderRadius: '5px' }} />
+                      </div>
+                      <span style={{ fontSize: '13px', color: colors.text, minWidth: '28px', textAlign: 'right' }}>{item.count}</span>
+                      <span style={{ fontSize: '12px', color: colors.textMuted, minWidth: '36px', textAlign: 'right' }}>{item.percentage}%</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Rating Distribution & Health Metrics */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-                {/* Rating Distribution */}
-                <div>
-                  <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase' }}>Rating Distribution</h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    {[
-                      { rating: 5, count: 840, percentage: 88.9 },
-                      { rating: 4, count: 48, percentage: 5.1 },
-                      { rating: 3, count: 5, percentage: 0.5 },
-                      { rating: 2, count: 6, percentage: 0.6 },
-                      { rating: 1, count: 46, percentage: 4.9 }
-                    ].map((item) => (
-                      <div key={item.rating} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                        <span style={{ color: getRatingColor(item.rating), fontSize: '13px', minWidth: '24px' }}>{item.rating}★</span>
-                        <div style={{ flex: 1, height: '8px', backgroundColor: colors.border, borderRadius: '4px', overflow: 'hidden' }}>
-                          <div style={{ width: `${item.percentage}%`, height: '100%', backgroundColor: getRatingColor(item.rating), borderRadius: '4px' }} />
-                        </div>
-                        <span style={{ fontSize: '13px', color: colors.text, minWidth: '32px' }}>{item.count}</span>
-                        <span style={{ fontSize: '12px', color: colors.textMuted, minWidth: '40px', textAlign: 'right' }}>{item.percentage}%</span>
+              {/* Health Metrics */}
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '13px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Health Metrics</h3>
+                
+                {/* NPS Card */}
+                <div style={{ backgroundColor: darkMode ? '#064e3b' : '#f0fdf4', borderRadius: '10px', padding: '16px', marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div>
+                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>NPS</p>
+                      <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#10b981' }}>+78</p>
+                      <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: '#10b981' }}>Excellent</p>
+                    </div>
+                    <div style={{ textAlign: 'right', fontSize: '11px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '3px', justifyContent: 'flex-end' }}>
+                        <span style={{ color: '#10b981' }}>●</span>
+                        <span style={{ color: colors.textMuted }}>Promoters (4-5):</span>
+                        <span style={{ color: colors.text }}>0</span>
                       </div>
-                    ))}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '3px', justifyContent: 'flex-end' }}>
+                        <span style={{ color: '#f59e0b' }}>●</span>
+                        <span style={{ color: colors.textMuted }}>Passives (3):</span>
+                        <span style={{ color: colors.text }}>0</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', justifyContent: 'flex-end' }}>
+                        <span style={{ color: '#ef4444' }}>●</span>
+                        <span style={{ color: colors.textMuted }}>Detractors (1-2):</span>
+                        <span style={{ color: colors.text }}>0</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Health Metrics */}
+                {/* Stats Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px' }}>
+                  <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '14px' }}>
+                    <p style={{ margin: '0 0 4px 0', fontSize: '10px', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Total Reviews</p>
+                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>1,000</p>
+                  </div>
+                  <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '14px' }}>
+                    <p style={{ margin: '0 0 4px 0', fontSize: '10px', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Avg Rating</p>
+                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>4.5<span style={{ color: '#f59e0b', marginLeft: '4px' }}>★</span></p>
+                  </div>
+                </div>
+
+                {/* Sentiment Split */}
                 <div>
-                  <h3 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase' }}>Health Metrics</h3>
-                  <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '12px', padding: '20px', marginBottom: '16px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                      <div>
-                        <p style={{ margin: '0 0 4px 0', fontSize: '12px', color: colors.textMuted }}>NPS</p>
-                        <p style={{ margin: 0, fontSize: '32px', fontWeight: '700', color: '#10b981' }}>+88</p>
-                        <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: '#10b981' }}>Excellent</p>
-                      </div>
-                      <div style={{ textAlign: 'right', fontSize: '12px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-                          <span style={{ color: '#10b981' }}>●</span>
-                          <span style={{ color: colors.textMuted }}>Promoters (4-5):</span>
-                          <span style={{ color: colors.text }}>0</span>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-                          <span style={{ color: '#f59e0b' }}>●</span>
-                          <span style={{ color: colors.textMuted }}>Passives (3):</span>
-                          <span style={{ color: colors.text }}>0</span>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <span style={{ color: '#ef4444' }}>●</span>
-                          <span style={{ color: colors.textMuted }}>Detractors (1-2):</span>
-                          <span style={{ color: colors.text }}>0</span>
-                        </div>
-                      </div>
+                  <p style={{ margin: '0 0 10px 0', fontSize: '10px', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Sentiment Split</p>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <div style={{ flex: 1, textAlign: 'center', padding: '10px', backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '6px' }}>
+                      <TrendIcon size={14} style={{ color: '#10b981', marginBottom: '4px' }} />
+                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>0%</p>
                     </div>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                    <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '16px' }}>
-                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>Total Reviews</p>
-                      <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>945</p>
+                    <div style={{ flex: 1, textAlign: 'center', padding: '10px', backgroundColor: darkMode ? '#1e293b' : '#fefce8', borderRadius: '6px' }}>
+                      <Minus size={14} style={{ color: '#eab308', marginBottom: '4px' }} />
+                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>0%</p>
                     </div>
-                    <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '16px' }}>
-                      <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>Avg Rating</p>
-                      <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>4.7★</p>
-                    </div>
-                  </div>
-                  <div style={{ marginTop: '16px' }}>
-                    <p style={{ margin: '0 0 8px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>Sentiment Split</p>
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                      <div style={{ flex: 1, textAlign: 'center', padding: '8px', backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '6px' }}>
-                        <TrendIcon size={16} style={{ color: '#10b981', marginBottom: '2px' }} />
-                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#10b981' }}>0%</p>
-                      </div>
-                      <div style={{ flex: 1, textAlign: 'center', padding: '8px', backgroundColor: darkMode ? '#1e293b' : '#fefce8', borderRadius: '6px' }}>
-                        <Minus size={16} style={{ color: '#eab308', marginBottom: '2px' }} />
-                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#eab308' }}>0%</p>
-                      </div>
-                      <div style={{ flex: 1, textAlign: 'center', padding: '8px', backgroundColor: darkMode ? '#1e293b' : '#fef2f2', borderRadius: '6px' }}>
-                        <TrendingDown size={16} style={{ color: '#ef4444', marginBottom: '2px' }} />
-                        <p style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: '#ef4444' }}>0%</p>
-                      </div>
+                    <div style={{ flex: 1, textAlign: 'center', padding: '10px', backgroundColor: darkMode ? '#1e293b' : '#fef2f2', borderRadius: '6px' }}>
+                      <TrendingDown size={14} style={{ color: '#ef4444', marginBottom: '4px' }} />
+                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>0%</p>
                     </div>
                   </div>
                 </div>
