@@ -15,7 +15,16 @@ import {
   Smartphone,
   Apple,
   Moon,
-  Sun
+  Sun,
+  Star,
+  BarChart3,
+  Activity,
+  Zap,
+  Target,
+  TrendingUp as TrendIcon,
+  AlertCircle,
+  CheckCircle,
+  Clock
 } from 'lucide-react';
 import { 
   BarChart, 
@@ -25,7 +34,14 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
-  Cell
+  Cell,
+  LineChart,
+  Line,
+  AreaChart,
+  Area,
+  PieChart as RePieChart,
+  Pie,
+  Legend
 } from 'recharts';
 
 // v1.0.1 - Build fix applied
@@ -347,6 +363,8 @@ function App() {
 
       {/* Main Content */}
       <main style={{ padding: '24px' }}>
+        {activeTab === 'reviews' && (
+          <>
         {/* Reviews Summary Card */}
         <div style={{ 
           backgroundColor: colors.card,
@@ -863,6 +881,578 @@ function App() {
               {data.headline}
             </p>
           </div>
+        )}
+        </>
+        )}
+
+        {activeTab === 'analytics' && (
+          <>
+            {/* Analytics Header */}
+            <div style={{ marginBottom: '24px' }}>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Analytics</h2>
+              <p style={{ margin: 0, color: colors.textMuted }}>Grow app metrics, sentiment analysis, and trend insights</p>
+            </div>
+
+            {/* Filters */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`
+            }}>
+              <div style={{ display: 'flex', gap: '40px' }}>
+                <div>
+                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    {['all', 'android', 'ios'].map(p => (
+                      <button
+                        key={p}
+                        onClick={() => setPlatform(p)}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '20px',
+                          border: 'none',
+                          backgroundColor: platform === p ? '#10b981' : colors.border,
+                          color: platform === p ? 'white' : colors.text,
+                          cursor: 'pointer',
+                          fontSize: '13px',
+                          textTransform: 'capitalize'
+                        }}
+                      >
+                        {p}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Time Period</p>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
+                      <button
+                        key={period}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '20px',
+                          border: 'none',
+                          backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
+                          color: period === 'Last 30 Days' ? 'white' : colors.text,
+                          cursor: 'pointer',
+                          fontSize: '13px'
+                        }}
+                      >
+                        {period}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Metrics Grid */}
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(4, 1fr)', 
+              gap: '16px',
+              marginBottom: '24px'
+            }}>
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <MessageSquare size={16} color={colors.textMuted} />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Total Reviews</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>1,000</p>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <Star size={16} color="#f59e0b" />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Avg Rating</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>4.5</p>
+                <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: colors.textMuted }}>out of 5.0</p>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <TrendIcon size={16} color="#10b981" />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Positive</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#10b981' }}>0%</p>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <TrendingDown size={16} color="#ef4444" />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Negative</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#ef4444' }}>0%</p>
+              </div>
+            </div>
+
+            {/* Charts Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              {/* Sentiment Analysis */}
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '24px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Sentiment Analysis</h3>
+                <div style={{ height: '250px' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={[
+                      { name: 'Positive', value: 750, fill: '#10b981' },
+                      { name: 'Neutral', value: 150, fill: '#f59e0b' },
+                      { name: 'Negative', value: 100, fill: '#ef4444' }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
+                      <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 12 }} />
+                      <YAxis axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 12 }} />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: colors.card, 
+                          border: `1px solid ${colors.border}`,
+                          borderRadius: '8px',
+                          color: colors.text
+                        }}
+                      />
+                      <Bar dataKey="value" radius={[4, 4, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+
+              {/* Rating Distribution */}
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '24px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Rating Distribution</h3>
+                <div style={{ height: '250px' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={data.ratingDistribution}>
+                      <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
+                      <XAxis dataKey="rating" tickFormatter={(v) => `${v}★`} axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 12 }} />
+                      <YAxis axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 12 }} />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: colors.card, 
+                          border: `1px solid ${colors.border}`,
+                          borderRadius: '8px',
+                          color: colors.text
+                        }}
+                        formatter={(value, name, props) => [`${value} reviews`, 'Count']}
+                      />
+                      <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                        {data.ratingDistribution.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={getRatingColor(entry.rating)} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {activeTab === 'categories' && (
+          <>
+            {/* Categories Header */}
+            <div style={{ marginBottom: '24px' }}>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Categories</h2>
+              <p style={{ margin: 0, color: colors.textMuted }}>AI-identified themes and category distribution across Groww reviews</p>
+            </div>
+
+            {/* Filters */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
+                  <div>
+                    <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      {['all', 'android', 'ios'].map(p => (
+                        <button
+                          key={p}
+                          onClick={() => setPlatform(p)}
+                          style={{
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            border: 'none',
+                            backgroundColor: platform === p ? '#10b981' : colors.border,
+                            color: platform === p ? 'white' : colors.text,
+                            cursor: 'pointer',
+                            fontSize: '13px',
+                            textTransform: 'capitalize'
+                          }}
+                        >
+                          {p}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Time Period</p>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                      {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
+                        <button
+                          key={period}
+                          style={{
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            border: 'none',
+                            backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
+                            color: period === 'Last 30 Days' ? 'white' : colors.text,
+                            cursor: 'pointer',
+                            fontSize: '13px'
+                          }}
+                        >
+                          {period}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <button style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}>Reset</button>
+              </div>
+            </div>
+
+            {/* Category Charts */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '24px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Sentiment Analysis</h3>
+                <div style={{ height: '250px' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={[
+                      { name: 'Positive', value: 0 },
+                      { name: 'Neutral', value: 0 },
+                      { name: 'Negative', value: 0 }
+                    ]}>
+                      <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
+                      <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: colors.textMuted }} />
+                      <YAxis axisLine={false} tickLine={false} tick={{ fill: colors.textMuted }} />
+                      <Bar dataKey="value" fill="#64748b" radius={[4, 4, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '24px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Rating Distribution</h3>
+                <div style={{ height: '250px' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={data.ratingDistribution}>
+                      <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
+                      <XAxis dataKey="rating" tickFormatter={(v) => `${v}★`} axisLine={false} tickLine={false} tick={{ fill: colors.textMuted }} />
+                      <YAxis axisLine={false} tickLine={false} tick={{ fill: colors.textMuted }} />
+                      <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                        {data.ratingDistribution.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={getRatingColor(entry.rating)} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </div>
+
+            {/* Trend Analysis */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '24px',
+              border: `1px solid ${colors.border}`,
+              marginTop: '24px'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '600' }}>Trend Analysis</h3>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <button style={{ padding: '6px 12px', borderRadius: '6px', border: 'none', backgroundColor: colors.border, color: colors.text, fontSize: '12px' }}>Sentiment</button>
+                  <button style={{ padding: '6px 12px', borderRadius: '6px', border: 'none', backgroundColor: '#10b981', color: 'white', fontSize: '12px' }}>Categories</button>
+                </div>
+              </div>
+              <div style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.textMuted }}>
+                <p>Trend data will appear here</p>
+              </div>
+            </div>
+          </>
+        )}
+
+        {activeTab === 'wordcloud' && (
+          <>
+            <div style={{ marginBottom: '24px' }}>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Word Cloud</h2>
+              <p style={{ margin: 0, color: colors.textMuted }}>Most frequent words and phrases from user reviews</p>
+            </div>
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '60px',
+              border: `1px solid ${colors.border}`,
+              minHeight: '400px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <Cloud size={48} color={colors.textMuted} style={{ marginBottom: '16px' }} />
+                <p style={{ color: colors.textMuted }}>Word cloud visualization coming soon</p>
+                <p style={{ color: colors.textMuted, fontSize: '13px', marginTop: '8px' }}>Analyzing {data.totalReviews.toLocaleString()} reviews...</p>
+              </div>
+            </div>
+          </>
+        )}
+
+        {activeTab === 'ideation' && (
+          <>
+            <div style={{ marginBottom: '24px' }}>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Ideation</h2>
+              <p style={{ margin: 0, color: colors.textMuted }}>AI-generated feature ideas and improvement suggestions</p>
+            </div>
+
+            {data.actions && data.actions.length > 0 && (
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '24px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>💡 Recommended Actions</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {data.actions.map((action, idx) => (
+                    <div 
+                      key={idx}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '12px',
+                        padding: '20px',
+                        backgroundColor: darkMode ? '#1e293b' : '#f0fdf4',
+                        borderRadius: '12px',
+                        borderLeft: '4px solid #10b981'
+                      }}
+                    >
+                      <div style={{ 
+                        width: '32px', 
+                        height: '32px', 
+                        backgroundColor: '#10b981',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        color: 'white',
+                        flexShrink: 0
+                      }}>
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, color: colors.text, fontSize: '16px', lineHeight: 1.5 }}>{action}</p>
+                        <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: colors.textMuted }}>AI-generated from review analysis</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '24px',
+              border: `1px solid ${colors.border}`,
+              marginTop: '24px'
+            }}>
+              <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Feature Requests</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {data.themes?.map((theme, idx) => (
+                  <div 
+                    key={idx}
+                    style={{
+                      padding: '16px',
+                      backgroundColor: darkMode ? '#1e293b' : '#f8fafc',
+                      borderRadius: '8px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <div>
+                      <p style={{ margin: 0, fontWeight: '600' }}>{theme.label}</p>
+                      <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: colors.textMuted }}>{theme.count} mentions</p>
+                    </div>
+                    <Zap size={20} color="#f59e0b" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {activeTab === 'reporting' && (
+          <>
+            <div style={{ marginBottom: '24px' }}>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Reporting</h2>
+              <p style={{ margin: 0, color: colors.textMuted }}>Weekly Pulse, Fee Explainer, and Morning Brew workflows</p>
+            </div>
+
+            {/* Filters */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '20px',
+              marginBottom: '24px',
+              border: `1px solid ${colors.border}`
+            }}>
+              <div style={{ display: 'flex', gap: '40px' }}>
+                <div>
+                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    {['all', 'android', 'ios'].map(p => (
+                      <button
+                        key={p}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '20px',
+                          border: 'none',
+                          backgroundColor: p === 'all' ? '#10b981' : colors.border,
+                          color: p === 'all' ? 'white' : colors.text,
+                          cursor: 'pointer',
+                          fontSize: '13px',
+                          textTransform: 'capitalize'
+                        }}
+                      >
+                        {p}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Time Period</p>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
+                      <button
+                        key={period}
+                        style={{
+                          padding: '8px 16px',
+                          borderRadius: '20px',
+                          border: 'none',
+                          backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
+                          color: period === 'Last 30 Days' ? 'white' : colors.text,
+                          cursor: 'pointer',
+                          fontSize: '13px'
+                        }}
+                      >
+                        {period}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 8 Reporting Orchestrator */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '24px',
+              border: `1px solid ${colors.border}`,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
+            }}>
+              <div>
+                <h3 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: '600' }}>Phase 8 Reporting Orchestrator</h3>
+                <p style={{ margin: 0, color: colors.textMuted, fontSize: '14px' }}>
+                  Generate leadership-ready pulse with top bugs, feature ideas, Jira + Confluence + SMTP actions
+                </p>
+                <p style={{ margin: '8px 0 0 0', color: colors.textMuted, fontSize: '13px' }}>
+                  Active filter: all / last 30
+                </p>
+              </div>
+              <button
+                style={{
+                  padding: '12px 24px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  backgroundColor: '#10b981',
+                  color: 'white',
+                  cursor: 'pointer',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                <RefreshCw size={16} />
+                Generate Weekly Pulse
+              </button>
+            </div>
+
+            {/* Weekly Pulse Preview */}
+            {data.headline && (
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '24px',
+                border: `1px solid ${colors.border}`,
+                marginTop: '24px'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+                  <div>
+                    <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: '600' }}>Latest Weekly Pulse</h3>
+                    <p style={{ margin: 0, color: colors.textMuted, fontSize: '13px' }}>Generated on {new Date().toLocaleDateString()}</p>
+                  </div>
+                  <CheckCircle size={24} color="#10b981" />
+                </div>
+                <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.6, color: colors.text }}>
+                  {data.headline}
+                </p>
+              </div>
+            )}
+          </>
         )}
       </main>
     </div>
