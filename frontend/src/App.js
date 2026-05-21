@@ -830,432 +830,6 @@ function App() {
                         key={p}
                         onClick={() => setPlatform(p)}
                         style={{
-                      padding: '8px 16px',
-                      borderRadius: '20px',
-                      border: 'none',
-                      backgroundColor: platform === p ? '#10b981' : colors.border,
-                      color: platform === p ? 'white' : colors.text,
-                      cursor: 'pointer',
-                      fontSize: '13px',
-                      textTransform: 'capitalize'
-                    }}
-                  >
-                    {p}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Time Period</p>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                {timePeriods.map(period => (
-                  <button
-                    key={period.id}
-                    onClick={() => setTimePeriod(period.id)}
-                    style={{
-                      padding: '8px 16px',
-                      borderRadius: '20px',
-                      border: 'none',
-                      backgroundColor: timePeriod === period.id ? '#10b981' : colors.border,
-                      color: timePeriod === period.id ? 'white' : colors.text,
-                      cursor: 'pointer',
-                      fontSize: '13px'
-                    }}
-                  >
-                    {period.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Charts Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
-          {/* Rating Distribution */}
-          <div style={{ 
-            backgroundColor: colors.card,
-            borderRadius: '12px',
-            padding: '24px',
-            border: `1px solid ${colors.border}`
-          }}>
-            <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Rating Distribution</h3>
-            <div style={{ height: '250px' }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data.ratingDistribution} layout="vertical">
-                  <CartesianGrid strokeDasharray="3 3" stroke={colors.border} horizontal={false} />
-                  <XAxis type="number" hide />
-                  <YAxis 
-                    type="category" 
-                    dataKey="rating" 
-                    tickFormatter={(value) => `${value}★`}
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: colors.text, fontSize: 14 }}
-                  />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: colors.card, 
-                      border: `1px solid ${colors.border}`,
-                      borderRadius: '8px',
-                      color: colors.text
-                    }}
-                    formatter={(value, name, props) => [`${value} (${props.payload.percentage}%)`, 'Reviews']}
-                  />
-                  <Bar 
-                    dataKey="count" 
-                    radius={[0, 4, 4, 0]}
-                    fill="#10b981"
-                  >
-                    {data.ratingDistribution.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={getRatingColor(entry.rating)} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-            <div style={{ marginTop: '12px' }}>
-              {data.ratingDistribution.map((item, idx) => (
-                <div key={idx} style={{ 
-                  display: 'flex', 
-                  justifyContent: 'space-between', 
-                  alignItems: 'center',
-                  padding: '8px 0',
-                  borderBottom: idx < data.ratingDistribution.length - 1 ? `1px solid ${colors.border}` : 'none'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: getRatingColor(item.rating) }}>{item.rating}★</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                    <span style={{ color: colors.text, fontWeight: '600' }}>{item.count}</span>
-                    <span style={{ color: colors.textMuted, fontSize: '13px', minWidth: '50px', textAlign: 'right' }}>
-                      {item.percentage}%
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Health Metrics */}
-          <div style={{ 
-            backgroundColor: colors.card,
-            borderRadius: '12px',
-            padding: '24px',
-            border: `1px solid ${colors.border}`
-          }}>
-            <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Health Metrics</h3>
-            
-            {/* NPS Score */}
-            <div style={{ 
-              backgroundColor: darkMode ? '#1e293b' : '#f0fdf4',
-              borderRadius: '12px',
-              padding: '20px',
-              marginBottom: '20px'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <div>
-                  <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: colors.textMuted }}>NPS</p>
-                  <p style={{ margin: 0, fontSize: '36px', fontWeight: '700', color: '#10b981' }}>
-                    +{data.nps}
-                  </p>
-                  <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: '#10b981' }}>Excellent</p>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', fontSize: '13px' }}>
-                    <span style={{ color: '#10b981' }}>●</span>
-                    <span style={{ color: colors.textMuted }}>Promoters (4-5):</span>
-                    <span style={{ color: colors.text, fontWeight: '600' }}>{data.promoters}</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', fontSize: '13px' }}>
-                    <span style={{ color: '#f59e0b' }}>●</span>
-                    <span style={{ color: colors.textMuted }}>Passives (3):</span>
-                    <span style={{ color: colors.text, fontWeight: '600' }}>{data.passives}</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px' }}>
-                    <span style={{ color: '#ef4444' }}>●</span>
-                    <span style={{ color: colors.textMuted }}>Detractors (1-2):</span>
-                    <span style={{ color: colors.text, fontWeight: '600' }}>{data.detractors}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Stats Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              <div style={{ 
-                backgroundColor: darkMode ? '#1e293b' : '#f8fafc',
-                borderRadius: '8px',
-                padding: '16px'
-              }}>
-                <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: colors.textMuted }}>TOTAL REVIEWS</p>
-                <p style={{ margin: 0, fontSize: '24px', fontWeight: '700', color: colors.text }}>
-                  {(data.androidReviews + data.iosReviews).toLocaleString()}
-                </p>
-              </div>
-              <div style={{ 
-                backgroundColor: darkMode ? '#1e293b' : '#f8fafc',
-                borderRadius: '8px',
-                padding: '16px'
-              }}>
-                <p style={{ margin: '0 0 8px 0', fontSize: '12px', color: colors.textMuted }}>AVG RATING</p>
-                <p style={{ margin: 0, fontSize: '24px', fontWeight: '700', color: colors.text }}>
-                  {data.avgRating}★
-                </p>
-              </div>
-            </div>
-
-            {/* Sentiment Split */}
-            <div style={{ marginTop: '20px' }}>
-              <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: colors.textMuted }}>SENTIMENT SPLIT</p>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <div style={{ flex: 1, textAlign: 'center', padding: '12px', backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '8px' }}>
-                  <TrendingUp size={20} style={{ color: '#10b981', marginBottom: '4px' }} />
-                  <p style={{ margin: 0, fontSize: '18px', fontWeight: '600', color: '#10b981' }}>0%</p>
-                  <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>Positive</p>
-                </div>
-                <div style={{ flex: 1, textAlign: 'center', padding: '12px', backgroundColor: darkMode ? '#1e293b' : '#fefce8', borderRadius: '8px' }}>
-                  <Minus size={20} style={{ color: '#eab308', marginBottom: '4px' }} />
-                  <p style={{ margin: 0, fontSize: '18px', fontWeight: '600', color: '#eab308' }}>0%</p>
-                  <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>Neutral</p>
-                </div>
-                <div style={{ flex: 1, textAlign: 'center', padding: '12px', backgroundColor: darkMode ? '#1e293b' : '#fef2f2', borderRadius: '8px' }}>
-                  <TrendingDown size={20} style={{ color: '#ef4444', marginBottom: '4px' }} />
-                  <p style={{ margin: 0, fontSize: '18px', fontWeight: '600', color: '#ef4444' }}>0%</p>
-                  <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>Negative</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Search & Sentiment Filter */}
-        <div style={{ 
-          backgroundColor: colors.card,
-          borderRadius: '12px',
-          padding: '20px',
-          marginBottom: '24px',
-          border: `1px solid ${colors.border}`,
-          display: 'flex',
-          gap: '20px',
-          alignItems: 'center'
-        }}>
-          <div style={{ flex: 1, position: 'relative' }}>
-            <Search size={18} style={{ 
-              position: 'absolute', 
-              left: '12px', 
-              top: '50%', 
-              transform: 'translateY(-50%)',
-              color: colors.textMuted 
-            }} />
-            <input
-              type="text"
-              placeholder="Search reviews..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '12px 12px 12px 40px',
-                borderRadius: '8px',
-                border: `1px solid ${colors.border}`,
-                backgroundColor: darkMode ? '#0f172a' : '#f8fafc',
-                color: colors.text,
-                fontSize: '14px',
-                outline: 'none'
-              }}
-            />
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <MessageSquare size={18} color={colors.textMuted} />
-            <span style={{ fontSize: '13px', color: colors.textMuted }}>SENTIMENT</span>
-            {['all', 'positive', 'negative', 'neutral'].map(s => (
-              <button
-                key={s}
-                onClick={() => setSentimentFilter(s)}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  border: 'none',
-                  backgroundColor: sentimentFilter === s ? '#10b981' : colors.border,
-                  color: sentimentFilter === s ? 'white' : colors.text,
-                  cursor: 'pointer',
-                  fontSize: '13px',
-                  textTransform: 'capitalize'
-                }}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Themes Section */}
-        <div style={{ 
-          backgroundColor: colors.card,
-          borderRadius: '12px',
-          padding: '24px',
-          border: `1px solid ${colors.border}`
-        }}>
-          <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>Top Themes</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {data.themes.map((theme, idx) => (
-              <div 
-                key={idx}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '16px',
-                  backgroundColor: darkMode ? '#1e293b' : '#f8fafc',
-                  borderRadius: '8px'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{ 
-                    width: '28px', 
-                    height: '28px', 
-                    backgroundColor: colors.border,
-                    borderRadius: '6px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '13px',
-                    fontWeight: '600'
-                  }}>
-                    {idx + 1}
-                  </span>
-                  <div>
-                    <p style={{ margin: 0, fontWeight: '600' }}>{theme.label}</p>
-                    <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: colors.textMuted }}>
-                      {theme.count} mentions
-                    </p>
-                  </div>
-                </div>
-                {getSentimentIcon(theme.sentiment)}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* User Quotes Section */}
-        {data.quotes && data.quotes.length > 0 && (
-          <div style={{ 
-            backgroundColor: colors.card,
-            borderRadius: '12px',
-            padding: '24px',
-            border: `1px solid ${colors.border}`,
-            marginTop: '24px'
-          }}>
-            <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>💬 User Quotes</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {data.quotes.map((quote, idx) => (
-                <div 
-                  key={idx}
-                  style={{
-                    padding: '16px',
-                    backgroundColor: darkMode ? '#1e293b' : '#fffbeb',
-                    borderRadius: '8px',
-                    borderLeft: '4px solid #f59e0b'
-                  }}
-                >
-                  <p style={{ margin: 0, fontStyle: 'italic', color: colors.text }}>
-                    "{quote}"
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Action Items Section */}
-        {data.actions && data.actions.length > 0 && (
-          <div style={{ 
-            backgroundColor: colors.card,
-            borderRadius: '12px',
-            padding: '24px',
-            border: `1px solid ${colors.border}`,
-            marginTop: '24px'
-          }}>
-            <h3 style={{ margin: '0 0 20px 0', fontSize: '16px', fontWeight: '600' }}>💡 Recommended Actions</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {data.actions.map((action, idx) => (
-                <div 
-                  key={idx}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '12px',
-                    padding: '16px',
-                    backgroundColor: darkMode ? '#1e293b' : '#f0fdf4',
-                    borderRadius: '8px',
-                    borderLeft: '4px solid #10b981'
-                  }}
-                >
-                  <span style={{ 
-                    width: '24px', 
-                    height: '24px', 
-                    backgroundColor: '#10b981',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: '600',
-                    color: 'white',
-                    flexShrink: 0
-                  }}>
-                    {idx + 1}
-                  </span>
-                  <p style={{ margin: 0, color: colors.text }}>{action}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Headline Section */}
-        {data.headline && (
-          <div style={{ 
-            backgroundColor: colors.card,
-            borderRadius: '12px',
-            padding: '24px',
-            border: `1px solid ${colors.border}`,
-            marginTop: '24px'
-          }}>
-            <h3 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600' }}>📰 Weekly Pulse Headline</h3>
-            <p style={{ margin: 0, fontSize: '18px', lineHeight: 1.6, color: colors.text }}>
-              {data.headline}
-            </p>
-          </div>
-        )}
-        </>
-        )}
-
-        {activeTab === 'analytics' && (
-          <>
-            {/* Analytics Header */}
-            <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Analytics</h2>
-              <p style={{ margin: 0, color: colors.textMuted }}>Grow app metrics, sentiment analysis, and trend insights</p>
-            </div>
-
-            {/* Filters */}
-            <div style={{ 
-              backgroundColor: colors.card,
-              borderRadius: '12px',
-              padding: '20px',
-              marginBottom: '24px',
-              border: `1px solid ${colors.border}`
-            }}>
-              <div style={{ display: 'flex', gap: '40px' }}>
-                <div>
-                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    {['all', 'android', 'ios'].map(p => (
-                      <button
-                        key={p}
-                        onClick={() => setPlatform(p)}
-                        style={{
                           padding: '8px 16px',
                           borderRadius: '20px',
                           border: 'none',
@@ -1293,12 +867,13 @@ function App() {
                   </div>
                 </div>
               </div>
+              <button style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}>Reset</button>
             </div>
 
             {/* Metrics Grid */}
             <div style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(4, 1fr)', 
+              gridTemplateColumns: 'repeat(5, 1fr)', 
               gap: '16px',
               marginBottom: '24px'
             }}>
@@ -1353,6 +928,19 @@ function App() {
                   <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Negative</span>
                 </div>
                 <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#ef4444' }}>0%</p>
+              </div>
+
+              <div style={{ 
+                backgroundColor: colors.card,
+                borderRadius: '12px',
+                padding: '20px',
+                border: `1px solid ${colors.border}`
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                  <Minus size={16} color="#eab308" />
+                  <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Neutral</span>
+                </div>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#eab308' }}>0%</p>
               </div>
             </div>
 
@@ -1421,6 +1009,26 @@ function App() {
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
+              </div>
+            </div>
+
+            {/* Trend Analysis */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '24px',
+              border: `1px solid ${colors.border}`,
+              marginTop: '24px'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '600' }}>Trend Analysis</h3>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <button style={{ padding: '6px 12px', borderRadius: '6px', border: 'none', backgroundColor: '#10b981', color: 'white', fontSize: '12px' }}>Sentiment</button>
+                  <button style={{ padding: '6px 12px', borderRadius: '6px', border: 'none', backgroundColor: colors.border, color: colors.text, fontSize: '12px' }}>Categories</button>
+                </div>
+              </div>
+              <div style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.textMuted }}>
+                <p>Trend data will appear here</p>
               </div>
             </div>
           </>
