@@ -38,19 +38,10 @@ jobs:
         echo "date=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
         echo "Pulse date: $(date +%Y-%m-%d)"
         
-    - name: Set up Python with caching
+    - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-        cache: 'pip'
-        
-    - name: Cache Python dependencies
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '**/*.py') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
           
     - name: Install dependencies
       run: |
