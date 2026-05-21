@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { 
   RefreshCw, 
   Search,
-  TrendingUp,
   TrendingDown,
   Minus,
   MessageSquare,
