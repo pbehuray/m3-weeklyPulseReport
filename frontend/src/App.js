@@ -27,6 +27,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+// v1.0.1 - Build fix applied
 // Mock data - replace with actual API calls
 const mockData = {
   totalReviews: 6792,
