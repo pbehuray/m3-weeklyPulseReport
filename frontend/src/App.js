@@ -1047,9 +1047,9 @@ function App() {
                 <div style={{ height: '250px' }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={[
-                      { name: 'Positive', value: 750, fill: '#10b981' },
-                      { name: 'Neutral', value: 150, fill: '#f59e0b' },
-                      { name: 'Negative', value: 100, fill: '#ef4444' }
+                      { name: 'Positive', value: data.sentimentSplit?.positive || 0, color: '#10b981' },
+                      { name: 'Neutral', value: data.sentimentSplit?.neutral || 0, color: '#f59e0b' },
+                      { name: 'Negative', value: data.sentimentSplit?.negative || 0, color: '#ef4444' }
                     ]}>
                       <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
                       <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 12 }} />
@@ -1061,8 +1061,17 @@ function App() {
                           borderRadius: '8px',
                           color: colors.text
                         }}
+                        formatter={(value) => [`${value}%`, 'Sentiment']}
                       />
-                      <Bar dataKey="value" radius={[4, 4, 0, 0]} />
+                      <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                        {[
+                          { name: 'Positive', color: '#10b981' },
+                          { name: 'Neutral', color: '#f59e0b' },
+                          { name: 'Negative', color: '#ef4444' }
+                        ].map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
