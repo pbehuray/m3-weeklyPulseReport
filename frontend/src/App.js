@@ -784,7 +784,7 @@ function App() {
               ) : reviews.filter(review => {
                 // Apply sentiment filter
                 if (sentimentFilter === 'all') return true;
-                const sentiment = (review.sentiment || '').toLowerCase();
+                const sentiment = (review.rating_label || '').toLowerCase();
                 if (sentimentFilter === 'positive') return sentiment.includes('positive');
                 if (sentimentFilter === 'negative') return sentiment.includes('negative');
                 if (sentimentFilter === 'neutral') return !sentiment.includes('positive') && !sentiment.includes('negative');
@@ -830,13 +830,13 @@ function App() {
                       <span style={{ 
                         padding: '4px 12px', 
                         borderRadius: '12px', 
-                        backgroundColor: (review.sentiment || '').toLowerCase().includes('positive') ? '#d4edda' : (review.sentiment || '').toLowerCase().includes('negative') ? '#f8d7da' : '#fff3cd',
-                        color: (review.sentiment || '').toLowerCase().includes('positive') ? '#155724' : (review.sentiment || '').toLowerCase().includes('negative') ? '#721c24' : '#856404',
+                        backgroundColor: (review.rating_label || '').toLowerCase().includes('positive') ? '#d4edda' : (review.rating_label || '').toLowerCase().includes('negative') ? '#f8d7da' : '#fff3cd',
+                        color: (review.rating_label || '').toLowerCase().includes('positive') ? '#155724' : (review.rating_label || '').toLowerCase().includes('negative') ? '#721c24' : '#856404',
                         fontSize: '12px',
                         fontWeight: '500',
                         textTransform: 'capitalize'
                       }}>
-                        {review.sentiment || 'Neutral'}
+                        {review.rating_label || 'Neutral'}
                       </span>
                     </div>
                   </div>
@@ -858,7 +858,7 @@ function App() {
                 (() => {
                   const filtered = reviews.filter(review => {
                     if (sentimentFilter === 'all') return true;
-                    const sentiment = (review.sentiment || '').toLowerCase();
+                    const sentiment = (review.rating_label || '').toLowerCase();
                     if (sentimentFilter === 'positive') return sentiment.includes('positive');
                     if (sentimentFilter === 'negative') return sentiment.includes('negative');
                     if (sentimentFilter === 'neutral') return !sentiment.includes('positive') && !sentiment.includes('negative');
