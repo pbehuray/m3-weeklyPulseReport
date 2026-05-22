@@ -1459,53 +1459,45 @@ function App() {
                 gap: '12px',
                 lineHeight: 1.4
               }}>
-                {[
-                  { word: 'app', size: 48, color: '#10b981' },
-                  { word: 'good', size: 42, color: '#3b82f6' },
-                  { word: 'easy', size: 38, color: '#f59e0b' },
-                  { word: 'user', size: 32, color: '#8b5cf6' },
-                  { word: 'nice', size: 28, color: '#10b981' },
-                  { word: 'excellent', size: 26, color: '#06b6d4' },
-                  { word: 'trade', size: 24, color: '#64748b' },
-                  { word: 'experience', size: 22, color: '#8b5cf6' },
-                  { word: 'charges', size: 22, color: '#64748b' },
-                  { word: 'mutual', size: 20, color: '#64748b' },
-                  { word: 'platform', size: 20, color: '#64748b' },
-                  { word: 'interface', size: 20, color: '#64748b' },
-                  { word: 'friendly', size: 20, color: '#f59e0b' },
-                  { word: 'smooth', size: 18, color: '#64748b' },
-                  { word: 'money', size: 18, color: '#64748b' },
-                  { word: 'groww', size: 18, color: '#10b981' },
-                  { word: 'simple', size: 18, color: '#64748b' },
-                  { word: 'stocks', size: 18, color: '#64748b' },
-                  { word: 'UI', size: 16, color: '#3b82f6' },
-                  { word: 'investment', size: 16, color: '#64748b' },
-                  { word: 'funds', size: 16, color: '#64748b' },
-                  { word: 'grow', size: 16, color: '#64748b' },
-                  { word: 'great', size: 16, color: '#f59e0b' },
-                  { word: 'best', size: 16, color: '#ef4444' },
-                  { word: 'invest', size: 16, color: '#64748b' },
-                  { word: 'investing', size: 16, color: '#64748b' },
-                  { word: 'application', size: 14, color: '#64748b' },
-                  { word: 'trading', size: 14, color: '#64748b' },
-                  { word: 'beginners', size: 14, color: '#64748b' },
-                  { word: 'stock', size: 14, color: '#64748b' },
-                  { word: 'market', size: 14, color: '#64748b' },
-                ].map((item, idx) => (
-                  <span 
-                    key={idx}
-                    style={{ 
-                      fontSize: item.size,
-                      color: item.color,
-                      fontWeight: item.size > 24 ? 700 : 500,
-                      cursor: 'pointer',
-                      transition: 'transform 0.2s',
-                      ':hover': { transform: 'scale(1.1)' }
-                    }}
-                  >
-                    {item.word}
-                  </span>
-                ))}
+{(() => {
+                  const stopWords = new Set(['the','and','for','are','was','is','in','it','to','of','a','i','my','me','app','this','with','very','so','have','has','not','but','be','they','your','from','on','at','by','an','as','we','do','its','no','or','up','had','can','get','got','did','our']);
+                  const wordFreq = {};
+                  reviews.forEach(r => {
+                    const text = (r.review_text || r.content || '').toLowerCase();
+                    text.split(/\s+/).forEach(w => {
+                      const clean = w.replace(/[^a-z]/g, '');
+                      if (clean.length > 3 && !stopWords.has(clean)) {
+                        wordFreq[clean] = (wordFreq[clean] || 0) + 1;
+                      }
+                    });
+                  });
+                  const wordColors = ['#10b981','#3b82f6','#f59e0b','#8b5cf6','#06b6d4','#ef4444','#ec4899'];
+                  const sorted = Object.entries(wordFreq).sort((a,b) => b[1]-a[1]).slice(0,40);
+                  const maxCount = sorted[0]?.[1] || 1;
+                  return sorted.map(([word, count], idx) => {
+                    const size = Math.round(14 + (count / maxCount) * 34);
+                    const color = wordColors[idx % wordColors.length];
+                    return (
+                      <span
+                        key={idx}
+                        title={`"${word}" appears ${count} times — click to search reviews`}
+                        onClick={() => { setActiveTab('reviews'); setSearchQuery(word); }}
+                        onMouseEnter={e => { e.target.style.transform = 'scale(1.2)'; e.target.style.opacity = '0.8'; }}
+                        onMouseLeave={e => { e.target.style.transform = 'scale(1)'; e.target.style.opacity = '1'; }}
+                        style={{
+                          fontSize: size,
+                          color,
+                          fontWeight: size > 30 ? 700 : 500,
+                          cursor: 'pointer',
+                          transition: 'transform 0.2s, opacity 0.2s',
+                          display: 'inline-block'
+                        }}
+                      >
+                        {word}
+                      </span>
+                    );
+                  });
+                })()}
               </div>
             </div>
           </>
