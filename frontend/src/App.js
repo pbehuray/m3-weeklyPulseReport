@@ -125,16 +125,22 @@ function App() {
       
       // Filter reviews by time period
       const now = new Date();
+      now.setHours(23, 59, 59, 999); // end of today
+
+      // Log date range in data for debugging
+      const dates = freshReviews.map(r => r.date).filter(Boolean).sort();
+      console.log(`Date range in data: ${dates[0]} to ${dates[dates.length - 1]}, timePeriod: ${timePeriod}`);
+
       const filteredByDate = freshReviews.filter(r => {
-        if (!r.date) return true; // Include reviews without dates
+        if (!r.date) return false; // Exclude reviews without dates
         const reviewDate = new Date(r.date);
         const daysDiff = (now - reviewDate) / (1000 * 60 * 60 * 24);
         
         switch(timePeriod) {
           case 'today':
-            return daysDiff < 1;
+            return daysDiff <= 1;
           case 'yesterday':
-            return daysDiff >= 1 && daysDiff < 2;
+            return daysDiff > 1 && daysDiff <= 2;
           case 'last7days':
             return daysDiff <= 7;
           case 'last15days':
