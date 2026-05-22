@@ -1239,14 +1239,19 @@ function App() {
                 <div style={{ height: '250px' }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={[
-                      { name: 'Positive', value: 0 },
-                      { name: 'Neutral', value: 0 },
-                      { name: 'Negative', value: 0 }
+                      { name: 'Positive', value: data.sentimentSplit?.positive || 0 },
+                      { name: 'Neutral', value: data.sentimentSplit?.neutral || 0 },
+                      { name: 'Negative', value: data.sentimentSplit?.negative || 0 }
                     ]}>
                       <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
                       <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: colors.textMuted }} />
                       <YAxis axisLine={false} tickLine={false} tick={{ fill: colors.textMuted }} />
-                      <Bar dataKey="value" fill="#64748b" radius={[4, 4, 0, 0]} />
+                      <Tooltip contentStyle={{ backgroundColor: colors.card, border: `1px solid ${colors.border}`, borderRadius: '8px', color: colors.text }} formatter={(value) => [`${value}%`, 'Sentiment']} />
+                      <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                        {[{ color: '#10b981' }, { color: '#f59e0b' }, { color: '#ef4444' }].map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -1291,8 +1296,34 @@ function App() {
                   <button style={{ padding: '6px 12px', borderRadius: '6px', border: 'none', backgroundColor: '#10b981', color: 'white', fontSize: '12px' }}>Categories</button>
                 </div>
               </div>
-              <div style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.textMuted }}>
-                <p>Trend data will appear here</p>
+              <div style={{ height: '250px' }}>
+                {(() => {
+                  const trendMap = {};
+                  reviews.forEach(r => {
+                    if (!r.date) return;
+                    if (!trendMap[r.date]) trendMap[r.date] = { date: r.date, positive: 0, negative: 0, neutral: 0 };
+                    const s = (r.rating_label || '').toLowerCase();
+                    if (s.includes('positive')) trendMap[r.date].positive++;
+                    else if (s.includes('negative')) trendMap[r.date].negative++;
+                    else trendMap[r.date].neutral++;
+                  });
+                  const trendData = Object.values(trendMap).sort((a, b) => a.date.localeCompare(b.date)).slice(-30);
+                  if (trendData.length === 0) return <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.textMuted }}><p>No trend data. Click Sync Reviews.</p></div>;
+                  return (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={trendData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke={colors.border} vertical={false} />
+                        <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 11 }} tickFormatter={v => v.slice(5)} />
+                        <YAxis axisLine={false} tickLine={false} tick={{ fill: colors.textMuted, fontSize: 11 }} />
+                        <Tooltip contentStyle={{ backgroundColor: colors.card, border: `1px solid ${colors.border}`, borderRadius: '8px', color: colors.text }} />
+                        <Legend />
+                        <Line type="monotone" dataKey="positive" stroke="#10b981" strokeWidth={2} dot={false} name="Positive" />
+                        <Line type="monotone" dataKey="negative" stroke="#ef4444" strokeWidth={2} dot={false} name="Negative" />
+                        <Line type="monotone" dataKey="neutral" stroke="#f59e0b" strokeWidth={2} dot={false} name="Neutral" />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  );
+                })()}
               </div>
             </div>
           </>
