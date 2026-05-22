@@ -80,7 +80,7 @@ jobs:
           echo "- ⏭️ Skipped (manual trigger with skip option)" >> $GITHUB_STEP_SUMMARY
         else
           echo "Fetching latest reviews from Google Play Store..."
-          python phase2/fetch_groww_play_reviews.py --count 500 --weeks 2 && echo "- ✅ Reviews fetched from Play Store" >> $GITHUB_STEP_SUMMARY || echo "- ⚠️ Review fetch failed, using existing data" >> $GITHUB_STEP_SUMMARY
+          python phase2/fetch_groww_play_reviews.py --count 2500 --weeks 4 && echo "- ✅ Reviews fetched from Play Store" >> $GITHUB_STEP_SUMMARY || echo "- ⚠️ Review fetch failed, using existing data" >> $GITHUB_STEP_SUMMARY
         fi
         
     - name: Debug - List all files
