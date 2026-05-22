@@ -91,7 +91,7 @@ function App() {
     border: darkMode ? '#334155' : '#e2e8f0' // slate-700 : slate-200
   };
 
-  const fetchData = async () => {
+  const fetchData = async (isManualSync = false) => {
     setLoading(true);
     try {
       // Fetch reviews data from GitHub (using privacy_safe_reviews.json which has sentiment)
@@ -225,11 +225,8 @@ function App() {
         newCount: freshReviews.length - reviews.length
       });
       
-      // Show notification if new reviews found
-      if (freshReviews.length > reviews.length && reviews.length > 0) {
-        const newCount = freshReviews.length - reviews.length;
-        alert(`${newCount} new review${newCount > 1 ? 's' : ''} synced!`);
-      } else if (freshReviews.length > 0) {
+      // Show notification only on manual sync
+      if (isManualSync && freshReviews.length > 0) {
         alert(`Synced ${freshReviews.length} reviews successfully!`);
       }
     } catch (error) {
@@ -243,7 +240,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(false); // Auto-fetch without alert
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [platform, timePeriod]);
 
@@ -375,7 +372,7 @@ function App() {
           </div>
 
           <button
-            onClick={fetchData}
+            onClick={() => fetchData(true)}
             disabled={loading}
             style={{
               padding: '8px 16px',
@@ -1546,7 +1543,7 @@ function App() {
                 )}
               </div>
               <button
-                onClick={fetchData}
+                onClick={() => fetchData(true)}
                 disabled={loading}
                 style={{
                   padding: '10px 20px',
