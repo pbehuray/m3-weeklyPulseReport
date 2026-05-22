@@ -18,7 +18,6 @@ import {
   BarChart3,
   Zap,
   TrendingUp as TrendIcon,
-  CheckCircle,
   Mail
 } from 'lucide-react';
 import { 
