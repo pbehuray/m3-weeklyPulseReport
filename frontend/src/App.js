@@ -633,13 +633,13 @@ function App() {
               }}>
                 <h3 style={{ margin: '0 0 20px 0', fontSize: '13px', fontWeight: '600', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Rating Distribution</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {[
-                    { rating: 5, count: 799, percentage: 79.9 },
-                    { rating: 4, count: 82, percentage: 8.2 },
-                    { rating: 3, count: 22, percentage: 2.2 },
-                    { rating: 2, count: 10, percentage: 1.0 },
-                    { rating: 1, count: 87, percentage: 8.7 }
-                  ].map((item) => (
+                  {(data.ratingDistribution || [
+                    { rating: 5, count: 0, percentage: 0 },
+                    { rating: 4, count: 0, percentage: 0 },
+                    { rating: 3, count: 0, percentage: 0 },
+                    { rating: 2, count: 0, percentage: 0 },
+                    { rating: 1, count: 0, percentage: 0 }
+                  ]).map((item) => (
                     <div key={item.rating} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <span style={{ color: getRatingColor(item.rating), fontSize: '13px', minWidth: '20px', fontWeight: 600 }}>{item.rating}★</span>
                       <div style={{ flex: 1, height: '10px', backgroundColor: darkMode ? '#1e293b' : '#e2e8f0', borderRadius: '5px', overflow: 'hidden' }}>
@@ -666,24 +666,24 @@ function App() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
                       <p style={{ margin: '0 0 4px 0', fontSize: '11px', color: colors.textMuted, textTransform: 'uppercase' }}>NPS</p>
-                      <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#10b981' }}>+78</p>
-                      <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: '#10b981' }}>Excellent</p>
+                      <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#10b981' }}>+{data.nps || 0}</p>
+                      <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: '#10b981' }}>{(data.nps || 0) >= 50 ? 'Excellent' : (data.nps || 0) >= 30 ? 'Good' : (data.nps || 0) >= 0 ? 'Average' : 'Poor'}</p>
                     </div>
                     <div style={{ textAlign: 'right', fontSize: '11px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '3px', justifyContent: 'flex-end' }}>
                         <span style={{ color: '#10b981' }}>●</span>
                         <span style={{ color: colors.textMuted }}>Promoters (4-5):</span>
-                        <span style={{ color: colors.text }}>0</span>
+                        <span style={{ color: colors.text }}>{data.promoters || 0}</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '3px', justifyContent: 'flex-end' }}>
                         <span style={{ color: '#f59e0b' }}>●</span>
                         <span style={{ color: colors.textMuted }}>Passives (3):</span>
-                        <span style={{ color: colors.text }}>0</span>
+                        <span style={{ color: colors.text }}>{data.passives || 0}</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', justifyContent: 'flex-end' }}>
                         <span style={{ color: '#ef4444' }}>●</span>
                         <span style={{ color: colors.textMuted }}>Detractors (1-2):</span>
-                        <span style={{ color: colors.text }}>0</span>
+                        <span style={{ color: colors.text }}>{data.detractors || 0}</span>
                       </div>
                     </div>
                   </div>
@@ -693,11 +693,11 @@ function App() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px' }}>
                   <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '14px' }}>
                     <p style={{ margin: '0 0 4px 0', fontSize: '10px', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Total Reviews</p>
-                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>1,000</p>
+                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>{data.totalReviews?.toLocaleString() || 0}</p>
                   </div>
                   <div style={{ backgroundColor: darkMode ? '#1e293b' : '#f8fafc', borderRadius: '8px', padding: '14px' }}>
                     <p style={{ margin: '0 0 4px 0', fontSize: '10px', color: colors.textMuted, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Avg Rating</p>
-                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>4.5<span style={{ color: '#f59e0b', marginLeft: '4px' }}>★</span></p>
+                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700' }}>{data.avgRating || 0}<span style={{ color: '#f59e0b', marginLeft: '4px' }}>★</span></p>
                   </div>
                 </div>
 
@@ -707,15 +707,15 @@ function App() {
                   <div style={{ display: 'flex', gap: '8px' }}>
                     <div style={{ flex: 1, textAlign: 'center', padding: '10px', backgroundColor: darkMode ? '#1e293b' : '#f0fdf4', borderRadius: '6px' }}>
                       <TrendIcon size={14} style={{ color: '#10b981', marginBottom: '4px' }} />
-                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>0%</p>
+                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>{data.sentimentSplit?.positive || 0}%</p>
                     </div>
                     <div style={{ flex: 1, textAlign: 'center', padding: '10px', backgroundColor: darkMode ? '#1e293b' : '#fefce8', borderRadius: '6px' }}>
                       <Minus size={14} style={{ color: '#eab308', marginBottom: '4px' }} />
-                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>0%</p>
+                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>{data.sentimentSplit?.neutral || 0}%</p>
                     </div>
                     <div style={{ flex: 1, textAlign: 'center', padding: '10px', backgroundColor: darkMode ? '#1e293b' : '#fef2f2', borderRadius: '6px' }}>
                       <TrendingDown size={14} style={{ color: '#ef4444', marginBottom: '4px' }} />
-                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>0%</p>
+                      <p style={{ margin: 0, fontSize: '12px', color: colors.textMuted }}>{data.sentimentSplit?.negative || 0}%</p>
                     </div>
                   </div>
                 </div>
