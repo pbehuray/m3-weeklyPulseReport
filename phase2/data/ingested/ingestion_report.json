@@ -4,9 +4,9 @@
   "valid_reviews": 11938,
   "invalid_reviews": 0,
   "invalid_details": [],
-  "within_date_window": 11875,
-  "outside_date_window": 63,
-  "duplicates_removed": 3837,
-  "final_count": 8038,
+  "within_date_window": 10561,
+  "outside_date_window": 1377,
+  "duplicates_removed": 3348,
+  "final_count": 7213,
   "load_errors": []
 }
