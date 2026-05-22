@@ -94,9 +94,9 @@ function App() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      // Fetch reviews data from GitHub
+      // Fetch reviews data from GitHub (using privacy_safe_reviews.json which has sentiment)
       const reviewsResponse = await fetch(
-        'https://raw.githubusercontent.com/pbehuray/m3-weeklyPulseReport/master/phase8/data/processed_reviews_with_sentiment_and_themes.json'
+        'https://raw.githubusercontent.com/pbehuray/m3-weeklyPulseReport/master/phase4/data/privacy_safe/privacy_safe_reviews.json'
       );
       
       // Fetch pulse data from GitHub
