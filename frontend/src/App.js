@@ -1581,7 +1581,7 @@ function App() {
               <div style={{ marginBottom: '16px' }}>
                 <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: colors.textMuted }}>
                   <span style={{ color: colors.textMuted }}>To: </span>
-                  <span style={{ color: colors.text }}>ar.shruthi17@gmail.com</span>
+                  <span style={{ color: colors.text }}>purbashabehuray@gmail.com</span>
                 </p>
                 <p style={{ margin: 0, fontSize: '14px', color: colors.textMuted }}>
                   <span style={{ color: colors.textMuted }}>Subject: </span>
@@ -1622,7 +1622,7 @@ function App() {
 
               <div style={{ display: 'flex', gap: '12px' }}>
                 <button
-                  onClick={() => window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=ar.shruthi17@gmail.com&su=Groww+Weekly+Review+Pulse&body=Groww+Play+Store+pulse+(2026-W21):+sentiment+skews+negative.+Support,+fees,+and+reliability+dominate.%0A%0ATOP+3+THEMES%0A1.+High+brokerage+charges+—+sell-side+fees+exceed+expectations;+transparency+gaps+drive+1★+reviews.%0A2.+Poor+customer+support+—+slow+or+missing+responses+on+Demat,+investments,+and+payouts.%0A3.+Withdrawal+issues+—+delays+and+failures+spiked+%2B28%+WoW;+trust+risk+for+money+movement.', '_blank')}
+                  onClick={() => window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=purbashabehuray@gmail.com&su=Groww+Weekly+Review+Pulse&body=Groww+Play+Store+pulse+(2026-W21):+sentiment+skews+negative.+Support,+fees,+and+reliability+dominate.%0A%0ATOP+3+THEMES%0A1.+High+brokerage+charges+—+sell-side+fees+exceed+expectations;+transparency+gaps+drive+1★+reviews.%0A2.+Poor+customer+support+—+slow+or+missing+responses+on+Demat,+investments,+and+payouts.%0A3.+Withdrawal+issues+—+delays+and+failures+spiked+%2B28%+WoW;+trust+risk+for+money+movement.', '_blank')}
                   style={{
                     padding: '12px 24px',
                     borderRadius: '8px',
