@@ -794,6 +794,11 @@ function App() {
                   <p>No reviews loaded. Click "Sync Reviews" to fetch data.</p>
                 </div>
               ) : reviews.filter(review => {
+                // Apply search filter
+                if (searchQuery) {
+                  const text = (review.review_text || review.content || '').toLowerCase();
+                  if (!text.includes(searchQuery.toLowerCase())) return false;
+                }
                 // Apply sentiment filter
                 if (sentimentFilter === 'all') return true;
                 const sentiment = (review.rating_label || '').toLowerCase();
