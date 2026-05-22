@@ -69,7 +69,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeTab, setActiveTab] = useState('reviews');
   const [platform, setPlatform] = useState('all');
-  const [timePeriod] = useState('last30days');
+  const [timePeriod, setTimePeriod] = useState('last30days');
   const [searchQuery, setSearchQuery] = useState('');
   const [sentimentFilter, setSentimentFilter] = useState('all');
   const [data, setData] = useState(mockData);
@@ -747,48 +747,19 @@ function App() {
 
             {/* Individual Review Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {[
-                { 
-                  user: 'Hi good game for my son', 
-                  platform: 'iOS', 
-                  date: '15 May 2026', 
-                  text: 'Groww is best app for trading',
-                  rating: 5,
-                  sentiment: 'Neutral'
-                },
-                { 
-                  user: 'banabasi', 
-                  platform: 'iOS', 
-                  date: '15 May 2026', 
-                  text: 'Most informative and easy to operate app',
-                  rating: 5,
-                  sentiment: 'Neutral'
-                },
-                { 
-                  user: 'trader_pro', 
-                  platform: 'Android', 
-                  date: '14 May 2026', 
-                  text: 'App is good but customer care needs improvement. Response time is very slow.',
-                  rating: 3,
-                  sentiment: 'Negative'
-                },
-                { 
-                  user: 'investor_2024', 
-                  platform: 'iOS', 
-                  date: '13 May 2026', 
-                  text: 'Excellent app for beginners. Very simple interface and easy to understand.',
-                  rating: 5,
-                  sentiment: 'Positive'
-                },
-                { 
-                  user: 'stockmaster', 
-                  platform: 'Android', 
-                  date: '12 May 2026', 
-                  text: 'Good app overall but charges are not transparent. Hidden fees are a problem.',
-                  rating: 4,
-                  sentiment: 'Mixed'
-                }
-              ].map((review, idx) => (
+              {reviews.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '40px', color: colors.textMuted }}>
+                  <p>No reviews loaded. Click "Sync Reviews" to fetch data.</p>
+                </div>
+              ) : reviews.filter(review => {
+                // Apply sentiment filter
+                if (sentimentFilter === 'all') return true;
+                const sentiment = (review.sentiment || '').toLowerCase();
+                if (sentimentFilter === 'positive') return sentiment.includes('positive');
+                if (sentimentFilter === 'negative') return sentiment.includes('negative');
+                if (sentimentFilter === 'neutral') return !sentiment.includes('positive') && !sentiment.includes('negative');
+                return true;
+              }).slice(0, 10).map((review, idx) => (
                 <div 
                   key={idx}
                   style={{
@@ -809,37 +780,38 @@ function App() {
                         alignItems: 'center',
                         justifyContent: 'center'
                       }}>
-                        <span style={{ fontSize: '16px', fontWeight: '600', color: colors.text }}>{review.user.charAt(0).toUpperCase()}</span>
+                        <span style={{ fontSize: '16px', fontWeight: '600', color: colors.text }}>{(review.reviewer_name || review.userName || 'User').charAt(0).toUpperCase()}</span>
                       </div>
                       <div>
-                        <p style={{ margin: 0, fontWeight: '600', fontSize: '14px' }}>{review.user}</p>
+                        <p style={{ margin: 0, fontWeight: '600', fontSize: '14px' }}>{review.reviewer_name || review.userName || 'Anonymous'}</p>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '2px' }}>
-                          <span style={{ fontSize: '12px', color: colors.textMuted }}>{review.platform}</span>
+                          <span style={{ fontSize: '12px', color: colors.textMuted }}>{review.platform || review.source || 'Unknown'}</span>
                           <span style={{ fontSize: '12px', color: colors.textMuted }}>•</span>
-                          <span style={{ fontSize: '12px', color: colors.textMuted }}>{review.date}</span>
+                          <span style={{ fontSize: '12px', color: colors.textMuted }}>{review.review_date || review.date || 'Recent'}</span>
                         </div>
                       </div>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <div style={{ display: 'flex', gap: '2px' }}>
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={14} fill={i < review.rating ? '#f59e0b' : 'transparent'} color={i < review.rating ? '#f59e0b' : colors.border} />
+                          <Star key={i} size={14} fill={i < (review.score || review.rating || 0) ? '#f59e0b' : 'transparent'} color={i < (review.score || review.rating || 0) ? '#f59e0b' : colors.border} />
                         ))}
                       </div>
                       <span style={{ 
                         padding: '4px 12px', 
                         borderRadius: '12px', 
-                        backgroundColor: review.sentiment === 'Positive' ? '#d4edda' : review.sentiment === 'Negative' ? '#f8d7da' : '#fff3cd',
-                        color: review.sentiment === 'Positive' ? '#155724' : review.sentiment === 'Negative' ? '#721c24' : '#856404',
+                        backgroundColor: (review.sentiment || '').toLowerCase().includes('positive') ? '#d4edda' : (review.sentiment || '').toLowerCase().includes('negative') ? '#f8d7da' : '#fff3cd',
+                        color: (review.sentiment || '').toLowerCase().includes('positive') ? '#155724' : (review.sentiment || '').toLowerCase().includes('negative') ? '#721c24' : '#856404',
                         fontSize: '12px',
-                        fontWeight: '500'
+                        fontWeight: '500',
+                        textTransform: 'capitalize'
                       }}>
-                        {review.sentiment}
+                        {review.sentiment || 'Neutral'}
                       </span>
                     </div>
                   </div>
                   <p style={{ margin: '0 0 16px 0', fontSize: '15px', color: colors.text, lineHeight: 1.5 }}>
-                    {review.text}
+                    {review.content || review.text || review.review_text || 'No content'}
                   </p>
                   <div style={{ display: 'flex', gap: '16px' }}>
                     <button style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: colors.textMuted, background: 'none', border: 'none', cursor: 'pointer' }}>
@@ -852,7 +824,14 @@ function App() {
                     </button>
                   </div>
                 </div>
-              ))}
+              )).concat(reviews.filter(review => {
+                if (sentimentFilter === 'all') return true;
+                const sentiment = (review.sentiment || '').toLowerCase();
+                if (sentimentFilter === 'positive') return sentiment.includes('positive');
+                if (sentimentFilter === 'negative') return sentiment.includes('negative');
+                if (sentimentFilter === 'neutral') return !sentiment.includes('positive') && !sentiment.includes('negative');
+                return true;
+              }).length > 10 ? [<div key="more" style={{ textAlign: 'center', padding: '20px', color: colors.textMuted }}><p>Showing first 10 reviews. {reviews.length} total reviews in dataset.</p></div>] : [])}
             </div>
           </>
         )}
@@ -903,12 +882,13 @@ function App() {
                     {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
                       <button
                         key={period}
+                        onClick={() => setTimePeriod(period.toLowerCase().replace(/\s/g, ''))}
                         style={{
                           padding: '8px 16px',
                           borderRadius: '20px',
                           border: 'none',
-                          backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
-                          color: period === 'Last 30 Days' ? 'white' : colors.text,
+                          backgroundColor: timePeriod === period.toLowerCase().replace(/\s/g, '') ? '#10b981' : colors.border,
+                          color: timePeriod === period.toLowerCase().replace(/\s/g, '') ? 'white' : colors.text,
                           cursor: 'pointer',
                           fontSize: '13px'
                         }}
@@ -919,7 +899,12 @@ function App() {
                   </div>
                 </div>
               </div>
-              <button style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}>Reset</button>
+              <button 
+                onClick={() => {setPlatform('all'); setTimePeriod('last30days');}}
+                style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}
+              >
+                Reset
+              </button>
             </div>
 
             {/* Metrics Grid */}
