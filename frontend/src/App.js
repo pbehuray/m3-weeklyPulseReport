@@ -1621,7 +1621,25 @@ function App() {
 
               <div style={{ display: 'flex', gap: '12px' }}>
                 <button
-                  onClick={() => window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=purbashabehuray@gmail.com&su=Groww+Weekly+Review+Pulse&body=Groww+Play+Store+pulse+(2026-W21):+sentiment+skews+negative.+Support,+fees,+and+reliability+dominate.%0A%0ATOP+3+THEMES%0A1.+High+brokerage+charges+—+sell-side+fees+exceed+expectations;+transparency+gaps+drive+1★+reviews.%0A2.+Poor+customer+support+—+slow+or+missing+responses+on+Demat,+investments,+and+payouts.%0A3.+Withdrawal+issues+—+delays+and+failures+spiked+%2B28%+WoW;+trust+risk+for+money+movement.', '_blank')}
+                  onClick={() => {
+                    const subject = 'Groww Weekly Review Pulse';
+                    const body = `Groww Play Store pulse (2026-W21): sentiment skews negative. Support, fees, and reliability dominate.
+
+TOP 3 THEMES
+1. High brokerage charges — sell-side fees exceed expectations; transparency gaps drive 1★ reviews.
+2. Poor customer support — slow or missing responses on Demat, investments, and payouts.
+3. Withdrawal issues — delays and failures spiked +28% WoW; trust risk for money movement.
+
+USER QUOTES
+• "They cut more charges than what they said — ₹30 instead of ₹7–8 on a sell."
+• "Support never responds when withdrawals fail for days."
+
+ACTION IDEAS
+1. Review brokerage and fee transparency in-app before order placement.
+2. Stabilize withdrawals and order execution with proactive status updates.
+3. Improve support SLAs and escalation paths for payout and trading tickets.`;
+                    window.location.href = `mailto:purbashabehuray@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  }}
                   style={{
                     padding: '12px 24px',
                     borderRadius: '8px',
@@ -1640,7 +1658,29 @@ function App() {
                   Draft Email
                 </button>
                 <button
-                  onClick={() => window.open('https://docs.google.com/document/create?title=Groww+Weekly+Review+Pulse+2026-W21&content=Groww+Play+Store+pulse+(2026-W21):+sentiment+skews+negative.+Support,+fees,+and+reliability+dominate.', '_blank')}
+                  onClick={() => {
+                    const content = `Groww Weekly Review Pulse (2026-W21)
+
+Groww Play Store pulse (2026-W21): sentiment skews negative. Support, fees, and reliability dominate.
+
+TOP 3 THEMES
+1. High brokerage charges — sell-side fees exceed expectations; transparency gaps drive 1★ reviews.
+2. Poor customer support — slow or missing responses on Demat, investments, and payouts.
+3. Withdrawal issues — delays and failures spiked +28% WoW; trust risk for money movement.
+
+USER QUOTES
+• "They cut more charges than what they said — ₹30 instead of ₹7–8 on a sell."
+• "Support never responds when withdrawals fail for days."
+
+ACTION IDEAS
+1. Review brokerage and fee transparency in-app before order placement.
+2. Stabilize withdrawals and order execution with proactive status updates.
+3. Improve support SLAs and escalation paths for payout and trading tickets.`;
+                    navigator.clipboard.writeText(content).then(() => {
+                      alert('Content copied to clipboard! Opening Google Docs...');
+                      window.open('https://docs.google.com/document/create', '_blank');
+                    });
+                  }}
                   style={{
                     padding: '12px 24px',
                     borderRadius: '8px',
