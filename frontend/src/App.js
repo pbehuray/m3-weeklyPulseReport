@@ -123,14 +123,39 @@ function App() {
         pulseData = await pulseResponse.json();
       }
       
-      // Calculate actual metrics from reviews data
-      const totalReviews = freshReviews.length || 2390;
-      const androidReviews = freshReviews.filter(r => r.platform === 'android' || r.source === 'play_store').length || 1800;
-      const iosReviews = freshReviews.filter(r => r.platform === 'ios' || r.source === 'app_store').length || 590;
+      // Filter reviews by time period
+      const now = new Date();
+      const filteredByDate = freshReviews.filter(r => {
+        if (!r.date) return true; // Include reviews without dates
+        const reviewDate = new Date(r.date);
+        const daysDiff = (now - reviewDate) / (1000 * 60 * 60 * 24);
+        
+        switch(timePeriod) {
+          case 'today':
+            return daysDiff < 1;
+          case 'yesterday':
+            return daysDiff >= 1 && daysDiff < 2;
+          case 'last7days':
+            return daysDiff <= 7;
+          case 'last15days':
+            return daysDiff <= 15;
+          case 'last30days':
+          default:
+            return daysDiff <= 30;
+        }
+      });
       
-      // Calculate rating distribution
+      // Use filtered reviews for metrics calculation
+      const reviewsToUse = filteredByDate.length > 0 ? filteredByDate : freshReviews;
+      
+      // Calculate actual metrics from filtered reviews data
+      const totalReviews = reviewsToUse.length || 2390;
+      const androidReviews = reviewsToUse.filter(r => r.platform === 'android' || r.source === 'play_store').length || 1800;
+      const iosReviews = reviewsToUse.filter(r => r.platform === 'ios' || r.source === 'app_store').length || 590;
+      
+      // Calculate rating distribution from filtered reviews
       const ratingCounts = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
-      freshReviews.forEach(r => {
+      reviewsToUse.forEach(r => {
         const rating = Math.round(r.score || r.rating || 0);
         if (rating >= 1 && rating <= 5) {
           ratingCounts[rating]++;
@@ -146,21 +171,26 @@ function App() {
         { rating: 1, count: ratingCounts[1], percentage: ((ratingCounts[1] / totalWithRating) * 100).toFixed(1) }
       ];
       
-      // Calculate sentiment split
+      // Calculate sentiment split from filtered reviews
       const sentimentCounts = { positive: 0, negative: 0, neutral: 0 };
-      freshReviews.forEach(r => {
-        const sentiment = (r.sentiment || '').toLowerCase();
+      reviewsToUse.forEach(r => {
+        // Use rating_label if sentiment is not available
+        const sentiment = (r.sentiment || r.rating_label || '').toLowerCase();
         if (sentiment.includes('positive')) sentimentCounts.positive++;
         else if (sentiment.includes('negative')) sentimentCounts.negative++;
         else sentimentCounts.neutral++;
       });
       
-      const totalWithSentiment = freshReviews.length || 1;
+      const totalWithSentiment = reviewsToUse.length || 1;
       const sentimentSplit = {
         positive: Math.round((sentimentCounts.positive / totalWithSentiment) * 100),
         negative: Math.round((sentimentCounts.negative / totalWithSentiment) * 100),
         neutral: Math.round((sentimentCounts.neutral / totalWithSentiment) * 100)
       };
+      
+      // Calculate average rating from filtered reviews
+      const totalRatingSum = reviewsToUse.reduce((sum, r) => sum + (r.rating || r.score || 0), 0);
+      const avgRating = reviewsToUse.length > 0 ? (totalRatingSum / reviewsToUse.length).toFixed(1) : 4.2;
       
       // Transform pulse data to dashboard format
       const transformedData = {
@@ -170,7 +200,7 @@ function App() {
         categorized: pulseData.top_themes?.length * 50 || 150,
         pending: 0,
         nps: pulseData.nps || 72,
-        avgRating: pulseData.avg_rating || 4.2,
+        avgRating: parseFloat(avgRating),
         promoters: pulseData.promoters || 1800,
         passives: pulseData.passives || 400,
         detractors: pulseData.detractors || 190,
