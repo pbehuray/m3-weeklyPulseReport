@@ -189,13 +189,22 @@ function App() {
       setData(transformedData);
       setLastSynced(new Date());
       
+      console.log('Sync completed:', {
+        totalReviews: freshReviews.length,
+        previousCount: reviews.length,
+        newCount: freshReviews.length - reviews.length
+      });
+      
       // Show notification if new reviews found
       if (freshReviews.length > reviews.length && reviews.length > 0) {
         const newCount = freshReviews.length - reviews.length;
         alert(`${newCount} new review${newCount > 1 ? 's' : ''} synced!`);
+      } else if (freshReviews.length > 0) {
+        alert(`Synced ${freshReviews.length} reviews successfully!`);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
+      alert('Sync failed: ' + error.message);
       // Fallback to mock data if fetch fails
       setData(mockData);
     } finally {
