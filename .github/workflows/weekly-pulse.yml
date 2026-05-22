@@ -109,9 +109,7 @@ jobs:
       id: phase3
       run: |
         echo "### 🔧 Phase 3: Data Normalization" >> $GITHUB_STEP_SUMMARY
-        if [ -f "phase3/data/normalized/normalized_reviews.json" ]; then
-          echo "- ⏭️ Using existing normalized data" >> $GITHUB_STEP_SUMMARY
-        elif [ -f "phase2/data/ingested/ingested_reviews.json" ]; then
+        if [ -f "phase2/data/ingested/ingested_reviews.json" ]; then
           python phase3/normalize_reviews.py
           echo "- ✅ Reviews normalized" >> $GITHUB_STEP_SUMMARY
         else
@@ -124,9 +122,7 @@ jobs:
       id: phase4
       run: |
         echo "### 🔒 Phase 4: Privacy Protection" >> $GITHUB_STEP_SUMMARY
-        if [ -f "phase4/data/privacy_safe/privacy_safe_reviews.json" ]; then
-          echo "- ⏭️ Using existing privacy-safe data" >> $GITHUB_STEP_SUMMARY
-        elif [ -f "phase3/data/normalized/normalized_reviews.json" ]; then
+        if [ -f "phase3/data/normalized/normalized_reviews.json" ]; then
           python phase4/privacy_filter.py
           echo "- ✅ Privacy filtering complete" >> $GITHUB_STEP_SUMMARY
         else
