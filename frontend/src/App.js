@@ -18,7 +18,8 @@ import {
   BarChart3,
   Zap,
   TrendingUp as TrendIcon,
-  CheckCircle
+  CheckCircle,
+  Mail
 } from 'lucide-react';
 import { 
   BarChart, 
@@ -1426,32 +1427,60 @@ function App() {
 
         {activeTab === 'reporting' && (
           <>
-            <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Reporting</h2>
-              <p style={{ margin: 0, color: colors.textMuted }}>Weekly Pulse, Fee Explainer, and Morning Brew workflows</p>
+            {/* Header with Sync */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
+              <div>
+                <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Weekly Pulse</h2>
+                <p style={{ margin: 0, color: colors.textMuted }}>AI-powered App Review Pulse Dashboard</p>
+              </div>
+              <button
+                onClick={fetchData}
+                disabled={loading}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: '8px',
+                  border: 'none',
+                  backgroundColor: '#10b981',
+                  color: 'white',
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  opacity: loading ? 0.7 : 1
+                }}
+              >
+                <RefreshCw size={16} style={{ animation: loading ? 'spin 1s linear infinite' : 'none' }} />
+                {loading ? 'Syncing...' : 'Sync Reviews'}
+              </button>
             </div>
 
             {/* Filters */}
             <div style={{ 
               backgroundColor: colors.card,
               borderRadius: '12px',
-              padding: '20px',
+              padding: '16px 20px',
               marginBottom: '24px',
-              border: `1px solid ${colors.border}`
+              border: `1px solid ${colors.border}`,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center'
             }}>
               <div style={{ display: 'flex', gap: '40px' }}>
                 <div>
-                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Platform</p>
+                  <p style={{ margin: '0 0 8px 0', fontSize: '11px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600', letterSpacing: '0.5px' }}>Platform</p>
                   <div style={{ display: 'flex', gap: '8px' }}>
                     {['all', 'android', 'ios'].map(p => (
                       <button
                         key={p}
+                        onClick={() => setPlatform(p)}
                         style={{
-                          padding: '8px 16px',
+                          padding: '6px 14px',
                           borderRadius: '20px',
                           border: 'none',
-                          backgroundColor: p === 'all' ? '#10b981' : colors.border,
-                          color: p === 'all' ? 'white' : colors.text,
+                          backgroundColor: platform === p ? '#10b981' : colors.border,
+                          color: platform === p ? 'white' : colors.text,
                           cursor: 'pointer',
                           fontSize: '13px',
                           textTransform: 'capitalize'
@@ -1463,22 +1492,22 @@ function App() {
                   </div>
                 </div>
                 <div>
-                  <p style={{ margin: '0 0 12px 0', fontSize: '12px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600' }}>Time Period</p>
-                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                    {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
+                  <p style={{ margin: '0 0 8px 0', fontSize: '11px', textTransform: 'uppercase', color: colors.textMuted, fontWeight: '600', letterSpacing: '0.5px' }}>Time Range</p>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    {['Today', '7 Days', '30 Days', '8-12 Weeks'].map(range => (
                       <button
-                        key={period}
+                        key={range}
                         style={{
-                          padding: '8px 16px',
+                          padding: '6px 14px',
                           borderRadius: '20px',
                           border: 'none',
-                          backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
-                          color: period === 'Last 30 Days' ? 'white' : colors.text,
+                          backgroundColor: range === '8-12 Weeks' ? '#10b981' : colors.border,
+                          color: range === '8-12 Weeks' ? 'white' : colors.text,
                           cursor: 'pointer',
                           fontSize: '13px'
                         }}
                       >
-                        {period}
+                        {range}
                       </button>
                     ))}
                   </div>
@@ -1486,66 +1515,152 @@ function App() {
               </div>
             </div>
 
-            {/* Phase 8 Reporting Orchestrator */}
+            {/* Weekly Pulse Note */}
             <div style={{ 
               backgroundColor: colors.card,
               borderRadius: '12px',
               padding: '24px',
               border: `1px solid ${colors.border}`,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
+              marginBottom: '24px'
             }}>
-              <div>
-                <h3 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: '600' }}>Phase 8 Reporting Orchestrator</h3>
-                <p style={{ margin: 0, color: colors.textMuted, fontSize: '14px' }}>
-                  Generate leadership-ready pulse with top bugs, feature ideas, Jira + Confluence + SMTP actions
-                </p>
-                <p style={{ margin: '8px 0 0 0', color: colors.textMuted, fontSize: '13px' }}>
-                  Active filter: all / last 30
-                </p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <Zap size={20} color="#10b981" />
+                  <div>
+                    <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '600' }}>Weekly Pulse Note</h3>
+                    <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: colors.textMuted }}>Executive one-pager · LIP limit ≤250 words</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <span style={{ padding: '4px 10px', backgroundColor: darkMode ? '#1e293b' : '#f1f5f9', borderRadius: '4px', fontSize: '12px', color: colors.textMuted }}>2026-W21</span>
+                  <span style={{ padding: '4px 10px', backgroundColor: darkMode ? '#1e293b' : '#f1f5f9', borderRadius: '4px', fontSize: '12px', color: colors.textMuted }}>146 words</span>
+                </div>
               </div>
-              <button
-                style={{
-                  padding: '12px 24px',
-                  borderRadius: '8px',
-                  border: 'none',
-                  backgroundColor: '#10b981',
-                  color: 'white',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px'
-                }}
-              >
-                <RefreshCw size={16} />
-                Generate Weekly Pulse
-              </button>
+
+              <div style={{ color: colors.text, fontSize: '14px', lineHeight: 1.7 }}>
+                <p style={{ margin: '0 0 16px 0' }}>
+                  Groww Play Store pulse (2026-W21): sentiment skews negative. Support, fees, and reliability dominate.
+                </p>
+
+                <h4 style={{ margin: '20px 0 12px 0', fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px', color: colors.textMuted }}>Top 3 Themes</h4>
+                <ol style={{ margin: 0, paddingLeft: '20px', lineHeight: 1.8 }}>
+                  <li><strong>High brokerage charges</strong> — sell-side fees exceed expectations; transparency gaps drive 1★ reviews.</li>
+                  <li><strong>Poor customer support</strong> — slow or missing responses on Demat, investments, and payouts.</li>
+                  <li><strong>Withdrawal issues</strong> — delays and failures spiked +28% WoW; trust risk for money movement.</li>
+                </ol>
+
+                <p style={{ margin: '16px 0 0 0', color: colors.textMuted }}>
+                  Also tracked: technical glitches (crashes at market open) and order execution problems (stuck sells, charge confusion).
+                </p>
+
+                <h4 style={{ margin: '20px 0 12px 0', fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px', color: colors.textMuted }}>User Quotes</h4>
+                <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: 1.8, color: colors.textMuted }}>
+                  <li>"They cut more charges than what they said — ₹30 instead of ₹7–8 on a sell."</li>
+                  <li>"Support never responds when withdrawals fail for days."</li>
+                  <li>"App crashes during trading sessions on market open."</li>
+                </ul>
+
+                <h4 style={{ margin: '20px 0 12px 0', fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.5px', color: colors.textMuted }}>Action Ideas</h4>
+                <ol style={{ margin: 0, paddingLeft: '20px', lineHeight: 1.8 }}>
+                  <li>Review brokerage and fee transparency in-app before order placement.</li>
+                  <li>Stabilize withdrawals and order execution with proactive status updates.</li>
+                  <li>Improve support SLAs and escalation paths for payout and trading tickets.</li>
+                </ol>
+              </div>
             </div>
 
-            {/* Weekly Pulse Preview */}
-            {data.headline && (
-              <div style={{ 
-                backgroundColor: colors.card,
-                borderRadius: '12px',
-                padding: '24px',
-                border: `1px solid ${colors.border}`,
-                marginTop: '24px'
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                  <div>
-                    <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: '600' }}>Latest Weekly Pulse</h3>
-                    <p style={{ margin: 0, color: colors.textMuted, fontSize: '13px' }}>Generated on {new Date().toLocaleDateString()}</p>
-                  </div>
-                  <CheckCircle size={24} color="#10b981" />
-                </div>
-                <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.6, color: colors.text }}>
-                  {data.headline}
+            {/* Email Draft Preview */}
+            <div style={{ 
+              backgroundColor: colors.card,
+              borderRadius: '12px',
+              padding: '24px',
+              border: `1px solid ${colors.border}`
+            }}>
+              <h3 style={{ margin: '0 0 20px 0', fontSize: '14px', fontWeight: '600', color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Email Draft Preview</h3>
+              
+              <div style={{ marginBottom: '16px' }}>
+                <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: colors.textMuted }}>
+                  <span style={{ color: colors.textMuted }}>To: </span>
+                  <span style={{ color: colors.text }}>ar.shruthi17@gmail.com</span>
+                </p>
+                <p style={{ margin: 0, fontSize: '14px', color: colors.textMuted }}>
+                  <span style={{ color: colors.textMuted }}>Subject: </span>
+                  <span style={{ color: colors.text, fontWeight: '500' }}>Groww Weekly Review Pulse</span>
                 </p>
               </div>
-            )}
+
+              <div style={{ 
+                backgroundColor: darkMode ? '#0f172a' : '#f8fafc',
+                borderRadius: '8px',
+                padding: '20px',
+                marginBottom: '24px',
+                fontSize: '14px',
+                lineHeight: 1.7,
+                color: colors.text
+              }}>
+                <p style={{ margin: '0 0 12px 0' }}>
+                  Groww Play Store pulse (2026-W21): sentiment skews negative. Support, fees, and reliability dominate.
+                </p>
+                <p style={{ margin: '0 0 8px 0', fontWeight: '600' }}>TOP 3 THEMES</p>
+                <ol style={{ margin: '0 0 16px 0', paddingLeft: '20px' }}>
+                  <li>High brokerage charges — sell-side fees exceed expectations; transparency gaps drive 1★ reviews.</li>
+                  <li>Poor customer support — slow or missing responses on Demat, investments, and payouts.</li>
+                  <li>Withdrawal issues — delays and failures spiked +28% WoW; trust risk for money movement.</li>
+                </ol>
+                <p style={{ margin: '0 0 8px 0', fontWeight: '600' }}>USER QUOTES</p>
+                <ul style={{ margin: '0 0 16px 0', paddingLeft: '20px', color: colors.textMuted }}>
+                  <li>"They cut more charges than what they said — ₹30 instead of ₹7–8 on a sell."</li>
+                  <li>"Support never responds when withdrawals fail for days."</li>
+                </ul>
+                <p style={{ margin: '0 0 8px 0', fontWeight: '600' }}>ACTION IDEAS</p>
+                <ol style={{ margin: 0, paddingLeft: '20px' }}>
+                  <li>Review brokerage and fee transparency in-app before order placement.</li>
+                  <li>Stabilize withdrawals and order execution with proactive status updates.</li>
+                  <li>Improve support SLAs and escalation paths for payout and trading tickets.</li>
+                </ol>
+              </div>
+
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <button
+                  onClick={() => window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=ar.shruthi17@gmail.com&su=Groww+Weekly+Review+Pulse&body=Groww+Play+Store+pulse+(2026-W21):+sentiment+skews+negative.+Support,+fees,+and+reliability+dominate.%0A%0ATOP+3+THEMES%0A1.+High+brokerage+charges+—+sell-side+fees+exceed+expectations;+transparency+gaps+drive+1★+reviews.%0A2.+Poor+customer+support+—+slow+or+missing+responses+on+Demat,+investments,+and+payouts.%0A3.+Withdrawal+issues+—+delays+and+failures+spiked+%2B28%+WoW;+trust+risk+for+money+movement.', '_blank')}
+                  style={{
+                    padding: '12px 24px',
+                    borderRadius: '8px',
+                    border: 'none',
+                    backgroundColor: '#10b981',
+                    color: 'white',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}
+                >
+                  <Mail size={16} />
+                  Draft Email
+                </button>
+                <button
+                  onClick={() => window.open('https://docs.google.com/document/create?title=Groww+Weekly+Review+Pulse+2026-W21&content=Groww+Play+Store+pulse+(2026-W21):+sentiment+skews+negative.+Support,+fees,+and+reliability+dominate.', '_blank')}
+                  style={{
+                    padding: '12px 24px',
+                    borderRadius: '8px',
+                    border: `1px solid ${colors.border}`,
+                    backgroundColor: colors.card,
+                    color: colors.text,
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}
+                >
+                  <FileText size={16} />
+                  Append to Docs
+                </button>
+              </div>
+            </div>
           </>
         )}
       </main>
