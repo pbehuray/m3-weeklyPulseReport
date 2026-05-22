@@ -602,12 +602,13 @@ function App() {
                       {['Today', 'Yesterday', 'Last 7 Days', 'Last 15 Days', 'Last 30 Days'].map(period => (
                         <button
                           key={period}
+                          onClick={() => setTimePeriod(period.toLowerCase().replace(/\s/g, ''))}
                           style={{
                             padding: '6px 14px',
                             borderRadius: '20px',
                             border: 'none',
-                            backgroundColor: period === 'Last 30 Days' ? '#10b981' : colors.border,
-                            color: period === 'Last 30 Days' ? 'white' : colors.text,
+                            backgroundColor: timePeriod === period.toLowerCase().replace(/\s/g, '') ? '#10b981' : colors.border,
+                            color: timePeriod === period.toLowerCase().replace(/\s/g, '') ? 'white' : colors.text,
                             cursor: 'pointer',
                             fontSize: '13px'
                           }}
@@ -618,7 +619,12 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <button style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}>Reset</button>
+                <button 
+                  onClick={() => {setPlatform('all'); setTimePeriod('last30days');}}
+                  style={{ color: colors.textMuted, fontSize: '13px', background: 'none', border: 'none', cursor: 'pointer' }}
+                >
+                  Reset
+                </button>
               </div>
             </div>
 
