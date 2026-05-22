@@ -1,59 +1,52 @@
 {
-  "input_count": 98,
-  "privacy_safe_count": 98,
-  "reviews_with_pii": 12,
+  "input_count": 99,
+  "privacy_safe_count": 99,
+  "reviews_with_pii": 10,
   "pii_detection_counts": {
-    "account_id": 12,
+    "account_id": 8,
     "order_id": 3
   },
   "affected_reviews": [
     {
-      "index": 47,
-      "review_id": "play_store-2026-05-20-00164",
+      "index": 50,
+      "review_id": "play_store-2026-05-20-00171",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 51,
-      "review_id": "play_store-2026-05-19-00189",
+      "index": 54,
+      "review_id": "play_store-2026-05-19-00196",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 52,
-      "review_id": "play_store-2026-05-19-00192",
+      "index": 55,
+      "review_id": "play_store-2026-05-19-00199",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 69,
-      "review_id": "play_store-2026-05-19-00254",
+      "index": 72,
+      "review_id": "play_store-2026-05-19-00261",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 73,
-      "review_id": "play_store-2026-05-19-00274",
+      "index": 76,
+      "review_id": "play_store-2026-05-19-00281",
       "pii_types": [
         "account_id"
-      ]
-    },
-    {
-      "index": 78,
-      "review_id": "play_store-2026-05-18-00292",
-      "pii_types": [
-        "order_id"
       ]
     },
     {
       "index": 81,
-      "review_id": "play_store-2026-05-18-00304",
+      "review_id": "play_store-2026-05-18-00299",
       "pii_types": [
-        "account_id"
+        "order_id"
       ]
     },
     {
@@ -64,32 +57,25 @@
       ]
     },
     {
-      "index": 86,
+      "index": 87,
       "review_id": "play_store-2026-05-18-00318",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 89,
+      "review_id": "play_store-2026-05-18-00325",
       "pii_types": [
         "account_id",
         "order_id"
       ]
     },
     {
-      "index": 90,
-      "review_id": "play_store-2026-05-18-00337",
+      "index": 93,
+      "review_id": "play_store-2026-05-18-00344",
       "pii_types": [
         "order_id"
-      ]
-    },
-    {
-      "index": 97,
-      "review_id": "play_store-2026-05-18-00361",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 98,
-      "review_id": "play_store-2026-05-18-00363",
-      "pii_types": [
-        "account_id"
       ]
     }
   ],
