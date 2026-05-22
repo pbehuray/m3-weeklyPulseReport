@@ -74,6 +74,9 @@ function App() {
   const [sentimentFilter, setSentimentFilter] = useState('all');
   const [data, setData] = useState(mockData);
   const [loading, setLoading] = useState(false);
+  const [lastSynced, setLastSynced] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [newReviewsCount, setNewReviewsCount] = useState(0);
 
   // Theme colors
   const colors = {
@@ -91,43 +94,92 @@ function App() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      // Fetch from GitHub raw
-      const response = await fetch(
+      // Fetch reviews data from GitHub
+      const reviewsResponse = await fetch(
+        'https://raw.githubusercontent.com/pbehuray/m3-weeklyPulseReport/master/phase8/data/processed_reviews_with_sentiment_and_themes.json'
+      );
+      
+      // Fetch pulse data from GitHub
+      const pulseResponse = await fetch(
         'https://raw.githubusercontent.com/pbehuray/m3-weeklyPulseReport/master/phase8/data/weekly_pulse/weekly_pulse.json'
       );
       
-      if (!response.ok) throw new Error('Failed to fetch data');
+      let freshReviews = [];
+      let pulseData = {};
       
-      const pulseData = await response.json();
+      if (reviewsResponse.ok) {
+        freshReviews = await reviewsResponse.json();
+        setReviews(freshReviews);
+        
+        // Calculate new reviews since last sync
+        const previousCount = reviews.length;
+        const newCount = freshReviews.length - previousCount;
+        if (newCount > 0) {
+          setNewReviewsCount(newCount);
+        }
+      }
+      
+      if (pulseResponse.ok) {
+        pulseData = await pulseResponse.json();
+      }
+      
+      // Calculate actual metrics from reviews data
+      const totalReviews = freshReviews.length || 2390;
+      const androidReviews = freshReviews.filter(r => r.platform === 'android' || r.source === 'play_store').length || 1800;
+      const iosReviews = freshReviews.filter(r => r.platform === 'ios' || r.source === 'app_store').length || 590;
+      
+      // Calculate rating distribution
+      const ratingCounts = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
+      freshReviews.forEach(r => {
+        const rating = Math.round(r.score || r.rating || 0);
+        if (rating >= 1 && rating <= 5) {
+          ratingCounts[rating]++;
+        }
+      });
+      
+      const totalWithRating = freshReviews.length || 1;
+      const ratingDistribution = [
+        { rating: 5, count: ratingCounts[5], percentage: ((ratingCounts[5] / totalWithRating) * 100).toFixed(1) },
+        { rating: 4, count: ratingCounts[4], percentage: ((ratingCounts[4] / totalWithRating) * 100).toFixed(1) },
+        { rating: 3, count: ratingCounts[3], percentage: ((ratingCounts[3] / totalWithRating) * 100).toFixed(1) },
+        { rating: 2, count: ratingCounts[2], percentage: ((ratingCounts[2] / totalWithRating) * 100).toFixed(1) },
+        { rating: 1, count: ratingCounts[1], percentage: ((ratingCounts[1] / totalWithRating) * 100).toFixed(1) }
+      ];
+      
+      // Calculate sentiment split
+      const sentimentCounts = { positive: 0, negative: 0, neutral: 0 };
+      freshReviews.forEach(r => {
+        const sentiment = (r.sentiment || '').toLowerCase();
+        if (sentiment.includes('positive')) sentimentCounts.positive++;
+        else if (sentiment.includes('negative')) sentimentCounts.negative++;
+        else sentimentCounts.neutral++;
+      });
+      
+      const totalWithSentiment = freshReviews.length || 1;
+      const sentimentSplit = {
+        positive: Math.round((sentimentCounts.positive / totalWithSentiment) * 100),
+        negative: Math.round((sentimentCounts.negative / totalWithSentiment) * 100),
+        neutral: Math.round((sentimentCounts.neutral / totalWithSentiment) * 100)
+      };
       
       // Transform pulse data to dashboard format
       const transformedData = {
-        totalReviews: 2390, // From your actual processed reviews
-        androidReviews: 1800,
-        iosReviews: 590,
+        totalReviews,
+        androidReviews,
+        iosReviews,
         categorized: pulseData.top_themes?.length * 50 || 150,
         pending: 0,
-        nps: 72,
-        avgRating: 4.2,
-        promoters: 1800,
-        passives: 400,
-        detractors: 190,
-        ratingDistribution: [
-          { rating: 5, count: 1580, percentage: 66.1 },
-          { rating: 4, count: 400, percentage: 16.7 },
-          { rating: 3, count: 220, percentage: 9.2 },
-          { rating: 2, count: 100, percentage: 4.2 },
-          { rating: 1, count: 90, percentage: 3.8 }
-        ],
-        sentimentSplit: {
-          positive: 75,
-          negative: 15,
-          neutral: 10
-        },
+        nps: pulseData.nps || 72,
+        avgRating: pulseData.avg_rating || 4.2,
+        promoters: pulseData.promoters || 1800,
+        passives: pulseData.passives || 400,
+        detractors: pulseData.detractors || 190,
+        ratingDistribution,
+        sentimentSplit,
         themes: pulseData.top_themes?.map((theme, idx) => ({
           label: theme.label || `Theme ${idx + 1}`,
-          count: [234, 189, 156, 134, 98][idx] || 100,
-          sentiment: ['negative', 'mixed', 'positive', 'positive', 'negative'][idx] || 'mixed'
+          count: theme.review_count || [234, 189, 156, 134, 98][idx] || 100,
+          sentiment: theme.sentiment || ['negative', 'mixed', 'positive', 'positive', 'negative'][idx] || 'mixed'
         })) || mockData.themes,
         headline: pulseData.headline || mockData.headline,
         quotes: pulseData.quotes || [],
@@ -135,6 +187,13 @@ function App() {
       };
       
       setData(transformedData);
+      setLastSynced(new Date());
+      
+      // Show notification if new reviews found
+      if (freshReviews.length > reviews.length && reviews.length > 0) {
+        const newCount = freshReviews.length - reviews.length;
+        alert(`${newCount} new review${newCount > 1 ? 's' : ''} synced!`);
+      }
     } catch (error) {
       console.error('Error fetching data:', error);
       // Fallback to mock data if fetch fails
@@ -1430,7 +1489,19 @@ function App() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
               <div>
                 <h2 style={{ margin: '0 0 8px 0', fontSize: '24px', fontWeight: '600' }}>Weekly Pulse</h2>
-                <p style={{ margin: 0, color: colors.textMuted }}>AI-powered App Review Pulse Dashboard</p>
+                <p style={{ margin: 0, color: colors.textMuted }}>
+                  AI-powered App Review Pulse Dashboard
+                  {lastSynced && (
+                    <span style={{ marginLeft: '12px', fontSize: '12px' }}>
+                      • Last synced: {lastSynced.toLocaleTimeString()}
+                    </span>
+                  )}
+                </p>
+                {newReviewsCount > 0 && (
+                  <p style={{ margin: '4px 0 0 0', fontSize: '13px', color: '#10b981' }}>
+                    {newReviewsCount} new review{newReviewsCount > 1 ? 's' : ''} available
+                  </p>
+                )}
               </div>
               <button
                 onClick={fetchData}
