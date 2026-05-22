@@ -145,13 +145,13 @@ function App() {
         }
       });
       
-      // Use filtered reviews for metrics calculation
-      const reviewsToUse = filteredByDate.length > 0 ? filteredByDate : freshReviews;
+      // Use filtered reviews for metrics calculation (always use filtered, even if empty)
+      const reviewsToUse = filteredByDate;
       
       // Calculate actual metrics from filtered reviews data
-      const totalReviews = reviewsToUse.length || 2390;
-      const androidReviews = reviewsToUse.filter(r => r.platform === 'android' || r.source === 'play_store').length || 1800;
-      const iosReviews = reviewsToUse.filter(r => r.platform === 'ios' || r.source === 'app_store').length || 590;
+      const totalReviews = reviewsToUse.length;
+      const androidReviews = reviewsToUse.filter(r => r.platform === 'android' || r.source === 'play_store').length;
+      const iosReviews = reviewsToUse.filter(r => r.platform === 'ios' || r.source === 'app_store').length;
       
       // Calculate rating distribution from filtered reviews
       const ratingCounts = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
@@ -162,7 +162,7 @@ function App() {
         }
       });
       
-      const totalWithRating = freshReviews.length || 1;
+      const totalWithRating = reviewsToUse.length || 1;
       const ratingDistribution = [
         { rating: 5, count: ratingCounts[5], percentage: ((ratingCounts[5] / totalWithRating) * 100).toFixed(1) },
         { rating: 4, count: ratingCounts[4], percentage: ((ratingCounts[4] / totalWithRating) * 100).toFixed(1) },
