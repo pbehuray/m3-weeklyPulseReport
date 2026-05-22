@@ -824,14 +824,25 @@ function App() {
                     </button>
                   </div>
                 </div>
-              )).concat(reviews.filter(review => {
-                if (sentimentFilter === 'all') return true;
-                const sentiment = (review.sentiment || '').toLowerCase();
-                if (sentimentFilter === 'positive') return sentiment.includes('positive');
-                if (sentimentFilter === 'negative') return sentiment.includes('negative');
-                if (sentimentFilter === 'neutral') return !sentiment.includes('positive') && !sentiment.includes('negative');
-                return true;
-              }).length > 10 ? [<div key="more" style={{ textAlign: 'center', padding: '20px', color: colors.textMuted }}><p>Showing first 10 reviews. {reviews.length} total reviews in dataset.</p></div>] : [])}
+              )).concat(
+                (() => {
+                  const filtered = reviews.filter(review => {
+                    if (sentimentFilter === 'all') return true;
+                    const sentiment = (review.sentiment || '').toLowerCase();
+                    if (sentimentFilter === 'positive') return sentiment.includes('positive');
+                    if (sentimentFilter === 'negative') return sentiment.includes('negative');
+                    if (sentimentFilter === 'neutral') return !sentiment.includes('positive') && !sentiment.includes('negative');
+                    return true;
+                  });
+                  if (filtered.length === 0) {
+                    return [<div key="empty" style={{ textAlign: 'center', padding: '40px', color: colors.textMuted }}><p>No {sentimentFilter} reviews found.</p></div>];
+                  }
+                  if (filtered.length > 10) {
+                    return [<div key="more" style={{ textAlign: 'center', padding: '20px', color: colors.textMuted }}><p>Showing first 10 of {filtered.length} {sentimentFilter} reviews. {reviews.length} total in dataset.</p></div>];
+                  }
+                  return [];
+                })()
+              )}
             </div>
           </>
         )}
@@ -924,7 +935,7 @@ function App() {
                   <MessageSquare size={16} color={colors.textMuted} />
                   <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Total Reviews</span>
                 </div>
-                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>1,000</p>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>{data.totalReviews?.toLocaleString() || 0}</p>
               </div>
 
               <div style={{ 
@@ -937,7 +948,7 @@ function App() {
                   <Star size={16} color="#f59e0b" />
                   <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Avg Rating</span>
                 </div>
-                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>4.5</p>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700' }}>{data.avgRating || 0}</p>
                 <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: colors.textMuted }}>out of 5.0</p>
               </div>
 
@@ -951,7 +962,7 @@ function App() {
                   <TrendIcon size={16} color="#10b981" />
                   <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Positive</span>
                 </div>
-                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#10b981' }}>0%</p>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#10b981' }}>{data.sentimentSplit?.positive || 0}%</p>
               </div>
 
               <div style={{ 
@@ -964,7 +975,7 @@ function App() {
                   <TrendingDown size={16} color="#ef4444" />
                   <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Negative</span>
                 </div>
-                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#ef4444' }}>0%</p>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#ef4444' }}>{data.sentimentSplit?.negative || 0}%</p>
               </div>
 
               <div style={{ 
@@ -977,7 +988,7 @@ function App() {
                   <Minus size={16} color="#eab308" />
                   <span style={{ fontSize: '12px', color: colors.textMuted, textTransform: 'uppercase' }}>Neutral</span>
                 </div>
-                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#eab308' }}>0%</p>
+                <p style={{ margin: 0, fontSize: '28px', fontWeight: '700', color: '#eab308' }}>{data.sentimentSplit?.neutral || 0}%</p>
               </div>
             </div>
 
