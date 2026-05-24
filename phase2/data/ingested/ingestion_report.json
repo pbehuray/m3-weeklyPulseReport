@@ -1,12 +1,12 @@
 {
   "total_files": 1,
-  "total_loaded": 500,
-  "valid_reviews": 500,
+  "total_loaded": 2500,
+  "valid_reviews": 2500,
   "invalid_reviews": 0,
   "invalid_details": [],
-  "within_date_window": 500,
+  "within_date_window": 2500,
   "outside_date_window": 0,
-  "duplicates_removed": 133,
-  "final_count": 367,
+  "duplicates_removed": 667,
+  "final_count": 1833,
   "load_errors": []
 }
