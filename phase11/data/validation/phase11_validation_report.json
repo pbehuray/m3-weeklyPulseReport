@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-24T10:27:50.634112",
-  "overall_valid": true,
+  "timestamp": "2026-05-31T10:53:43.132676",
+  "overall_valid": false,
   "phases_validated": 8,
   "constraints_met": {
     "max_5_themes": true,
     "top_3_themes_in_report": true,
     "3_real_quotes": true,
     "3_action_ideas": true,
-    "mcp_docs_integration": true,
-    "mcp_gmail_integration": true,
+    "mcp_docs_integration": false,
+    "mcp_gmail_integration": false,
     "privacy_protection": true
   },
   "phase_results": {
     "phase3_normalization": {
       "valid": true,
-      "review_count": 564,
+      "review_count": 533,
       "fields_present": [
         "content",
         "rating",
@@ -24,7 +24,7 @@
     },
     "phase4_privacy": {
       "valid": true,
-      "privacy_safe_count": 564,
+      "privacy_safe_count": 533,
       "pii_issues_in_sample": [],
       "note": "PII check on sample - some patterns may be false positives"
     },
@@ -67,17 +67,17 @@
       "actions_count": 3
     },
     "phase9_docs": {
-      "valid": true,
-      "mcp_used": true,
+      "valid": false,
+      "mcp_used": false,
       "document_url": "https://docs.google.com/document/d/1IsqpOHq53G51Shg5R271iq7P57k6wUqqQKVNzJVA6dw/edit",
-      "timestamp": "2026-05-24T10:27:49.784279"
+      "timestamp": "2026-05-31T10:53:42.699880"
     },
     "phase10_gmail": {
-      "valid": true,
-      "mcp_used": true,
+      "valid": false,
+      "mcp_used": false,
       "recipient": "purbashabehuray@gmail.com",
-      "subject": "Weekly App Review Pulse - 2026-05-24",
-      "timestamp": "2026-05-24T10:27:50.575449"
+      "subject": "Weekly App Review Pulse - 2026-05-31",
+      "timestamp": "2026-05-31T10:53:43.079015"
     }
   }
 }
