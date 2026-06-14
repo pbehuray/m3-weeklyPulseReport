@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T11:05:11.434364",
+  "timestamp": "2026-06-14T11:26:55.661698",
   "overall_valid": false,
   "phases_validated": 8,
   "constraints_met": {
@@ -14,7 +14,7 @@
   "phase_results": {
     "phase3_normalization": {
       "valid": true,
-      "review_count": 525,
+      "review_count": 582,
       "fields_present": [
         "content",
         "rating",
@@ -24,7 +24,7 @@
     },
     "phase4_privacy": {
       "valid": true,
-      "privacy_safe_count": 525,
+      "privacy_safe_count": 582,
       "pii_issues_in_sample": [],
       "note": "PII check on sample - some patterns may be false positives"
     },
@@ -70,14 +70,14 @@
       "valid": false,
       "mcp_used": false,
       "document_url": "https://docs.google.com/document/d/1IsqpOHq53G51Shg5R271iq7P57k6wUqqQKVNzJVA6dw/edit",
-      "timestamp": "2026-06-07T11:05:10.514305"
+      "timestamp": "2026-06-14T11:26:54.395030"
     },
     "phase10_gmail": {
       "valid": false,
       "mcp_used": false,
       "recipient": "purbashabehuray@gmail.com",
-      "subject": "Weekly App Review Pulse - 2026-06-07",
-      "timestamp": "2026-06-07T11:05:11.391849"
+      "subject": "Weekly App Review Pulse - 2026-06-14",
+      "timestamp": "2026-06-14T11:26:55.604566"
     }
   }
 }
