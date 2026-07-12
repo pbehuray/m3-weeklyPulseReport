@@ -1,19 +1,23 @@
 {
-  "input_count": 1762,
-  "normalized_count": 496,
-  "rejected_count": 1266,
+  "input_count": 1656,
+  "normalized_count": 435,
+  "rejected_count": 1221,
   "rejected_records": [
     {
       "index": 1,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 2,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 3,
-      "reason": "non-English review_text"
+      "reason": "review contains emoji"
     },
     {
       "index": 4,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 5,
@@ -28,36 +32,52 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 9,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 10,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 13,
-      "reason": "non-English review_text"
+      "index": 11,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 14,
+      "index": 12,
       "reason": "review contains emoji"
     },
     {
-      "index": 17,
+      "index": 13,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 14,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 18,
+      "index": 15,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 16,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 18,
+      "reason": "review contains emoji"
     },
     {
       "index": 19,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 21,
-      "reason": "review contains emoji"
+      "index": 20,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 23,
-      "reason": "review_text has fewer than 6 words"
+      "index": 21,
+      "reason": "review contains emoji"
     },
     {
       "index": 24,
@@ -81,6 +101,10 @@
     },
     {
       "index": 30,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 31,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -93,26 +117,26 @@
     },
     {
       "index": 34,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 36,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 37,
-      "reason": "review_text has fewer than 6 words"
+      "index": 35,
+      "reason": "review contains emoji"
     },
     {
       "index": 38,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 39,
+      "reason": "non-English review_text"
+    },
+    {
       "index": 40,
       "reason": "review contains emoji"
     },
     {
-      "index": 42,
+      "index": 41,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -120,7 +144,7 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 45,
+      "index": 44,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -137,7 +161,11 @@
     },
     {
       "index": 50,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 51,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 52,
@@ -145,10 +173,6 @@
     },
     {
       "index": 53,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 54,
       "reason": "review contains emoji"
     },
     {
@@ -156,27 +180,31 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 57,
+      "index": 56,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 58,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 59,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 60,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 61,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 63,
       "reason": "review contains emoji"
     },
     {
+      "index": 63,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 64,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 65,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -188,7 +216,15 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 68,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 69,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 70,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -201,15 +237,15 @@
     },
     {
       "index": 74,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 75,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 76,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 77,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 78,
@@ -217,30 +253,30 @@
     },
     {
       "index": 79,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 80,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 81,
-      "reason": "review_text has fewer than 6 words"
+      "index": 82,
+      "reason": "review contains emoji"
     },
     {
       "index": 83,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 84,
       "reason": "review contains emoji"
     },
     {
       "index": 85,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 86,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 87,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -249,6 +285,10 @@
     },
     {
       "index": 89,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 90,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -257,6 +297,10 @@
     },
     {
       "index": 92,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 93,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -268,12 +312,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 96,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 97,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 98,
@@ -281,31 +321,19 @@
     },
     {
       "index": 99,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 100,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 101,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 102,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 103,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 104,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 105,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 106,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 107,
@@ -313,23 +341,15 @@
     },
     {
       "index": 108,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 109,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 110,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 111,
+      "index": 112,
       "reason": "review contains emoji"
-    },
-    {
-      "index": 113,
-      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 114,
@@ -344,32 +364,44 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 117,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 118,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 119,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 120,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 121,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 122,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 123,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 124,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 125,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 127,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 130,
-      "reason": "review_text has fewer than 6 words"
+      "index": 128,
+      "reason": "review contains emoji"
     },
     {
       "index": 131,
@@ -384,19 +416,11 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 136,
+      "index": 135,
       "reason": "review contains emoji"
     },
     {
-      "index": 137,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 139,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 140,
+      "index": 136,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -404,8 +428,8 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 143,
-      "reason": "review_text has fewer than 6 words"
+      "index": 142,
+      "reason": "review contains emoji"
     },
     {
       "index": 144,
@@ -416,8 +440,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 147,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 148,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 149,
@@ -425,7 +453,7 @@
     },
     {
       "index": 150,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 151,
@@ -433,27 +461,27 @@
     },
     {
       "index": 153,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 154,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 155,
-      "reason": "review contains emoji"
+      "reason": "non-English review_text"
     },
     {
       "index": 156,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 157,
+      "index": 160,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 159,
+      "index": 161,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 162,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 163,
+      "reason": "review contains emoji"
     },
     {
       "index": 164,
@@ -461,31 +489,47 @@
     },
     {
       "index": 166,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 167,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 168,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 170,
+      "index": 169,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 170,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 171,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 172,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 173,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 174,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 175,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 176,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 177,
@@ -497,23 +541,31 @@
     },
     {
       "index": 179,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 180,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 181,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 182,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 185,
+      "index": 183,
       "reason": "review contains emoji"
     },
     {
-      "index": 186,
-      "reason": "non-English review_text"
+      "index": 184,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 185,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 187,
@@ -525,6 +577,10 @@
     },
     {
       "index": 189,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 191,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -534,6 +590,10 @@
     {
       "index": 193,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 194,
+      "reason": "review contains emoji"
     },
     {
       "index": 195,
@@ -548,10 +608,6 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 198,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 199,
       "reason": "review_text has fewer than 6 words"
     },
@@ -560,16 +616,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 203,
+      "index": 202,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 203,
+      "reason": "review contains emoji"
     },
     {
       "index": 204,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 205,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 207,
@@ -577,11 +633,11 @@
     },
     {
       "index": 208,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 209,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 210,
@@ -589,11 +645,19 @@
     },
     {
       "index": 211,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 212,
+      "reason": "review contains emoji"
     },
     {
       "index": 213,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 214,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 215,
@@ -601,27 +665,27 @@
     },
     {
       "index": 216,
-      "reason": "review contains emoji"
+      "reason": "non-English review_text"
     },
     {
       "index": 217,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 218,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 219,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 220,
-      "reason": "review contains emoji"
+      "index": 221,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 221,
-      "reason": "review contains emoji"
+      "index": 222,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 224,
@@ -629,23 +693,19 @@
     },
     {
       "index": 225,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 226,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 227,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 228,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 229,
-      "reason": "review contains emoji"
+      "index": 227,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 228,
+      "reason": "non-English review_text"
     },
     {
       "index": 230,
@@ -653,7 +713,11 @@
     },
     {
       "index": 231,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 232,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 233,
@@ -664,27 +728,31 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 239,
+      "index": 235,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 241,
+      "index": 236,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 238,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 239,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 240,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 242,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 243,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 244,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 245,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -692,12 +760,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 249,
-      "reason": "review_text has fewer than 6 words"
+      "index": 247,
+      "reason": "non-English review_text"
     },
     {
-      "index": 251,
-      "reason": "review_text has fewer than 6 words"
+      "index": 248,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 249,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 250,
+      "reason": "review contains emoji"
     },
     {
       "index": 253,
@@ -709,10 +785,6 @@
     },
     {
       "index": 255,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 257,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -724,43 +796,43 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 262,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 263,
+      "index": 261,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 264,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 265,
+      "index": 262,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 267,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 268,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 270,
+      "index": 269,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 271,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 273,
+      "index": 272,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 274,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 277,
+      "index": 275,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 276,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -768,39 +840,39 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 279,
-      "reason": "review contains emoji"
+      "index": 280,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 281,
-      "reason": "review contains emoji"
+      "index": 282,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 283,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 284,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 285,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 286,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 287,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 288,
-      "reason": "review contains emoji"
     },
     {
       "index": 289,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 290,
+      "reason": "review contains emoji"
     },
     {
       "index": 291,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 292,
       "reason": "review contains emoji"
     },
     {
@@ -824,15 +896,27 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 300,
+      "index": 299,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 301,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 302,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 305,
+      "index": 303,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 304,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 306,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -845,7 +929,7 @@
     },
     {
       "index": 310,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 312,
@@ -853,14 +937,14 @@
     },
     {
       "index": 313,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 314,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 315,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 316,
       "reason": "review contains emoji"
     },
     {
@@ -869,18 +953,14 @@
     },
     {
       "index": 318,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 319,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 320,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 321,
       "reason": "review contains emoji"
     },
     {
@@ -889,27 +969,47 @@
     },
     {
       "index": 323,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 324,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 325,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 327,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 328,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 329,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 330,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 331,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 332,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 334,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 335,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 336,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 337,
@@ -920,11 +1020,11 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 340,
+      "index": 341,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 341,
+      "index": 342,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -932,35 +1032,31 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 345,
+      "index": 344,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 346,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 348,
+      "index": 347,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 349,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 350,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 351,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 352,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 353,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 354,
+      "index": 353,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -968,11 +1064,19 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 357,
+      "index": 356,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 357,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 359,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 360,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -980,8 +1084,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 364,
+      "index": 363,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 364,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 365,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 366,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 367,
@@ -993,18 +1109,26 @@
     },
     {
       "index": 369,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 370,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 371,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 372,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 377,
-      "reason": "review_text has fewer than 6 words"
+      "index": 373,
+      "reason": "review contains emoji"
     },
     {
-      "index": 378,
+      "index": 376,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1016,16 +1140,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 381,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 382,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 383,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 384,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 385,
@@ -1036,20 +1160,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 387,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 388,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 389,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 390,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 391,
@@ -1061,27 +1177,27 @@
     },
     {
       "index": 393,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 394,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 395,
+      "index": 396,
       "reason": "review contains emoji"
     },
     {
       "index": 398,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 399,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 400,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 401,
+      "reason": "review contains emoji"
     },
     {
       "index": 402,
@@ -1093,11 +1209,11 @@
     },
     {
       "index": 404,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 406,
-      "reason": "review contains emoji"
+      "index": 405,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 407,
@@ -1108,15 +1224,7 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 409,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 410,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 411,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1125,14 +1233,10 @@
     },
     {
       "index": 413,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 414,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 415,
+      "index": 414,
       "reason": "review contains emoji"
     },
     {
@@ -1141,15 +1245,11 @@
     },
     {
       "index": 417,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 418,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 419,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 420,
@@ -1157,6 +1257,10 @@
     },
     {
       "index": 421,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 422,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1169,19 +1273,19 @@
     },
     {
       "index": 427,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 428,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 429,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 430,
+      "reason": "non-English review_text"
+    },
+    {
       "index": 431,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 432,
@@ -1193,10 +1297,18 @@
     },
     {
       "index": 434,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 435,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 436,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 437,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1204,7 +1316,7 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 440,
+      "index": 441,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1216,23 +1328,15 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 444,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 445,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 446,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 447,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 449,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 450,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1241,19 +1345,19 @@
     },
     {
       "index": 453,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 454,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 455,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 456,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 457,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 458,
@@ -1268,36 +1372,32 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 461,
-      "reason": "review contains emoji"
+      "index": 462,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 463,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 464,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 465,
+      "index": 466,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 466,
-      "reason": "review contains emoji"
+      "index": 467,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 468,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 469,
+      "index": 471,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 472,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 473,
@@ -1305,23 +1405,19 @@
     },
     {
       "index": 474,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 475,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 476,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 478,
       "reason": "review contains emoji"
     },
     {
-      "index": 479,
+      "index": 478,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 479,
+      "reason": "review contains emoji"
     },
     {
       "index": 480,
@@ -1333,11 +1429,11 @@
     },
     {
       "index": 482,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 483,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 484,
@@ -1348,31 +1444,23 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 486,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 487,
-      "reason": "non-English review_text"
-    },
-    {
       "index": 488,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 489,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 490,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 492,
-      "reason": "review_text has fewer than 6 words"
+      "index": 491,
+      "reason": "review contains emoji"
     },
     {
-      "index": 493,
+      "index": 492,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1380,23 +1468,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 495,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 496,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 497,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 498,
       "reason": "review contains emoji"
     },
     {
-      "index": 501,
+      "index": 497,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 498,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 499,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1404,12 +1488,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 503,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 504,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 505,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 506,
@@ -1417,6 +1505,10 @@
     },
     {
       "index": 507,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 508,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1428,56 +1520,36 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 511,
-      "reason": "review_text has fewer than 6 words"
+      "index": 512,
+      "reason": "review contains emoji"
     },
     {
       "index": 513,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 514,
+      "index": 515,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 515,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 516,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 517,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 519,
+      "index": 518,
       "reason": "review contains emoji"
     },
     {
       "index": 520,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 521,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 522,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 523,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 524,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 525,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 526,
@@ -1485,39 +1557,47 @@
     },
     {
       "index": 527,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 528,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 532,
-      "reason": "review contains emoji"
+      "index": 529,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 530,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 533,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 534,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 536,
+      "index": 535,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 537,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 538,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 539,
       "reason": "review contains emoji"
     },
     {
+      "index": 539,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 540,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 541,
@@ -1526,10 +1606,6 @@
     {
       "index": 542,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 543,
-      "reason": "review contains emoji"
     },
     {
       "index": 544,
@@ -1544,27 +1620,31 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 548,
+      "index": 547,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 549,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 550,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 551,
       "reason": "review contains emoji"
     },
     {
-      "index": 552,
+      "index": 550,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 553,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 555,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 554,
+      "index": 556,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 557,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1572,48 +1652,48 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 561,
-      "reason": "review contains emoji"
+      "index": 560,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 562,
+      "index": 561,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 563,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 564,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 566,
-      "reason": "review contains emoji"
+      "index": 565,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 567,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 569,
+      "index": 568,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 571,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 573,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 574,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 577,
+      "index": 575,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 576,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 577,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 578,
@@ -1621,6 +1701,10 @@
     },
     {
       "index": 579,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 580,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1637,7 +1721,7 @@
     },
     {
       "index": 585,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 586,
@@ -1652,12 +1736,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 589,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 590,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 591,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 592,
@@ -1665,15 +1753,23 @@
     },
     {
       "index": 593,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 594,
       "reason": "review contains emoji"
     },
     {
-      "index": 595,
+      "index": 596,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 597,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 598,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 599,
@@ -1688,19 +1784,11 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 602,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 604,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 605,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 606,
       "reason": "review contains emoji"
     },
     {
@@ -1709,7 +1797,7 @@
     },
     {
       "index": 608,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 609,
@@ -1717,27 +1805,23 @@
     },
     {
       "index": 610,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 611,
       "reason": "review contains emoji"
     },
     {
-      "index": 612,
+      "index": 615,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 613,
-      "reason": "review contains emoji"
     },
     {
       "index": 616,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 617,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 618,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 619,
@@ -1745,7 +1829,11 @@
     },
     {
       "index": 620,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 621,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 622,
@@ -1756,11 +1844,27 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 625,
+      "index": 624,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 626,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 627,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 628,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 629,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 630,
       "reason": "review contains emoji"
     },
     {
@@ -1773,23 +1877,11 @@
     },
     {
       "index": 633,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 634,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 635,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 636,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 637,
-      "reason": "review contains emoji"
     },
     {
       "index": 638,
@@ -1801,11 +1893,7 @@
     },
     {
       "index": 640,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 641,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 642,
@@ -1821,7 +1909,7 @@
     },
     {
       "index": 645,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 646,
@@ -1829,7 +1917,7 @@
     },
     {
       "index": 647,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 649,
@@ -1837,75 +1925,51 @@
     },
     {
       "index": 650,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 652,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 653,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 654,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 655,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 656,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 657,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 659,
+      "index": 658,
       "reason": "review contains emoji"
     },
     {
-      "index": 660,
+      "index": 661,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 662,
-      "reason": "review contains emoji"
+      "reason": "non-English review_text"
     },
     {
       "index": 663,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 665,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 666,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 667,
+      "index": 664,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 668,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 669,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 670,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 671,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 672,
@@ -1913,11 +1977,11 @@
     },
     {
       "index": 673,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 674,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 675,
@@ -1925,11 +1989,11 @@
     },
     {
       "index": 677,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 678,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 679,
@@ -1937,11 +2001,15 @@
     },
     {
       "index": 680,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 681,
       "reason": "review contains emoji"
     },
     {
       "index": 682,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 684,
@@ -1949,6 +2017,10 @@
     },
     {
       "index": 685,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 686,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -1977,11 +2049,7 @@
     },
     {
       "index": 693,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 694,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 695,
@@ -1992,19 +2060,27 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 698,
-      "reason": "review_text has fewer than 6 words"
+      "index": 697,
+      "reason": "review contains emoji"
     },
     {
       "index": 699,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 700,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 701,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 702,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 703,
       "reason": "review contains emoji"
     },
     {
@@ -2016,12 +2092,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 706,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 707,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 708,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 709,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 710,
@@ -2032,15 +2116,27 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 712,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 713,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 714,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 715,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 716,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 717,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2049,43 +2145,39 @@
     },
     {
       "index": 719,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 720,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 722,
+      "index": 721,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 723,
+      "index": 722,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 724,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 726,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 727,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 728,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 729,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 730,
       "reason": "review contains emoji"
     },
     {
-      "index": 732,
+      "index": 731,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 733,
-      "reason": "review contains emoji"
     },
     {
       "index": 734,
@@ -2097,7 +2189,7 @@
     },
     {
       "index": 736,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 737,
@@ -2108,16 +2200,8 @@
       "reason": "non-English review_text"
     },
     {
-      "index": 739,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 740,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 741,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 742,
@@ -2132,15 +2216,31 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 747,
+      "index": 745,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 747,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 748,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 749,
+      "reason": "non-English review_text"
+    },
+    {
       "index": 750,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 751,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 752,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2157,7 +2257,15 @@
     },
     {
       "index": 756,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 757,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 759,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 760,
@@ -2173,14 +2281,10 @@
     },
     {
       "index": 763,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 764,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 765,
+      "index": 764,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2188,16 +2292,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 767,
+      "index": 768,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 770,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 771,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 772,
@@ -2205,15 +2305,19 @@
     },
     {
       "index": 773,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 774,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 775,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 776,
+      "reason": "review contains emoji"
     },
     {
       "index": 777,
@@ -2228,27 +2332,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 781,
-      "reason": "review_text has fewer than 6 words"
+      "index": 780,
+      "reason": "review contains emoji"
     },
     {
-      "index": 782,
-      "reason": "review_text has fewer than 6 words"
+      "index": 781,
+      "reason": "review contains emoji"
     },
     {
       "index": 783,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 784,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 785,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 786,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2260,16 +2356,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 793,
-      "reason": "review contains emoji"
+      "index": 791,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 794,
+      "index": 792,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 793,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 795,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 796,
@@ -2277,11 +2377,19 @@
     },
     {
       "index": 798,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 799,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 800,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 802,
+      "reason": "non-English review_text"
     },
     {
       "index": 803,
@@ -2297,6 +2405,10 @@
     },
     {
       "index": 807,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 808,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2308,12 +2420,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 811,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 812,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 813,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 814,
@@ -2321,19 +2437,35 @@
     },
     {
       "index": 815,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 816,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 817,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 818,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 820,
+      "index": 819,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 820,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 821,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 822,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 823,
@@ -2344,7 +2476,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 829,
+      "index": 825,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 826,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 827,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 828,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2353,10 +2497,10 @@
     },
     {
       "index": 831,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 833,
+      "index": 832,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2368,7 +2512,15 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 836,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 837,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 838,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2381,11 +2533,15 @@
     },
     {
       "index": 841,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 842,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 843,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 844,
@@ -2393,10 +2549,26 @@
     },
     {
       "index": 845,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 846,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 847,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 848,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 849,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 850,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2408,43 +2580,47 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 853,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 854,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 859,
+      "index": 856,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 857,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 858,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 860,
+      "index": 859,
       "reason": "review contains emoji"
     },
     {
       "index": 861,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 866,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 867,
       "reason": "review contains emoji"
     },
     {
+      "index": 862,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 863,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 864,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 865,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 868,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 869,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 870,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2452,19 +2628,15 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 872,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 873,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 874,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 875,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 876,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2480,8 +2652,12 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 880,
-      "reason": "review contains emoji"
+      "index": 881,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 882,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 883,
@@ -2489,7 +2665,7 @@
     },
     {
       "index": 884,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 885,
@@ -2500,16 +2676,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 887,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 888,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 889,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 890,
@@ -2537,15 +2709,19 @@
     },
     {
       "index": 896,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 897,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 898,
+      "reason": "review contains emoji"
     },
     {
       "index": 899,
-      "reason": "non-English review_text"
+      "reason": "review contains emoji"
     },
     {
       "index": 900,
@@ -2553,34 +2729,42 @@
     },
     {
       "index": 901,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 902,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 904,
-      "reason": "review contains emoji"
+      "index": 903,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 905,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 906,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 907,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 908,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 909,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 910,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 911,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2588,31 +2772,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 914,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 915,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 916,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 917,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 918,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 919,
       "reason": "review contains emoji"
     },
     {
-      "index": 920,
+      "index": 921,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2624,16 +2796,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 924,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 925,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 926,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 927,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 929,
@@ -2641,11 +2813,15 @@
     },
     {
       "index": 930,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 931,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 932,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 933,
@@ -2653,10 +2829,10 @@
     },
     {
       "index": 934,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 936,
+      "index": 935,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2664,11 +2840,19 @@
       "reason": "review contains emoji"
     },
     {
+      "index": 938,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 939,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 942,
+      "index": 940,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 941,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2681,50 +2865,38 @@
     },
     {
       "index": 945,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 946,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 947,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 948,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 949,
-      "reason": "review contains emoji"
     },
     {
       "index": 950,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 951,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 954,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 953,
-      "reason": "review contains emoji"
+      "index": 955,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 955,
-      "reason": "review contains emoji"
+      "index": 956,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 958,
       "reason": "review contains emoji"
     },
     {
-      "index": 961,
+      "index": 960,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 962,
+      "index": 961,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2732,28 +2904,28 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 965,
+      "index": 964,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 965,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 966,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 967,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 968,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 969,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 971,
-      "reason": "review contains emoji"
+      "index": 970,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 972,
@@ -2768,23 +2940,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 975,
+      "index": 977,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 976,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 979,
-      "reason": "review contains emoji"
+      "index": 978,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 980,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 981,
+      "index": 982,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2801,6 +2969,10 @@
     },
     {
       "index": 987,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 988,
       "reason": "review contains emoji"
     },
     {
@@ -2812,7 +2984,11 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 992,
+      "index": 993,
+      "reason": "non-English review_text"
+    },
+    {
+      "index": 994,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2821,30 +2997,22 @@
     },
     {
       "index": 997,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 999,
-      "reason": "review contains emoji"
+      "index": 998,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1000,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1002,
+      "index": 1001,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1003,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1004,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1005,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2857,7 +3025,7 @@
     },
     {
       "index": 1008,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1010,
@@ -2865,7 +3033,11 @@
     },
     {
       "index": 1011,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1012,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1013,
@@ -2873,14 +3045,22 @@
     },
     {
       "index": 1014,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1015,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1018,
+      "index": 1017,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1019,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1020,
       "reason": "review contains emoji"
     },
     {
@@ -2888,24 +3068,24 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1024,
-      "reason": "review contains emoji"
+      "index": 1022,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1023,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1025,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1026,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1027,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1028,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1029,
@@ -2917,11 +3097,15 @@
     },
     {
       "index": 1031,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1032,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1033,
+      "reason": "review contains emoji"
     },
     {
       "index": 1034,
@@ -2929,7 +3113,7 @@
     },
     {
       "index": 1035,
-      "reason": "non-English review_text"
+      "reason": "review contains emoji"
     },
     {
       "index": 1036,
@@ -2937,23 +3121,43 @@
     },
     {
       "index": 1037,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1039,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1040,
+      "index": 1038,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1039,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1041,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1042,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1043,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1044,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1045,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1047,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1046,
-      "reason": "review contains emoji"
+      "index": 1048,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1049,
@@ -2961,14 +3165,14 @@
     },
     {
       "index": 1050,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1051,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1053,
+      "index": 1052,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -2977,30 +3181,14 @@
     },
     {
       "index": 1055,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1057,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1058,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1059,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1060,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 1061,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1062,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3009,14 +3197,10 @@
     },
     {
       "index": 1065,
-      "reason": "non-English review_text"
+      "reason": "review contains emoji"
     },
     {
       "index": 1066,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 1067,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3024,12 +3208,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1069,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1070,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1071,
@@ -3041,7 +3221,7 @@
     },
     {
       "index": 1074,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1075,
@@ -3053,23 +3233,15 @@
     },
     {
       "index": 1078,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1079,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1080,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 1081,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1082,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1083,
@@ -3077,19 +3249,27 @@
     },
     {
       "index": 1084,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1085,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1086,
+      "index": 1087,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1088,
+      "reason": "review contains emoji"
     },
     {
       "index": 1089,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 1090,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1091,
@@ -3097,39 +3277,23 @@
     },
     {
       "index": 1092,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1094,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1095,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1096,
-      "reason": "review contains emoji"
     },
     {
       "index": 1097,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1098,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1099,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1100,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1102,
-      "reason": "review contains emoji"
+      "index": 1101,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1103,
@@ -3140,16 +3304,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1105,
+      "index": 1108,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1106,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1107,
-      "reason": "non-English review_text"
     },
     {
       "index": 1109,
@@ -3165,10 +3321,10 @@
     },
     {
       "index": 1112,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1113,
+      "index": 1114,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3176,12 +3332,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1116,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1118,
+      "reason": "review contains emoji"
     },
     {
-      "index": 1118,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1119,
+      "reason": "non-English review_text"
     },
     {
       "index": 1120,
@@ -3189,19 +3345,11 @@
     },
     {
       "index": 1121,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1122,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1123,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1124,
-      "reason": "review contains emoji"
+      "index": 1122,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1125,
@@ -3212,12 +3360,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1127,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 1128,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1129,
@@ -3228,19 +3372,15 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1132,
-      "reason": "review contains emoji"
+      "index": 1131,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1133,
+      "index": 1132,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1134,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1135,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3249,38 +3389,30 @@
     },
     {
       "index": 1137,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1138,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1139,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1140,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1141,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1142,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1143,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1144,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1145,
+      "index": 1143,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1144,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3288,28 +3420,40 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1149,
+      "index": 1148,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1149,
+      "reason": "review contains emoji"
     },
     {
       "index": 1150,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1153,
+      "index": 1151,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1152,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1153,
+      "reason": "review contains emoji"
     },
     {
       "index": 1154,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 1155,
+      "index": 1157,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1158,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1159,
@@ -3317,11 +3461,15 @@
     },
     {
       "index": 1160,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1161,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1162,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1163,
@@ -3329,26 +3477,22 @@
     },
     {
       "index": 1164,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1166,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1167,
       "reason": "review contains emoji"
     },
     {
-      "index": 1169,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1171,
-      "reason": "non-English review_text"
-    },
-    {
       "index": 1172,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1174,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3365,14 +3509,10 @@
     },
     {
       "index": 1178,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1180,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1181,
+      "index": 1179,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3380,8 +3520,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1183,
-      "reason": "review contains emoji"
+      "index": 1184,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1186,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1187,
@@ -3389,7 +3533,7 @@
     },
     {
       "index": 1188,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1190,
@@ -3400,16 +3544,12 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1193,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1194,
+      "index": 1192,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1195,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1196,
@@ -3420,7 +3560,7 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1199,
+      "index": 1198,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3428,28 +3568,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1202,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1203,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1205,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1204,
+      "reason": "review contains emoji"
     },
     {
       "index": 1206,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1207,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1209,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1210,
@@ -3457,7 +3589,7 @@
     },
     {
       "index": 1211,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1212,
@@ -3468,11 +3600,7 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1215,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1216,
+      "index": 1217,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3481,7 +3609,7 @@
     },
     {
       "index": 1219,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1220,
@@ -3489,23 +3617,15 @@
     },
     {
       "index": 1221,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1222,
       "reason": "review contains emoji"
     },
     {
-      "index": 1223,
+      "index": 1222,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1224,
       "reason": "review contains emoji"
-    },
-    {
-      "index": 1225,
-      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1226,
@@ -3516,20 +3636,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1229,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1228,
+      "reason": "review contains emoji"
     },
     {
       "index": 1230,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1231,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1232,
-      "reason": "non-English review_text"
     },
     {
       "index": 1233,
@@ -3540,15 +3656,7 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1237,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1238,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1239,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3557,10 +3665,6 @@
     },
     {
       "index": 1241,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1242,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3568,23 +3672,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1244,
+      "index": 1245,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1245,
+      "index": 1246,
       "reason": "review contains emoji"
     },
     {
       "index": 1247,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1248,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1249,
       "reason": "review contains emoji"
     },
     {
@@ -3596,28 +3696,24 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 1252,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1253,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 1254,
       "reason": "review contains emoji"
     },
     {
-      "index": 1258,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1259,
+      "index": 1255,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1260,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1261,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1262,
-      "reason": "review contains emoji"
+      "index": 1256,
+      "reason": "non-English review_text"
     },
     {
       "index": 1263,
@@ -3625,66 +3721,66 @@
     },
     {
       "index": 1264,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1266,
+      "index": 1265,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1267,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1268,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1270,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1271,
-      "reason": "review contains emoji"
+      "index": 1272,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1273,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1274,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1277,
-      "reason": "review contains emoji"
+      "index": 1276,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1278,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1280,
+      "index": 1279,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1281,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1282,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1283,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1284,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1285,
+      "reason": "review contains emoji"
     },
     {
-      "index": 1285,
+      "index": 1286,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3692,23 +3788,15 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1289,
+      "index": 1288,
       "reason": "review contains emoji"
     },
     {
-      "index": 1291,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1292,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1293,
+      "index": 1290,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1294,
+      "index": 1292,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3716,47 +3804,31 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1296,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1297,
       "reason": "review contains emoji"
     },
     {
-      "index": 1298,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1299,
+      "index": 1300,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1301,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1302,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1303,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1304,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1305,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1306,
+      "index": 1310,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1309,
+      "index": 1311,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3764,8 +3836,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1314,
-      "reason": "review contains emoji"
+      "index": 1313,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1315,
@@ -3785,11 +3857,11 @@
     },
     {
       "index": 1319,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1320,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1321,
@@ -3797,15 +3869,23 @@
     },
     {
       "index": 1322,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1323,
+      "reason": "review contains emoji"
     },
     {
       "index": 1324,
       "reason": "review contains emoji"
     },
     {
-      "index": 1326,
+      "index": 1325,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1326,
+      "reason": "review contains emoji"
     },
     {
       "index": 1327,
@@ -3813,19 +3893,11 @@
     },
     {
       "index": 1328,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1329,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 1330,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1331,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1332,
@@ -3845,11 +3917,19 @@
     },
     {
       "index": 1337,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1339,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1340,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1341,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1342,
@@ -3865,35 +3945,67 @@
     },
     {
       "index": 1345,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1346,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1347,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1348,
+      "reason": "review contains emoji"
     },
     {
       "index": 1349,
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 1350,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1351,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1352,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1353,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 1354,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1356,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1359,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1360,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1361,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1362,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1363,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1364,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1365,
@@ -3904,27 +4016,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1369,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1367,
+      "reason": "review contains emoji"
     },
     {
-      "index": 1370,
-      "reason": "review contains emoji"
+      "index": 1369,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1371,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1372,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1373,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1374,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3937,30 +4041,30 @@
     },
     {
       "index": 1377,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1378,
+      "reason": "review contains emoji"
     },
     {
       "index": 1379,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1380,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1382,
-      "reason": "review contains emoji"
+      "index": 1381,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1383,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1384,
-      "reason": "review contains emoji"
+      "index": 1385,
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1385,
+      "index": 1386,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -3969,19 +4073,23 @@
     },
     {
       "index": 1388,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1389,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1390,
       "reason": "review contains emoji"
     },
     {
-      "index": 1393,
+      "index": 1389,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1390,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1391,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1392,
+      "reason": "review contains emoji"
     },
     {
       "index": 1394,
@@ -3989,7 +4097,7 @@
     },
     {
       "index": 1395,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1396,
@@ -3997,11 +4105,7 @@
     },
     {
       "index": 1397,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1398,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1399,
@@ -4012,20 +4116,12 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1401,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1402,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 1403,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1404,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1405,
@@ -4037,14 +4133,18 @@
     },
     {
       "index": 1407,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1408,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1409,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1410,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1411,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4052,7 +4152,19 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 1413,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1414,
+      "reason": "review contains emoji"
+    },
+    {
       "index": 1415,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1416,
       "reason": "review contains emoji"
     },
     {
@@ -4061,7 +4173,7 @@
     },
     {
       "index": 1418,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1419,
@@ -4069,14 +4181,14 @@
     },
     {
       "index": 1420,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1421,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1422,
+      "index": 1423,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4085,7 +4197,7 @@
     },
     {
       "index": 1425,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1426,
@@ -4097,19 +4209,19 @@
     },
     {
       "index": 1428,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1429,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1430,
+      "index": 1429,
       "reason": "review contains emoji"
     },
     {
-      "index": 1431,
-      "reason": "review contains emoji"
+      "index": 1432,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1433,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1435,
@@ -4117,7 +4229,7 @@
     },
     {
       "index": 1436,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1437,
@@ -4129,7 +4241,7 @@
     },
     {
       "index": 1440,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1441,
@@ -4140,12 +4252,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1443,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1444,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1445,
@@ -4153,19 +4261,27 @@
     },
     {
       "index": 1446,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1447,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 1449,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1448,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1450,
+      "reason": "review contains emoji"
     },
     {
       "index": 1451,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 1452,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1453,
@@ -4180,24 +4296,24 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1457,
+      "index": 1456,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 1457,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1458,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1459,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1460,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1461,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1463,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1464,
@@ -4205,35 +4321,39 @@
     },
     {
       "index": 1465,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1467,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1468,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1469,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1470,
       "reason": "review contains emoji"
     },
     {
       "index": 1471,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "non-English review_text"
     },
     {
       "index": 1472,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1474,
+      "index": 1473,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1475,
+      "index": 1474,
       "reason": "review contains emoji"
+    },
+    {
+      "index": 1475,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1476,
@@ -4241,38 +4361,50 @@
     },
     {
       "index": 1477,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1478,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1479,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1480,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1486,
+      "index": 1481,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1488,
+      "index": 1482,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1483,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1491,
+      "index": 1485,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1490,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1492,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1493,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1494,
+      "reason": "review contains emoji"
     },
     {
       "index": 1495,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1496,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4281,11 +4413,7 @@
     },
     {
       "index": 1498,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1499,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1500,
@@ -4293,26 +4421,22 @@
     },
     {
       "index": 1502,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1503,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1504,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1505,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1506,
+      "index": 1508,
       "reason": "review contains emoji"
     },
     {
-      "index": 1508,
+      "index": 1509,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4320,8 +4444,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1513,
+      "index": 1512,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1514,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1515,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1516,
+      "reason": "review contains emoji"
     },
     {
       "index": 1517,
@@ -4336,23 +4472,35 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1520,
+      "index": 1521,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1522,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1523,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1524,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1526,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1527,
+      "index": 1529,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1530,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1531,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4364,16 +4512,16 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1534,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1535,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1536,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1537,
+      "reason": "review contains emoji"
     },
     {
       "index": 1538,
@@ -4381,7 +4529,7 @@
     },
     {
       "index": 1539,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1540,
@@ -4393,6 +4541,10 @@
     },
     {
       "index": 1542,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1543,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4400,19 +4552,15 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1546,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1547,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1548,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 1549,
+      "index": 1550,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4420,28 +4568,20 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1552,
-      "reason": "review contains emoji"
+      "index": 1553,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1554,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1555,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1556,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
       "index": 1557,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1558,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1560,
@@ -4464,16 +4604,28 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1566,
+      "index": 1565,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1566,
+      "reason": "review contains emoji"
     },
     {
       "index": 1567,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1569,
+      "index": 1568,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1569,
+      "reason": "review contains emoji"
+    },
+    {
+      "index": 1570,
+      "reason": "review contains emoji"
     },
     {
       "index": 1571,
@@ -4481,7 +4633,11 @@
     },
     {
       "index": 1572,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1573,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1574,
@@ -4493,11 +4649,7 @@
     },
     {
       "index": 1576,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1577,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1578,
@@ -4505,11 +4657,11 @@
     },
     {
       "index": 1579,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
-      "index": 1580,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1581,
+      "reason": "review contains emoji"
     },
     {
       "index": 1582,
@@ -4520,12 +4672,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
+      "index": 1584,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
       "index": 1585,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1588,
+      "index": 1586,
       "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1588,
+      "reason": "review contains emoji"
     },
     {
       "index": 1589,
@@ -4533,18 +4693,18 @@
     },
     {
       "index": 1591,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1592,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1593,
+      "index": 1594,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1594,
+      "index": 1595,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4553,19 +4713,27 @@
     },
     {
       "index": 1597,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1598,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1599,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1600,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1601,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1602,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1603,
@@ -4573,11 +4741,7 @@
     },
     {
       "index": 1604,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1605,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1606,
@@ -4588,11 +4752,11 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1609,
+      "index": 1608,
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1610,
+      "index": 1609,
       "reason": "review contains emoji"
     },
     {
@@ -4600,12 +4764,20 @@
       "reason": "review contains emoji"
     },
     {
-      "index": 1612,
+      "index": 1613,
       "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1614,
-      "reason": "non-English review_text"
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1616,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1617,
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1618,
@@ -4613,14 +4785,18 @@
     },
     {
       "index": 1619,
-      "reason": "review_text has fewer than 6 words"
+      "reason": "review contains emoji"
     },
     {
       "index": 1620,
-      "reason": "non-English review_text"
+      "reason": "review contains emoji"
     },
     {
       "index": 1621,
+      "reason": "review_text has fewer than 6 words"
+    },
+    {
+      "index": 1622,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4633,7 +4809,7 @@
     },
     {
       "index": 1625,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1627,
@@ -4648,8 +4824,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1630,
-      "reason": "review_text has fewer than 6 words"
+      "index": 1631,
+      "reason": "review contains emoji"
     },
     {
       "index": 1633,
@@ -4657,10 +4833,6 @@
     },
     {
       "index": 1634,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1635,
       "reason": "review_text has fewer than 6 words"
     },
     {
@@ -4676,12 +4848,8 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1641,
+      "index": 1640,
       "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1642,
-      "reason": "review contains emoji"
     },
     {
       "index": 1643,
@@ -4696,10 +4864,6 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1646,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 1647,
       "reason": "review_text has fewer than 6 words"
     },
@@ -4709,7 +4873,7 @@
     },
     {
       "index": 1649,
-      "reason": "review contains emoji"
+      "reason": "review_text has fewer than 6 words"
     },
     {
       "index": 1651,
@@ -4720,364 +4884,20 @@
       "reason": "review_text has fewer than 6 words"
     },
     {
-      "index": 1653,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1654,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1655,
-      "reason": "review contains emoji"
-    },
-    {
       "index": 1656,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1657,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1658,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1659,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1662,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1663,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1664,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1665,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1666,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1667,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1668,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1670,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1671,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1672,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1673,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1674,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1675,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1677,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1678,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1679,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1680,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1681,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1682,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1683,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1684,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1685,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1686,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1687,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1688,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1690,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1692,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1693,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1694,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1696,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1697,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1698,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1701,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1702,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1703,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1705,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1706,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1707,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1709,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1713,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1714,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1717,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1718,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1719,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1720,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1721,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1722,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1723,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1724,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1725,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1726,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1727,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1728,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1729,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1730,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1733,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1734,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1735,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1738,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1740,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1741,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1742,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1743,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1744,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1745,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1746,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1747,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1748,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1749,
-      "reason": "non-English review_text"
-    },
-    {
-      "index": 1750,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1751,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1752,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1753,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1755,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1757,
-      "reason": "review contains emoji"
-    },
-    {
-      "index": 1758,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1759,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1760,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1761,
-      "reason": "review_text has fewer than 6 words"
-    },
-    {
-      "index": 1762,
       "reason": "review contains emoji"
     }
   ],
   "duplicates_removed": 0,
-  "final_count": 496,
+  "final_count": 435,
   "platform_counts": {
     "app_store": 0,
-    "play_store": 496
+    "play_store": 435
   },
   "rating_label_counts": {
-    "negative": 183,
-    "neutral": 27,
-    "positive": 286
+    "negative": 150,
+    "neutral": 23,
+    "positive": 262
   },
   "standard_fields": [
     "review_id",

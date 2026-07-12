@@ -6,7 +6,7 @@
   "invalid_details": [],
   "within_date_window": 2500,
   "outside_date_window": 0,
-  "duplicates_removed": 738,
-  "final_count": 1762,
+  "duplicates_removed": 844,
+  "final_count": 1656,
   "load_errors": []
 }
