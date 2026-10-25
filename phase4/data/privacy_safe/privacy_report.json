@@ -1,476 +1,485 @@
 {
-  "input_count": 466,
-  "privacy_safe_count": 466,
-  "reviews_with_pii": 66,
+  "input_count": 470,
+  "privacy_safe_count": 470,
+  "reviews_with_pii": 67,
   "pii_detection_counts": {
-    "account_id": 62,
-    "order_id": 11,
-    "long_numeric_id": 2,
-    "username": 1
+    "account_id": 66,
+    "username": 3,
+    "order_id": 9,
+    "long_numeric_id": 2
   },
   "affected_reviews": [
     {
+      "index": 1,
+      "review_id": "play_store-2026-10-17-00006",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 2,
+      "review_id": "play_store-2026-10-17-00007",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 4,
+      "review_id": "play_store-2026-10-17-00021",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
       "index": 7,
-      "review_id": "play_store-2026-10-10-00038",
+      "review_id": "play_store-2026-10-17-00041",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 9,
-      "review_id": "play_store-2026-10-10-00040",
-      "pii_types": [
-        "order_id"
-      ]
-    },
-    {
-      "index": 13,
-      "review_id": "play_store-2026-10-09-00066",
+      "index": 8,
+      "review_id": "play_store-2026-10-17-00043",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 14,
-      "review_id": "play_store-2026-10-09-00072",
+      "index": 10,
+      "review_id": "play_store-2026-10-16-00060",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 24,
-      "review_id": "play_store-2026-10-09-00108",
+      "index": 21,
+      "review_id": "play_store-2026-10-16-00101",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 32,
-      "review_id": "play_store-2026-10-09-00131",
-      "pii_types": [
-        "order_id"
-      ]
-    },
-    {
-      "index": 39,
-      "review_id": "play_store-2026-10-09-00151",
+      "index": 23,
+      "review_id": "play_store-2026-10-16-00107",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 44,
-      "review_id": "play_store-2026-10-08-00175",
+      "index": 34,
+      "review_id": "play_store-2026-10-16-00130",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 53,
-      "review_id": "play_store-2026-10-08-00207",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 64,
-      "review_id": "play_store-2026-10-07-00248",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 65,
-      "review_id": "play_store-2026-10-07-00251",
-      "pii_types": [
-        "order_id"
-      ]
-    },
-    {
-      "index": 78,
-      "review_id": "play_store-2026-10-07-00272",
-      "pii_types": [
-        "long_numeric_id"
-      ]
-    },
-    {
-      "index": 86,
-      "review_id": "play_store-2026-10-07-00297",
+      "index": 37,
+      "review_id": "play_store-2026-10-15-00150",
       "pii_types": [
         "account_id",
-        "order_id"
-      ]
-    },
-    {
-      "index": 90,
-      "review_id": "play_store-2026-10-07-00302",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 91,
-      "review_id": "play_store-2026-10-07-00304",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 94,
-      "review_id": "play_store-2026-10-07-00318",
-      "pii_types": [
         "username"
       ]
     },
     {
-      "index": 98,
-      "review_id": "play_store-2026-10-07-00330",
+      "index": 39,
+      "review_id": "play_store-2026-10-15-00153",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 41,
+      "review_id": "play_store-2026-10-15-00162",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 62,
+      "review_id": "play_store-2026-10-14-00256",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 63,
+      "review_id": "play_store-2026-10-14-00264",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 73,
+      "review_id": "play_store-2026-10-14-00288",
       "pii_types": [
         "order_id"
       ]
     },
     {
-      "index": 113,
-      "review_id": "play_store-2026-10-06-00388",
+      "index": 76,
+      "review_id": "play_store-2026-10-14-00296",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 118,
-      "review_id": "play_store-2026-10-06-00400",
+      "index": 80,
+      "review_id": "play_store-2026-10-14-00307",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 119,
-      "review_id": "play_store-2026-10-06-00405",
+      "index": 82,
+      "review_id": "play_store-2026-10-14-00311",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 129,
-      "review_id": "play_store-2026-10-06-00437",
+      "index": 84,
+      "review_id": "play_store-2026-10-14-00324",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 134,
-      "review_id": "play_store-2026-10-06-00447",
+      "index": 95,
+      "review_id": "play_store-2026-10-13-00361",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 136,
-      "review_id": "play_store-2026-10-06-00452",
+      "index": 96,
+      "review_id": "play_store-2026-10-13-00364",
+      "pii_types": [
+        "order_id"
+      ]
+    },
+    {
+      "index": 98,
+      "review_id": "play_store-2026-10-13-00379",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 99,
+      "review_id": "play_store-2026-10-13-00381",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 114,
+      "review_id": "play_store-2026-10-13-00442",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 137,
+      "review_id": "play_store-2026-10-12-00514",
       "pii_types": [
         "account_id"
       ]
     },
     {
       "index": 140,
-      "review_id": "play_store-2026-10-06-00458",
+      "review_id": "play_store-2026-10-12-00519",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 148,
-      "review_id": "play_store-2026-10-05-00500",
+      "index": 142,
+      "review_id": "play_store-2026-10-12-00537",
       "pii_types": [
         "account_id"
+      ]
+    },
+    {
+      "index": 155,
+      "review_id": "play_store-2026-10-11-00587",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 157,
+      "review_id": "play_store-2026-10-10-00596",
+      "pii_types": [
+        "account_id",
+        "username"
+      ]
+    },
+    {
+      "index": 165,
+      "review_id": "play_store-2026-10-10-00643",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 167,
+      "review_id": "play_store-2026-10-10-00645",
+      "pii_types": [
+        "order_id"
       ]
     },
     {
       "index": 171,
-      "review_id": "play_store-2026-10-05-00569",
+      "review_id": "play_store-2026-10-09-00669",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 181,
-      "review_id": "play_store-2026-10-04-00605",
+      "index": 172,
+      "review_id": "play_store-2026-10-09-00675",
       "pii_types": [
         "account_id"
       ]
     },
     {
       "index": 182,
-      "review_id": "play_store-2026-10-04-00608",
+      "review_id": "play_store-2026-10-09-00711",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 190,
+      "review_id": "play_store-2026-10-09-00734",
+      "pii_types": [
+        "order_id"
+      ]
+    },
+    {
+      "index": 197,
+      "review_id": "play_store-2026-10-09-00754",
       "pii_types": [
         "account_id"
       ]
     },
     {
       "index": 202,
-      "review_id": "play_store-2026-10-02-00730",
+      "review_id": "play_store-2026-10-08-00778",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 209,
-      "review_id": "play_store-2026-10-02-00758",
+      "index": 211,
+      "review_id": "play_store-2026-10-08-00810",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 210,
-      "review_id": "play_store-2026-10-02-00762",
+      "index": 222,
+      "review_id": "play_store-2026-10-07-00851",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 233,
-      "review_id": "play_store-2026-10-01-00853",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 234,
-      "review_id": "play_store-2026-10-01-00854",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 237,
-      "review_id": "play_store-2026-10-01-00862",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 238,
-      "review_id": "play_store-2026-10-01-00863",
+      "index": 223,
+      "review_id": "play_store-2026-10-07-00854",
       "pii_types": [
         "order_id"
       ]
     },
     {
-      "index": 253,
-      "review_id": "play_store-2026-09-30-00928",
+      "index": 236,
+      "review_id": "play_store-2026-10-07-00875",
+      "pii_types": [
+        "long_numeric_id"
+      ]
+    },
+    {
+      "index": 244,
+      "review_id": "play_store-2026-10-07-00900",
+      "pii_types": [
+        "account_id",
+        "order_id"
+      ]
+    },
+    {
+      "index": 248,
+      "review_id": "play_store-2026-10-07-00905",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 266,
-      "review_id": "play_store-2026-09-29-00993",
+      "index": 249,
+      "review_id": "play_store-2026-10-07-00907",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 252,
+      "review_id": "play_store-2026-10-07-00921",
+      "pii_types": [
+        "username"
+      ]
+    },
+    {
+      "index": 256,
+      "review_id": "play_store-2026-10-07-00933",
+      "pii_types": [
+        "order_id"
+      ]
+    },
+    {
+      "index": 271,
+      "review_id": "play_store-2026-10-06-00990",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 276,
+      "review_id": "play_store-2026-10-06-01002",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 277,
+      "review_id": "play_store-2026-10-06-01007",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 287,
+      "review_id": "play_store-2026-10-06-01039",
+      "pii_types": [
+        "account_id"
+      ]
+    },
+    {
+      "index": 292,
+      "review_id": "play_store-2026-10-06-01049",
       "pii_types": [
         "account_id"
       ]
     },
     {
       "index": 294,
-      "review_id": "play_store-2026-09-29-01056",
+      "review_id": "play_store-2026-10-06-01054",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 306,
-      "review_id": "play_store-2026-09-28-01106",
-      "pii_types": [
-        "long_numeric_id",
-        "order_id"
-      ]
-    },
-    {
-      "index": 319,
-      "review_id": "play_store-2026-09-28-01158",
+      "index": 298,
+      "review_id": "play_store-2026-10-06-01060",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 320,
-      "review_id": "play_store-2026-09-28-01165",
+      "index": 305,
+      "review_id": "play_store-2026-10-05-01101",
       "pii_types": [
-        "order_id"
+        "account_id"
       ]
     },
     {
-      "index": 323,
-      "review_id": "play_store-2026-09-27-01177",
+      "index": 327,
+      "review_id": "play_store-2026-10-05-01169",
       "pii_types": [
-        "order_id"
+        "account_id"
       ]
     },
     {
       "index": 337,
-      "review_id": "play_store-2026-09-26-01268",
+      "review_id": "play_store-2026-10-04-01205",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 352,
-      "review_id": "play_store-2026-09-25-01337",
+      "index": 338,
+      "review_id": "play_store-2026-10-04-01208",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 360,
-      "review_id": "play_store-2026-09-25-01355",
+      "index": 358,
+      "review_id": "play_store-2026-10-02-01328",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 371,
-      "review_id": "play_store-2026-09-25-01393",
+      "index": 365,
+      "review_id": "play_store-2026-10-02-01359",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 373,
-      "review_id": "play_store-2026-09-25-01400",
+      "index": 388,
+      "review_id": "play_store-2026-10-01-01450",
       "pii_types": [
         "account_id"
       ]
     },
     {
       "index": 389,
-      "review_id": "play_store-2026-09-24-01457",
+      "review_id": "play_store-2026-10-01-01451",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 390,
-      "review_id": "play_store-2026-09-24-01459",
+      "index": 392,
+      "review_id": "play_store-2026-10-01-01459",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 397,
-      "review_id": "play_store-2026-09-24-01482",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 399,
-      "review_id": "play_store-2026-09-24-01486",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 401,
-      "review_id": "play_store-2026-09-24-01494",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 404,
-      "review_id": "play_store-2026-09-24-01507",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 405,
-      "review_id": "play_store-2026-09-24-01510",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 406,
-      "review_id": "play_store-2026-09-24-01511",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 407,
-      "review_id": "play_store-2026-09-24-01512",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 419,
-      "review_id": "play_store-2026-09-23-01556",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 427,
-      "review_id": "play_store-2026-09-23-01584",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 435,
-      "review_id": "play_store-2026-09-23-01612",
-      "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 436,
-      "review_id": "play_store-2026-09-23-01613",
+      "index": 393,
+      "review_id": "play_store-2026-10-01-01460",
       "pii_types": [
         "order_id"
       ]
     },
     {
-      "index": 438,
-      "review_id": "play_store-2026-09-23-01620",
+      "index": 408,
+      "review_id": "play_store-2026-09-30-01525",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 444,
-      "review_id": "play_store-2026-09-22-01645",
+      "index": 421,
+      "review_id": "play_store-2026-09-29-01590",
       "pii_types": [
         "account_id"
-      ]
-    },
-    {
-      "index": 447,
-      "review_id": "play_store-2026-09-22-01668",
-      "pii_types": [
-        "order_id"
       ]
     },
     {
       "index": 449,
-      "review_id": "play_store-2026-09-22-01671",
+      "review_id": "play_store-2026-09-29-01653",
       "pii_types": [
         "account_id"
       ]
     },
     {
-      "index": 460,
-      "review_id": "play_store-2026-09-22-01695",
+      "index": 461,
+      "review_id": "play_store-2026-09-28-01703",
       "pii_types": [
-        "account_id"
-      ]
-    },
-    {
-      "index": 466,
-      "review_id": "play_store-2026-09-22-01716",
-      "pii_types": [
-        "account_id"
+        "long_numeric_id",
+        "order_id"
       ]
     }
   ],
@@ -478,6 +487,14 @@
     "review_text",
     "review_title"
   ],
-  "ready_for_ai_analysis": true,
-  "remaining_pii_after_filter": []
+  "ready_for_ai_analysis": false,
+  "remaining_pii_after_filter": [
+    {
+      "index": 157,
+      "review_id": "play_store-2026-10-10-00596",
+      "remaining_pii_types": [
+        "username"
+      ]
+    }
+  ]
 }
